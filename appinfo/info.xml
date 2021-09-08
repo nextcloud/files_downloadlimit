@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<info>
+	<id>files_downloadcounter</id>
+	<name>Files download counter</name>
+	<summary>File share download counter</summary>
+
+	<description><![CDATA[File share download counter]]></description>
+	<version>0.0.1</version>
+	<licence>AGPL</licence>
+	<author mail="skjnldsv@protonmail.com">John Molakvoæ</author>
+
+	<namespace>Files_DownloadCounter</namespace>
+
+	<category>files</category>
+	<bugs>https://github.com/nextcloud/files_downloadcounter/issues</bugs>
+	<website>https://github.com/nextcloud/files_downloadcounter</website>
+	<repository type="git">https://github.com/nextcloud/files_downloadcounter.git</repository>
+  
+	<dependencies>
+		<nextcloud min-version="23" max-version="23" />
+	</dependencies>
+</info>
