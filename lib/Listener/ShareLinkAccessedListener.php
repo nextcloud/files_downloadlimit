@@ -26,13 +26,14 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\Listener;
 
-use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\Db\Limit;
+use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
+use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IConfig;
 use OCP\Share\IManager;
-use Psr\Log\LoggerInterface;
 
 class ShareLinkAccessedListener implements IEventListener {
 
@@ -42,15 +43,15 @@ class ShareLinkAccessedListener implements IEventListener {
 	/** @var IManager */
 	private $manager;
 
-	/** @var LoggerInterface */
-	private $logger;
+	/** @var LimitMapper */
+	private $mapper;
 
 	public function __construct(IConfig $config,
 								IManager $manager,
-								LoggerInterface $logger) {
+								LimitMapper $mapper) {
 		$this->config = $config;
 		$this->manager = $manager;
-		$this->logger = $logger;
+		$this->mapper = $mapper;
 	}
 
 	public function handle(Event $event): void {
@@ -65,18 +66,27 @@ class ShareLinkAccessedListener implements IEventListener {
 
 		// Make sure we have a valid limit
 		$token = $event->getShare()->getToken();
-		$limit = $this->config->getAppValue(Application::APP_ID, 'download_limit_' . $token, -1);
+		try {
+			$shareLimit = $this->mapper->get($token);
+			$limit = $shareLimit->getLimit();
 
-		if ($limit > 0) {
-			$count = $this->config->getAppValue(Application::APP_ID, 'download_count_' . $token, 0) + 1;
-			$this->config->setAppValue(Application::APP_ID, 'download_count_' . $token, $count);
+			// Increment this download event
+			$downloads = $shareLimit->getDownloads() + 1;
 
-			// If we reached the count download, we delete the share
-			if ($count >= $limit) {
+			// If we reached the maximum allowed download count
+			if ($downloads >= $limit) {
+				// Delete share
 				$this->manager->deleteShare($event->getShare());
-				$count = $this->config->deleteAppValue(Application::APP_ID, 'download_limit_' . $token);
-				$count = $this->config->deleteAppValue(Application::APP_ID, 'download_count_' . $token);
+				// Delete limit
+				$this->mapper->delete($shareLimit);
+				return;
 			}
+			
+			// Else, we just update the current download count
+			$shareLimit->setDownloads($downloads);
+			$this->mapper->update($shareLimit);
+		} catch (DoesNotExistException $e) {
+			// No limit is set, ignore
 		}
 	}
 }

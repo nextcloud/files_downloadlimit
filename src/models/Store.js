@@ -1,7 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
 /**
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
@@ -24,10 +20,46 @@ declare(strict_types=1);
  *
  */
 
-return [
-	'ocs' => [
-		['name' => 'api#getDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'GET'],
-		['name' => 'api#setDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'PUT'],
-		['name' => 'api#removeDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'DELETE'],
-	]
-];
+// Create dummy global store
+export default class Store {
+
+	_data = {
+		enabled: false,
+		limit: null,
+		count: null,
+		token: null,
+	}
+
+	get enabled() {
+		return this._data.enabled
+	}
+
+	set enabled(enabled) {
+		this._data.enabled = enabled
+	}
+
+	get limit() {
+		return this._data.limit
+	}
+
+	set limit(limit) {
+		this._data.limit = limit
+	}
+
+	get count() {
+		return this._data.count
+	}
+
+	set count(count) {
+		this._data.count = count
+	}
+
+	get token() {
+		return this._data.token
+	}
+
+	set token(token) {
+		this._data.token = token
+	}
+
+}

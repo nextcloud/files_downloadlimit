@@ -1,7 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
 /**
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
@@ -24,10 +20,45 @@ declare(strict_types=1);
  *
  */
 
-return [
-	'ocs' => [
-		['name' => 'api#getDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'GET'],
-		['name' => 'api#setDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'PUT'],
-		['name' => 'api#removeDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'DELETE'],
-	]
-];
+import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
+import { translate as t } from '@nextcloud/l10n'
+import debounce from 'debounce'
+
+import { setDownloadLimit } from '../service/DownloadLimitService'
+
+export default class DownloadLimitAction {
+
+	// internal state
+	_store;
+
+	constructor(store) {
+		this._store = store
+	}
+
+	get id() {
+		return appName
+	}
+
+	get shareType() {
+		return [OC.Share.SHARE_TYPE_LINK, OC.Share.SHARE_TYPE_EMAIL]
+	}
+
+	data() {
+		return {
+			icon: 'icon-download',
+			is: this._store.enabled ? ActionInput : null,
+			text: t('files_downloadlimit', 'Download limit'),
+			title: t('files_downloadlimit', 'Download count: {count}', this._store),
+			value: this._store.limit,
+		}
+	}
+
+	get handlers() {
+		return {
+			'update:value': debounce((limit) => {
+				setDownloadLimit(this._store.token, limit)
+			}, 300),
+		}
+	}
+
+}
