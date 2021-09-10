@@ -1,5 +1,5 @@
 {
-	"name": "files_downloadcounter",
+	"name": "files_downloadlimit",
 	"description": "Nextcloud link share download counter.",
 	"version": "0.0.1",
 	"author": "John Molakvoæ <skjnldsv@protonmail.com>",
@@ -14,13 +14,13 @@
 		"download"
 	],
 	"bugs": {
-		"url": "https://github.com/skjnldsv/files_downloadcounter/issues"
+		"url": "https://github.com/skjnldsv/files_downloadlimit/issues"
 	},
 	"repository": {
-		"url": "https://github.com/skjnldsv/files_downloadcounter",
+		"url": "https://github.com/skjnldsv/files_downloadlimit",
 		"type": "git"
 	},
-	"homepage": "https://github.com/skjnldsv/files_downloadcounter",
+	"homepage": "https://github.com/skjnldsv/files_downloadlimit",
 	"license": "agpl",
 	"private": true,
 	"scripts": {
