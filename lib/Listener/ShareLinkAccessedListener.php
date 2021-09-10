@@ -24,9 +24,9 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Files_DownloadCounter\Listener;
+namespace OCA\Files_DownloadLimit\Listener;
 
-use OCA\Files_DownloadCounter\AppInfo\Application;
+use OCA\Files_DownloadLimit\AppInfo\Application;
 use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;

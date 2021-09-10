@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <info>
-	<id>files_downloadcounter</id>
+	<id>files_downloadlimit</id>
 	<name>Files download counter</name>
 	<summary>File share download counter</summary>
 
@@ -9,12 +9,12 @@
 	<licence>AGPL</licence>
 	<author mail="skjnldsv@protonmail.com">John Molakvoæ</author>
 
-	<namespace>Files_DownloadCounter</namespace>
+	<namespace>Files_DownloadLimit</namespace>
 
 	<category>files</category>
-	<bugs>https://github.com/nextcloud/files_downloadcounter/issues</bugs>
-	<website>https://github.com/nextcloud/files_downloadcounter</website>
-	<repository type="git">https://github.com/nextcloud/files_downloadcounter.git</repository>
+	<bugs>https://github.com/nextcloud/files_downloadlimit/issues</bugs>
+	<website>https://github.com/nextcloud/files_downloadlimit</website>
+	<repository type="git">https://github.com/nextcloud/files_downloadlimit.git</repository>
   
 	<dependencies>
 		<nextcloud min-version="23" max-version="23" />

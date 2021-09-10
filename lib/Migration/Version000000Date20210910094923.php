@@ -24,7 +24,7 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Files_DownloadCounter\Migration;
+namespace OCA\Files_DownloadLimit\Migration;
 
 use Closure;
 use Doctrine\DBAL\Types\Types;

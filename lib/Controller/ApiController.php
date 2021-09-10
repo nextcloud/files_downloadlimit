@@ -24,11 +24,11 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Files_DownloadCounter\Controller;
+namespace OCA\Files_DownloadLimit\Controller;
 
-use OCA\Files_DownloadCounter\AppInfo\Application;
-use OCA\Files_DownloadCounter\Db\Limit;
-use OCA\Files_DownloadCounter\Db\LimitMapper;
+use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\Db\Limit;
+use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Http\Response;

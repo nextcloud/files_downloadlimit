@@ -24,9 +24,9 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Files_DownloadCounter\AppInfo;
+namespace OCA\Files_DownloadLimit\AppInfo;
 
-use OCA\Files_DownloadCounter\Listener\ShareLinkAccessedListener;
+use OCA\Files_DownloadLimit\Listener\ShareLinkAccessedListener;
 use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
@@ -35,7 +35,7 @@ use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\EventDispatcher\IEventDispatcher;
 
 class Application extends App implements IBootstrap {
-	public const APP_ID = 'files_downloadcounter';
+	public const APP_ID = 'files_downloadlimit';
 
 	public function __construct(array $urlParams = []) {
 		parent::__construct(self::APP_ID, $urlParams);

@@ -23,7 +23,7 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Files_DownloadCounter\Db;
+namespace OCA\Files_DownloadLimit\Db;
 
 use \JsonSerializable;
 use OCP\AppFramework\Db\Entity;
