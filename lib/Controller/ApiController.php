@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /**
- * @copyright Copyright (c) 2020 Arthur Schiwon <blizzz@arthur-schiwon.de>
+ * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
- * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
+ * @author John Molakvoæ <skjnldsv@protonmail.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -19,13 +20,16 @@ declare(strict_types=1);
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
 namespace OCA\Files_DownloadCounter\Controller;
 
 use OCA\Files_DownloadCounter\AppInfo\Application;
+use OCA\Files_DownloadCounter\Db\Limit;
+use OCA\Files_DownloadCounter\Db\LimitMapper;
+use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Http\Response;
 use OCP\AppFramework\OCS\OCSBadRequestException;
@@ -36,6 +40,7 @@ use OCP\IRequest;
 use OCP\IUserSession;
 use OCP\Share\Exceptions\ShareNotFound;
 use OCP\Share\IManager;
+use OCP\Share\IShare;
 
 class ApiController extends OCSController {
 
@@ -48,14 +53,19 @@ class ApiController extends OCSController {
 	/** @var IUserSession */
 	private $userSession;
 
+	/** @var LimitMapper */
+	private $mapper;
+
 	public function __construct(IRequest $request,
 								IConfig $config,
 								IManager $shareManager,
-								IUserSession $userSession) {
+								IUserSession $userSession,
+								LimitMapper $mapper) {
 		parent::__construct(Application::APP_ID, $request);
 		$this->config = $config;
 		$this->shareManager = $shareManager;
 		$this->userSession = $userSession;
+		$this->mapper = $mapper;
 	}
 
 	/**
@@ -63,7 +73,77 @@ class ApiController extends OCSController {
 	 *
 	 * Set the download limit for a given link share
 	 */
-	public function setDownloadLimit(string $token, int $limit = 0): Response {
+	public function setDownloadLimit(string $token, int $limit): Response {
+		$this->validateToken($token);
+
+		// Count needs to be at least 1
+		if ($limit < 1) {
+			throw new OCSBadRequestException('Limit needs to be greater or equal than 1');
+		}
+
+		// Getting existing limit and init if unset
+		$insert = false;
+		try {
+			$shareLimit = $this->mapper->get($token);
+		} catch (DoesNotExistException $e) {
+			$shareLimit = new Limit();
+			$shareLimit->setId($token);
+			$insert = true;
+		}
+
+		// Update DB
+		$shareLimit->setLimit($limit);
+		if ($insert) {
+			$this->mapper->insert($shareLimit);
+		} else {
+			$this->mapper->update($shareLimit);
+		}
+
+		return new DataResponse();
+	}
+
+	/**
+	 * @NoAdminRequired
+	 *
+	 * Remove the download limit for a given link share
+	 */
+	public function removeDownloadLimit(string $token): Response {
+		$this->validateToken($token);
+
+		try {
+			$shareLimit = $this->mapper->get($token);
+			$this->mapper->delete($shareLimit);
+		} catch (DoesNotExistException $e) {
+			// Ignore if does not exists
+		}
+	
+		return new DataResponse();
+	}
+
+	/**
+	 * @NoAdminRequired
+	 *
+	 * Get the download limit for a given link share
+	 */
+	public function getDownloadLimit(string $token): Response {
+		$this->validateToken($token);
+
+		try {
+			$shareLimit = $this->mapper->get($token);
+		} catch (DoesNotExistException $e) {
+			return new DataResponse([
+				'limit' => null,
+				'count' => null
+			]);
+		}
+
+		return new DataResponse([
+			'limit' => $shareLimit->getLimit(),
+			'count' => $shareLimit->getDownloads()
+		]);
+	}
+
+	protected function validateToken(string $token = '') {
 		$user = $this->userSession->getUser();
 
 		try {
@@ -77,32 +157,15 @@ class ApiController extends OCSController {
 			throw new OCSNotFoundException('Unknown share');
 		}
 
-		// Download count limit only works on single file shares
-		if ($share->getNodeType() !== 'file') {
+		// Download count limit only works on links
+		if ($share->getShareType() !== IShare::TYPE_LINK
+			&& $share->getShareType() !== IShare::TYPE_EMAIL) {
 			throw new OCSNotFoundException('Invalid share type');
 		}
-		
-		if ($limit === -1) {
-			$this->config->deleteAppValue(Application::APP_ID, 'download_limit_' . $token);
-			return new DataResponse();
+
+		// Download count limit only works on single file shares
+		if ($share->getNodeType() !== 'file') {
+			throw new OCSNotFoundException('Invalid file type');
 		}
-
-		// Count needs to be at least 1
-		if ($limit < 1) {
-			throw new OCSBadRequestException('Limit needs to be greater or equal than 1');
-		}
-
-		$this->config->setAppValue(Application::APP_ID, 'download_limit_' . $token, $limit);
-
-		return new DataResponse();
-	}
-
-	/**
-	 * @NoAdminRequired
-	 *
-	 * Remove the download limit for a given link share
-	 */
-	public function removeDownloadLimit(string $token): Response {
-		return $this->setDownloadLimit($token, -1);
 	}
 }
