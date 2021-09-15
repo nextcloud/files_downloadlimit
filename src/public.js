@@ -19,46 +19,21 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+import { loadState } from '@nextcloud/initial-state'
+import { translatePlural as n } from '@nextcloud/l10n'
 
-import { translate as t } from '@nextcloud/l10n'
-import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
-import debounce from 'debounce'
+const { limit, downloads } = loadState(appName, 'download_limit', { limit: -1, downloads: 0 })
+console.debug('[DEBUG]', appName, { limit, downloads })
 
-import { setDownloadLimit } from '../service/DownloadLimitService'
+window.addEventListener('DOMContentLoaded', function() {
+	if (limit > 0) {
+		const count = limit - downloads
+		const container = document.getElementById('header-primary-action')
+		const span = document.createElement('span')
 
-export default class DownloadLimitAction {
+		span.style = 'color: var(--color-primary-text); padding: 0 10px;'
+		span.innerText = n('files_downloadlimit', '1 more download allowed', '{count} more downloads allowed', count, { count })
 
-	// internal state
-	_store;
-
-	constructor(store) {
-		this._store = store
+		container.prepend(span)
 	}
-
-	get id() {
-		return appName
-	}
-
-	get shareType() {
-		return [OC.Share.SHARE_TYPE_LINK, OC.Share.SHARE_TYPE_EMAIL]
-	}
-
-	data() {
-		return {
-			icon: 'icon-download',
-			is: this._store.enabled ? ActionInput : null,
-			text: t('files_downloadlimit', 'Download limit'),
-			title: t('files_downloadlimit', 'Download count: {count}', this._store),
-			value: this._store.limit,
-		}
-	}
-
-	get handlers() {
-		return {
-			'update:value': debounce((limit) => {
-				setDownloadLimit(this._store.token, limit)
-			}, 300),
-		}
-	}
-
-}
+})

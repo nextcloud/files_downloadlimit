@@ -27,8 +27,10 @@ declare(strict_types=1);
 namespace OCA\Files_DownloadLimit\AppInfo;
 
 use OCA\Files\Event\LoadSidebar;
+use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
 use OCA\Files_DownloadLimit\Listener\ShareLinkAccessedListener;
+use OCA\Files_Sharing\Event\BeforeTemplateRenderedEvent;
 use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
@@ -46,8 +48,11 @@ class Application extends App implements IBootstrap {
 	public function register(IRegistrationContext $context): void {
 		/** @var IEventDispatcher $eventDispatcher */
 		$eventDispatcher = $this->getContainer()->query(IEventDispatcher::class);
-		$eventDispatcher->addServiceListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
+
+		// Add listeners
+		$eventDispatcher->addServiceListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
 		$eventDispatcher->addServiceListener(LoadSidebar::class, LoadSidebarListener::class);
+		$eventDispatcher->addServiceListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
 	}
 
 	public function boot(IBootContext $context): void {
