@@ -22,8 +22,8 @@
 
 import { translate as t } from '@nextcloud/l10n'
 import ActionCheckbox from '@nextcloud/vue/dist/Components/ActionCheckbox'
-import { deleteDownloadLimit, getDownloadLimit } from '../service/DownloadLimitService'
 
+import { deleteDownloadLimit, getDownloadLimit } from '../service/DownloadLimitService'
 export default class LimitEnableAction {
 
 	// internal state
