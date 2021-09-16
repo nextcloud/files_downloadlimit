@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		const span = document.createElement('span')
 
 		span.style = 'color: var(--color-primary-text); padding: 0 10px;'
-		span.innerText = n('files_downloadlimit', '1 more download allowed', '{count} more downloads allowed', count, { count })
+		span.innerText = n('files_downloadlimit', '1 remaining download allowed', '{count} remaining downloads allowed', count, { count })
 
 		container.prepend(span)
 	}
