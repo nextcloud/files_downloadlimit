@@ -1,7 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
 /**
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
@@ -23,11 +19,22 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+import axios from '@nextcloud/axios'
+import { generateOcsUrl } from '@nextcloud/router'
 
-return [
-	'ocs' => [
-		['name' => 'api#getDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'GET'],
-		['name' => 'api#setDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'PUT'],
-		['name' => 'api#removeDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'DELETE'],
-	]
-];
+export const getDownloadLimit = async function(token) {
+	const response = await axios.get(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }))
+	return response.data.ocs.data
+}
+
+export const setDownloadLimit = async function(token, limit) {
+	const response = await axios.put(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }), {
+		limit,
+	})
+	return response.data.ocs.data
+}
+
+export const deleteDownloadLimit = async function(token) {
+	const response = await axios.delete(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }))
+	return response.data.ocs.data
+}

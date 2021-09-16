@@ -1,7 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
 /**
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
@@ -23,11 +19,21 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+import { loadState } from '@nextcloud/initial-state'
+import { translatePlural as n } from '@nextcloud/l10n'
 
-return [
-	'ocs' => [
-		['name' => 'api#getDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'GET'],
-		['name' => 'api#setDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'PUT'],
-		['name' => 'api#removeDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'DELETE'],
-	]
-];
+const { limit, downloads } = loadState(appName, 'download_limit', { limit: -1, downloads: 0 })
+console.debug('[DEBUG]', appName, { limit, downloads })
+
+window.addEventListener('DOMContentLoaded', function() {
+	if (limit > 0) {
+		const count = limit - downloads
+		const container = document.getElementById('header-primary-action')
+		const span = document.createElement('span')
+
+		span.style = 'color: var(--color-primary-text); padding: 0 10px;'
+		span.innerText = n('files_downloadlimit', '1 remaining download allowed', '{count} remaining downloads allowed', count, { count })
+
+		container.prepend(span)
+	}
+})
