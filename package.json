@@ -1,7 +1,7 @@
 {
 	"name": "files_downloadlimit",
 	"description": "Nextcloud link share download counter.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "John Molakvoæ <skjnldsv@protonmail.com>",
 	"contributors": [
 		"John Molakvoæ <skjnldsv@protonmail.com>"
