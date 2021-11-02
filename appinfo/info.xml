@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <info>
 	<id>files_downloadlimit</id>
-	<name>Files download counter</name>
-	<summary>File share download counter</summary>
+	<name>Files download limit</name>
+	<summary>File link share download limit</summary>
 
-	<description><![CDATA[File share download counter]]></description>
+	<description>Allow to limit the number of downloads for link shares</description>
 	<version>0.1.1</version>
 	<licence>AGPL</licence>
 	<author mail="skjnldsv@protonmail.com">John Molakvoæ</author>
