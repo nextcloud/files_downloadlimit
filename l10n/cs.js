@@ -1,8 +1,6 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Files download counter" : "Počitadlo stažení souborů",
-    "File share download counter" : "Počitadlo stažení sdíleného souboru",
     "Download limit" : "Limit stahování",
     "Download count: {count}" : "Počet stažení: {count}",
     "Limit downloads" : "Omezit stahování",

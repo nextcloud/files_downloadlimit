@@ -1,8 +1,6 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Files download counter" : "Datei Download-Zähler",
-    "File share download counter" : "Download-Zähler für Dateifreigabe",
     "Download limit" : "Downloadlimit",
     "Download count: {count}" : "Anzahl Downloads: {count}",
     "Limit downloads" : "Downloads begrenzen",

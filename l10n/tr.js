@@ -1,8 +1,6 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Files download counter" : "Dosyalar indirme sayacı",
-    "File share download counter" : "Dosya paylaşımı indirme sayacı",
     "Download limit" : "İndirme sınırı",
     "Download count: {count}" : "İndirme sayısı: {count}",
     "Limit downloads" : "İndirmeleri sınırla",
