@@ -1,6 +1,9 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "Files download limit" : "檔案下載限制",
+    "File link share download limit" : "檔案連結分享下載限制",
+    "Allow to limit the number of downloads for link shares" : "允許限制連結分享的下載數量",
     "Download limit" : "下載限制",
     "Download count: {count}" : "下載次數：{count}",
     "Limit downloads" : "限制下載",
