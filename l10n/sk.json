@@ -1,4 +1,5 @@
 { "translations": {
+    "Files download limit" : "Limit sťahovania súborov",
     "Download limit" : "Limit sťahovania",
     "Download count: {count}" : "Počítadlo sťahovania: {count}",
     "Limit downloads" : "Limit sťahovania",
