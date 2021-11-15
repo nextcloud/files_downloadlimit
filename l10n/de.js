@@ -7,6 +7,6 @@ OC.L10N.register(
     "Download limit" : "Download-Limit",
     "Download count: {count}" : "Anzahl Downloads: {count}",
     "Limit downloads" : "Downloads begrenzen",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} verbleibender Download erlaubt","{count} verbleibende Downloads erlaubt"]
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 verbleibender Download erlaubt","{count} verbleibende Downloads erlaubt"]
 },
 "nplurals=2; plural=(n != 1);");
