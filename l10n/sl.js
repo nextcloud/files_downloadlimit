@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "Files download limit" : "Omejitev prejemanja datotek",
     "Download limit" : "Omejitev prejemanja",
     "Download count: {count}" : "Števec prejemov: {count}",
     "Limit downloads" : "Omeji prejemanje",
