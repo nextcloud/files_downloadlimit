@@ -12,9 +12,9 @@
 	<namespace>Files_DownloadLimit</namespace>
 
 	<category>files</category>
+	<website>https://github.com/nextcloud/files_downloadlimit</website>
 	<bugs>https://github.com/nextcloud/files_downloadlimit/issues</bugs>
 	<repository type="git">https://github.com/nextcloud/files_downloadlimit.git</repository>
-	<website>https://github.com/nextcloud/files_downloadlimit</website>
   
 	<dependencies>
 		<nextcloud min-version="22" max-version="24" />
