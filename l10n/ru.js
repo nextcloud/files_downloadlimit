@@ -6,6 +6,7 @@ OC.L10N.register(
     "Allow to limit the number of downloads for link shares" : "Разрешить ограничивать количество скачиваний для обмена ссылками",
     "Download limit" : "Лимит скачивания",
     "Download count: {count}" : "Количество скачиваний: {count}",
-    "Limit downloads" : "Лимит загрузок"
+    "Limit downloads" : "Лимит загрузок",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} оставшаяся разрешённая загрузка","{count} оставшихся разрешённых загрузки","{count} оставшихся разрешённых загрузок","{count} оставшихся разрешённых загрузок"]
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");
