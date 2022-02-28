@@ -27,7 +27,7 @@ import { deleteDownloadLimit, getDownloadLimit } from '../service/DownloadLimitS
 export default class LimitEnableAction {
 
 	// internal state
-	_store;
+	_store
 
 	constructor(store) {
 		this._store = store
