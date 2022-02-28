@@ -29,7 +29,7 @@ import { setDownloadLimit } from '../service/DownloadLimitService'
 export default class DownloadLimitAction {
 
 	// internal state
-	_store;
+	_store
 
 	constructor(store) {
 		this._store = store
