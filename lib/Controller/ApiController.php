@@ -73,12 +73,13 @@ class ApiController extends OCSController {
 	 *
 	 * Set the download limit for a given link share
 	 */
-	public function setDownloadLimit(string $token, int $limit): Response {
+	public function setDownloadLimit(string $token, $limit): Response {
 		$this->validateToken($token);
+		$limit = trim($limit);
 
-		// Count needs to be at least 1
-		if ($limit < 1) {
-			throw new OCSBadRequestException('Limit needs to be greater or equal than 1');
+		// Count needs to be at least 0 or null
+		if (!is_numeric($limit) && $limit !== '') {
+			throw new OCSBadRequestException('Limit must be greater than or equal to 0 or null');
 		}
 
 		// Getting existing limit and init if unset
@@ -93,10 +94,18 @@ class ApiController extends OCSController {
 
 		// Update DB
 		$shareLimit->setLimit($limit);
-		if ($insert) {
-			$this->mapper->insert($shareLimit);
+		if($limit == 0 || $limit == ''){
+			$this->mapper->delete($shareLimit);
 		} else {
-			$this->mapper->update($shareLimit);
+			if($limit < 0) {
+				throw new OCSBadRequestException('Limit must be greater than or equal to 0 or null');
+			} else {
+				if ($insert) {
+					$this->mapper->insert($shareLimit);
+				} else {
+					$this->mapper->update($shareLimit);
+				}
+			}
 		}
 
 		return new DataResponse();
