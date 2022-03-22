@@ -48,7 +48,7 @@ export default class DownloadLimitAction {
 			icon: 'icon-download',
 			is: this._store.enabled ? ActionInput : null,
 			text: t('files_downloadlimit', 'Download limit'),
-			title: t('files_downloadlimit', 'Download count: {count}', this._store),
+			title: t('files_downloadlimit', 'Downloads: {count}', this._store),
 			value: this._store.limit ? this._store.limit - this._store.count : this._store.limit,
 		}
 	}
