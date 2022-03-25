@@ -2,6 +2,7 @@ OC.L10N.register(
     "files_downloadlimit",
     {
     "Files download limit" : "Límit de baixades de fitxers",
+    "File link share download limit" : "Límit de baixada compartida d'enllaç de fitxer",
     "Allow to limit the number of downloads for link shares" : "Permet limitar el nombre de baixades dels elements compartits mitjançant un enllaç",
     "Download limit" : "Límit de baixades",
     "Download count: {count}" : "Nombre de baixades: {count}",
