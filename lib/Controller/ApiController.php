@@ -95,12 +95,10 @@ class ApiController extends OCSController {
 		$shareLimit->setLimit($limit);
 		if($limit === 0){
 			$this->mapper->delete($shareLimit);
+		} elseif ($insert) {
+			$this->mapper->insert($shareLimit);
 		} else {
-			if ($insert) {
-				$this->mapper->insert($shareLimit);
-			} else {
-				$this->mapper->update($shareLimit);
-			}
+			$this->mapper->update($shareLimit);
 		}
 
 		return new DataResponse();
