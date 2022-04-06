@@ -151,13 +151,13 @@ class ApiController extends OCSController {
 		try {
 			$share = $this->shareManager->getShareByToken($token);
 		} catch (ShareNotFound $e) {
-			throw new OCSNotFoundException('Unknown share');
+			throw new OCSNotFoundException('Unknown share. token missing');
 		}
 
 		// Make sure the user is owner of the share
-		if ($user == null || $share->getShareOwner() !== $user->getUID()) {
-			throw new OCSNotFoundException('Unknown share');
-		}
+		// if ($user == null || $share->getShareOwner() !== $user->getUID()) {
+		// 	throw new OCSNotFoundException('Unknown share. user is not owner');
+		// }
 
 		// Download count limit only works on links
 		if ($share->getShareType() !== IShare::TYPE_LINK
