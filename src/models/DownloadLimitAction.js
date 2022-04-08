@@ -43,7 +43,12 @@ export default class DownloadLimitAction {
 		return [OC.Share.SHARE_TYPE_LINK, OC.Share.SHARE_TYPE_EMAIL]
 	}
 
-	data() {
+	data({ share, fileInfo }) {
+		// Only works for files and existing shares
+		if (typeof share.token !== 'string' || fileInfo.type !== 'file') {
+			return {}
+		}
+
 		return {
 			icon: 'icon-download',
 			is: this._store.enabled ? ActionInput : null,

@@ -42,6 +42,11 @@ export default class LimitEnableAction {
 	}
 
 	data({ share, fileInfo }) {
+		// Only works for files and existing shares
+		if (typeof share.token !== 'string' || fileInfo.type !== 'file') {
+			return {}
+		}
+
 		getDownloadLimit(share.token).then(data => {
 			// If token changed, let's update the checkbox state.
 			if (this._store.token !== share.token) {
