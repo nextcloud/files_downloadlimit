@@ -48,6 +48,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
 		container.prepend(span)
 
+		// Preventing mouse interaction
+		document.querySelector('#files-public-content').oncontextmenu = function(event) {
+			event.preventDefault()
+			event.stopPropagation()
+			return false
+		}
+
 		// Adding double-download warning
 		const downloadButton = container.querySelector('a[href*="/download/"]')
 		if (downloadButton) {
@@ -61,6 +68,7 @@ window.addEventListener('DOMContentLoaded', function() {
 					}
 				}
 
+				// Handle counts changes
 				count--
 				clicks++
 				updateCounter(span, count)
