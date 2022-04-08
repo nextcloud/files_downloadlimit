@@ -1,0 +1,105 @@
+- color: 0052cc
+  description: Pending approval or rejection. This issue is pending approval.
+  name: 0. Needs triage
+- color: 0052cc
+  description: Accepted and waiting to be taken care of
+  name: 1. to develop
+- color: 0052cc
+  description: Work in progress
+  name: 2. developing
+- color: 0052cc
+  description: Waiting for reviews
+  name: 3. to review
+- color: 0052cc
+  description: Ready to be released and/or waiting for tests to finish
+  name: 4. to release
+- color: 006b75
+  description: Pending backport by the backport-bot
+  name: backport-request
+- color: 129e5e
+  description: This issue have a bounty
+  name: bounty
+- color: ee0701
+  description: Something isn't working
+  name: bug
+- color: 83db60
+  description: Pull requests that update a dependency file
+  name: dependencies
+- color: cc317c
+  description: Related to the design
+  name: design
+- color: 0e8a16
+  description: Being discussed
+  name: discussion
+- color: e99695
+  description: ""
+  name: downstream
+- color: cccccc
+  description: This issue or pull request already exists
+  name: duplicate
+- color: 0e8a16
+  description: New feature or request
+  name: enhancement
+- color: 7057ff
+  description: Good for newcomers
+  name: good first issue
+- color: 006b75
+  description: Extra attention is needed
+  name: help wanted
+- color: c5def5
+  description: High priority
+  name: high
+- color: 006b75
+  description: Compatibility with other apps
+  name: integration
+- color: e4e669
+  description: This doesn't seem right
+  name: invalid
+- color: "168700"
+  description: Javascript related ticket
+  name: javascript
+- color: c5def5
+  description: Low priority
+  name: low
+- color: c5def5
+  description: Medium priority
+  name: medium
+- color: 006b75
+  description: Not enough information provided
+  name: needs info
+- color: fbca04
+  description: Overview of other issues
+  name: overview
+- color: d93f0b
+  description: Small issues that doesn't break the ux/ui
+  name: papercut
+- color: 806fe2
+  description: Pending a documentation update
+  name: pending documentation
+- color: "423799"
+  description: Waiting for a fix on one of our dependencies
+  name: pending fix
+- color: 54f7de
+  description: Performances issues and optimisations
+  name: performances
+- color: 45229e
+  description: PHP related ticket
+  name: php
+- color: d876e3
+  description: Further information is requested
+  name: question
+- color: ee0701
+  description: Regression of a previous working feature
+  name: regression
+- color: b60205
+  description: Security related ticket
+  name: security
+- color: 006b75
+  description: On hold
+  name: stale
+- color: fef2c0
+  description: Technical issue
+  name: technical debt
+- color: ffffff
+  description: This will not be worked on
+  name: wontfix
