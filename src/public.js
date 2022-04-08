@@ -20,20 +20,56 @@
  *
  */
 import { loadState } from '@nextcloud/initial-state'
-import { translatePlural as n } from '@nextcloud/l10n'
+import { translate as t, translatePlural as n } from '@nextcloud/l10n'
+
+import '../css/public.css'
 
 const { limit, downloads } = loadState(appName, 'download_limit', { limit: -1, downloads: 0 })
 console.debug('[DEBUG]', appName, { limit, downloads })
 
+let count = limit - downloads
+let clicks = 0
+
+const updateCounter = function(span) {
+	if (count === 0) {
+		span.innerText = t(appName, 'You have reached the maximum amount of downloads allowed')
+	} else {
+		span.innerText = n(appName, '1 remaining download allowed', '{count} remaining downloads allowed', count, { count })
+	}
+}
+
 window.addEventListener('DOMContentLoaded', function() {
 	if (limit > 0) {
-		const count = limit - downloads
 		const container = document.getElementById('header-primary-action')
 		const span = document.createElement('span')
 
 		span.style = 'color: var(--color-primary-text); padding: 0 10px;'
-		span.innerText = n('files_downloadlimit', '1 remaining download allowed', '{count} remaining downloads allowed', count, { count })
+		updateCounter(span, count)
 
 		container.prepend(span)
+
+		// Adding double-download warning
+		const downloadButton = container.querySelector('a[href*="/download/"]')
+		if (downloadButton) {
+			downloadButton.addEventListener('click', (event) => {
+				// Warn about download limits
+				if (clicks > 0) {
+					if (!confirm(t(appName, 'This share has a limited number of downloads. Are you sure you want to trigger a new download ?'))) {
+						event.preventDefault()
+						event.stopPropagation()
+						return
+					}
+				}
+
+				count--
+				clicks++
+				updateCounter(span, count)
+
+				// Remove the button if share is now expired
+				if (count === 0) {
+					downloadButton.remove()
+				}
+			})
+		}
 	}
 })

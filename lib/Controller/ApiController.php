@@ -91,8 +91,11 @@ class ApiController extends OCSController {
 			$insert = true;
 		}
 
-		// Update DB
+		// Set new limit
 		$shareLimit->setLimit($limit);
+		// Reset existing counter
+		$shareLimit->setDownloads(0);
+		// Update DB
 		if ($insert) {
 			$this->mapper->insert($shareLimit);
 		} else {
