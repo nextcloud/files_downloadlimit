@@ -45,18 +45,21 @@ export default class DownloadLimitAction {
 
 	data() {
 		return {
-			icon: 'icon-download',
+			icon: this._store.loading ? 'icon-loading-small' : 'icon-download',
 			is: this._store.enabled ? ActionInput : null,
 			text: t('files_downloadlimit', 'Download limit'),
 			title: t('files_downloadlimit', 'Download count: {count}', this._store),
 			value: this._store.limit,
+			disabled: this._store.loading,
 		}
 	}
 
 	get handlers() {
 		return {
-			'update:value': debounce((limit) => {
-				setDownloadLimit(this._store.token, limit)
+			'update:value': debounce(async (limit) => {
+				this._store.loading = true
+				await setDownloadLimit(this._store.token, limit)
+				this._store.loading = false
 			}, 300),
 		}
 	}

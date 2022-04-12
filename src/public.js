@@ -56,12 +56,12 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 
 		// Adding double-download warning
-		const downloadButton = container.querySelector('a[href*="/download/"]')
-		if (downloadButton) {
-			downloadButton.addEventListener('click', (event) => {
+		const downloadButtons = document.querySelectorAll('a[href*="/download/"]') || []
+		new Set(downloadButtons).forEach(button => {
+			button.addEventListener('click', (event) => {
 				// Warn about download limits
 				if (clicks > 0) {
-					if (!confirm(t(appName, 'This share has a limited number of downloads. Are you sure you want to trigger a new download ?'))) {
+					if (!confirm(t(appName, 'This share has a limited number of downloads. Are you sure you want to trigger a new download?'))) {
 						event.preventDefault()
 						event.stopPropagation()
 						return
@@ -73,11 +73,11 @@ window.addEventListener('DOMContentLoaded', function() {
 				clicks++
 				updateCounter(span, count)
 
-				// Remove the button if share is now expired
+				// Remove the buttons if share is now expired
 				if (count === 0) {
-					downloadButton.remove()
+					[...downloadButtons].forEach(button => button.remove())
 				}
 			})
-		}
+		})
 	}
 })

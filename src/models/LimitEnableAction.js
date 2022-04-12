@@ -57,6 +57,7 @@ export default class LimitEnableAction {
 			is: ActionCheckbox,
 			text: t('files_downloadlimit', 'Limit downloads'),
 			checked: this._store.enabled,
+			disabled: this._store.loading,
 		}
 	}
 
