@@ -27,10 +27,17 @@ import '../css/public.css'
 const { limit, downloads } = loadState(appName, 'download_limit', { limit: -1, downloads: 0 })
 console.debug('[DEBUG]', appName, { limit, downloads })
 
+// Global variables init on page load
 let count = limit - downloads
 let clicks = 0
 
-const updateCounter = function(span) {
+/**
+ * Update the span counter message
+ *
+ * @param {Element} span the html dom element to edit
+ * @param {number} count how much downloads are still allowed
+ */
+const updateCounter = function(span, count) {
 	if (count === 0) {
 		span.innerText = t(appName, 'You have reached the maximum amount of downloads allowed')
 	} else {
