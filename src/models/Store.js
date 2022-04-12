@@ -28,6 +28,7 @@ export default class Store {
 		limit: null,
 		count: null,
 		token: null,
+		loading: false,
 	}
 
 	get enabled() {
@@ -60,6 +61,14 @@ export default class Store {
 
 	set token(token) {
 		this._data.token = token
+	}
+
+	get loading() {
+		return this._data.loading
+	}
+
+	set loading(loading) {
+		this._data.loading = loading
 	}
 
 }
