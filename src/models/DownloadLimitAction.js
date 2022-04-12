@@ -24,7 +24,7 @@ import { translate as t } from '@nextcloud/l10n'
 import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
 import debounce from 'debounce'
 
-import { setDownloadLimit } from '../service/DownloadLimitService'
+import { setDownloadLimit, deleteDownloadLimit } from '../service/DownloadLimitService'
 
 export default class DownloadLimitAction {
 
@@ -62,8 +62,17 @@ export default class DownloadLimitAction {
 	get handlers() {
 		return {
 			'update:value': debounce(async (limit) => {
+				console.debug('[DEBUG]', appName, 'Setting limit of ' + this._store.token + ' to ' + limit)
 				this._store.loading = true
-				await setDownloadLimit(this._store.token, limit)
+
+				// If the value is not correct, let's remove the limit
+				if (!parseInt(limit) || parseInt(limit) < 1) {
+					await deleteDownloadLimit(this._store.token)
+				} else {
+					await setDownloadLimit(this._store.token, limit)
+				}
+
+				// Done loading
 				this._store.loading = false
 			}, 300),
 		}
