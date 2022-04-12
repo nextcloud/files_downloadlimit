@@ -49,12 +49,25 @@ export default class DownloadLimitAction {
 			return {}
 		}
 
-		return {
+		const countLeft = this._store.limit - this._store.count
+		const result = {
 			icon: this._store.loading ? 'icon-loading-small' : 'icon-download',
-			is: this._store.enabled ? ActionInput : null,
-			text: t('files_downloadlimit', 'Download limit'),
-			title: t('files_downloadlimit', 'Download count: {count}', this._store),
-			value: this._store.limit,
+			is: ActionInput,
+			text: t('files_downloadlimit', 'Set download limit'),
+		}
+
+		if (!this._store.enabled) {
+			return {}
+		}
+
+		if (!this._store.limit) {
+			return result
+		}
+
+		return {
+			...result,
+			title: t('files_downloadlimit', 'This share was limited to {limit} downloads. There is still {countLeft} left allowed.', { limit: this._store.limit, countLeft }),
+			value: countLeft,
 			disabled: this._store.loading,
 		}
 	}
