@@ -4,8 +4,6 @@ OC.L10N.register(
     "Files download limit" : "Limite download dei file",
     "File link share download limit" : "Limite download di condivisioni file",
     "Allow to limit the number of downloads for link shares" : "Permetti di limitare il numero di scaricamenti per le condivisioni",
-    "Download limit" : "Limite di scaricamento",
-    "Download count: {count}" : "Numero di download: {count}",
     "Limit downloads" : "Limita scaricamenti",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 scaricamento permesso rimasto","{count} scaricamenti permessi rimasti"]
 },

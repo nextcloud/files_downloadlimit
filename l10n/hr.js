@@ -4,8 +4,6 @@ OC.L10N.register(
     "Files download limit" : "Ograničenje preuzimanja datoteka",
     "File link share download limit" : "Ograničenje preuzimanja poveznice dijeljenja datoteke",
     "Allow to limit the number of downloads for link shares" : "Dopustite kako biste ograničili broj preuzimanja poveznica dijeljenja",
-    "Download limit" : "Ograničenje preuzimanja",
-    "Download count: {count}" : "Broj preuzimanja: {count}",
     "Limit downloads" : "Ograniči preuzimanja",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dopušteno je 1 preostalo preuzimanje","Dopuštena su {count} preostala preuzimanja","Dopušteno je {count} preostalih preuzimanja"]
 },

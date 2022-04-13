@@ -1,8 +1,6 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Download limit" : "Atsisiuntimų riba",
-    "Download count: {count}" : "Atsisiuntimų skaičius: {count}",
     "Limit downloads" : "Riboti atsisiuntimus",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Liko 1 leidžiamas atsisiuntimas","Liko {count} leidžiami atsisiuntimai","Liko {count} leidžiamų atsisiuntimų","Liko {count} leidžiamas atsisiuntimas"]
 },
