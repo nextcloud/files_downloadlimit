@@ -29,4 +29,5 @@ const store = new Store()
 window.addEventListener('DOMContentLoaded', function() {
 	OCA.Sharing.ExternalShareActions.registerAction(new LimitEnableAction(store))
 	OCA.Sharing.ExternalShareActions.registerAction(new DownloadLimitAction(store))
+	console.debug('LimitEnableAction and DownloadLimitAction', appVersion, 'registered')
 })
