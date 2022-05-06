@@ -4,6 +4,7 @@ OC.L10N.register(
     "Files download limit" : "Limit sťahovania súborov",
     "File link share download limit" : "Limit sťahovania zdieľaného odkazu na súbor",
     "Allow to limit the number of downloads for link shares" : "Povoliť obmedzenie počtu stiahnutí pre zdieľané odkazy",
+    "Set download limit" : "Nastaviť limit sťahovania",
     "Limit downloads" : "Limit sťahovania",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 zostávajúce povolené sťahovanie","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania"]
 },
