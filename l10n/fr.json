@@ -6,7 +6,7 @@
     "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Ce partage était limité à {limit} téléchargements. Il en reste encore {countLeft} autorisés.",
     "Limit downloads" : "Limiter le nombre de téléchargements",
     "You have reached the maximum amount of downloads allowed" : "Vous avez atteint le nombre maximal de téléchargements autorisés.",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 téléchargement autorisé restant","{count} téléchargements autorisés restants"],
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 téléchargement autorisé restant","{count} téléchargements autorisés restants","{count} téléchargements autorisés restants"],
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ce partage ne peut être téléchargé qu'un nombre limité de fois. Etes-vous certain de vouloir déclencher un nouveau téléchargement ?"
-},"pluralForm" :"nplurals=2; plural=(n > 1);"
+},"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
