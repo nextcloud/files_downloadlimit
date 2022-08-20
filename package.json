@@ -37,7 +37,7 @@
     "@nextcloud/router": "^2.0.0",
     "@nextcloud/vue": "^4.4.0",
     "debounce": "^1.2.1",
-    "vue": "^2.7.8"
+    "vue": "^2.7.9"
   },
   "engines": {
     "node": "^16.0.0",
