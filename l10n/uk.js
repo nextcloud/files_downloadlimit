@@ -3,7 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "Обмеження завантаження файлів",
     "File link share download limit" : "Обмеження завантаження файлу за посиланням",
-    "Allow to limit the number of downloads for link shares" : "Дозволити обмежити кількість завантажень для спільних посилань",
+    "Allow to limit the number of downloads for link shares" : "Дозволити обмежити кількість завантажень за посиланнями спільного доступу",
     "Set download limit" : "Встановити ліміт завантаження",
     "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Ця частка була обмежена {ліміт} завантажень. Залишилося дозволено {countLeft}.",
     "Limit downloads" : "Обмежте завантаження",
