@@ -21,7 +21,7 @@
  */
 
 import { translate as t } from '@nextcloud/l10n'
-import ActionCheckbox from '@nextcloud/vue/dist/Components/ActionCheckbox'
+import NcActionCheckbox from '@nextcloud/vue/dist/Components/NcActionCheckbox'
 
 import { deleteDownloadLimit, getDownloadLimit } from '../service/DownloadLimitService'
 export default class LimitEnableAction {
@@ -59,7 +59,7 @@ export default class LimitEnableAction {
 		})
 
 		return {
-			is: ActionCheckbox,
+			is: NcActionCheckbox,
 			text: t('files_downloadlimit', 'Limit downloads'),
 			checked: this._store.enabled,
 			disabled: this._store.loading,
