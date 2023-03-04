@@ -21,7 +21,7 @@
  */
 
 import { translate as t } from '@nextcloud/l10n'
-import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
+import NcActionInput from '@nextcloud/vue/dist/Components/NcActionInput'
 import debounce from 'debounce'
 
 import { setDownloadLimit, deleteDownloadLimit } from '../service/DownloadLimitService'
@@ -52,7 +52,7 @@ export default class DownloadLimitAction {
 		const countLeft = this._store.limit - this._store.count
 		const result = {
 			icon: this._store.loading ? 'icon-loading-small' : 'icon-download',
-			is: ActionInput,
+			is: NcActionInput,
 			text: t('files_downloadlimit', 'Set download limit'),
 		}
 
