@@ -4,8 +4,8 @@ OC.L10N.register(
     "Files download limit" : "حد أقصى لتنزيل الملفات",
     "File link share download limit" : "حد أقصى لروابط المشاركة لتنزيل الملفات",
     "Allow to limit the number of downloads for link shares" : "إسمح بتقييد عدد التنزيلات لروابط المشاركة",
-    "Set download limit" : "عيّن حد أقصى للتنزيل",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "هذه المشاركة مُقيّدة بعدد {limit} تنزيلاً؛ مازال مٌتاحاً منها {countLeft} فقط. ",
+    "Set download limit" : "عيّن حداً أقصى للتنزيل",
+    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "هذه المشاركة مُقيّدة بعدد {limit} تنزيل؛ مازال مٌتاحاً منها {countLeft} فقط. ",
     "Limit downloads" : "تقييد التنزيلات",
     "You have reached the maximum amount of downloads allowed" : "أنت وصلت إلى الحد الأقصى من التنزيلات المسموح بها",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "هذه المُشاركة لها عدد معيّن من التنزيلات. هل أنت متأكد أنك تريد إطلاق تنزيل جديد؟"
