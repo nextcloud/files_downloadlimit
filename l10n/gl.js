@@ -3,7 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "Límite de descarga de ficheiros",
     "File link share download limit" : "Límite de descarga para ficheiros con ligazóns compartidas",
-    "Allow to limit the number of downloads for link shares" : "Permite limitar o número de descargas para as ligazóns compartidas",
+    "Allow to limit the number of downloads for link shares" : "Permite limitar o número de descargas para as ligazóns  para compartir",
     "Set download limit" : "Estabelecer o límite de descarga",
     "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Esta compartición limitouse a {limit} descargas. Aínda quedan {countLeft} permitidos.",
     "Limit downloads" : "Limitar descargas",
