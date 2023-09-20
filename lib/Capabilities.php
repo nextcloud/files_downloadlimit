@@ -34,11 +34,8 @@ class Capabilities implements ICapability {
 	 */
 	public function getCapabilities(): array {
 		return [
-			'files' => [
-				'downloadlimit' => [
-					'enabled' => true,
-					'api-version' => '2',
-				],
+			'downloadlimit' => [
+				'enabled' => true
 			]
 		];
 	}
