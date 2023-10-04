@@ -58,6 +58,9 @@ class BeforeTemplateRenderedListener implements IEventListener {
 		} catch (\Exception $e) {
 			// No limits are set, ignoring...
 			return;
+		} catch (\Throwable $e) {
+			// No limits are set, ignoring...
+			return;
 		}
 
 		$this->initialStateService->provideInitialState('download_limit', [
