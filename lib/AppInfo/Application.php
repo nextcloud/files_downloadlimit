@@ -6,6 +6,7 @@ declare(strict_types=1);
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
  * @author John Molakvoæ <skjnldsv@protonmail.com>
+ * @author Stephan Orbaugh <stephan.orbaugh@nextcloud.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -26,6 +27,7 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\AppInfo;
 
+use OCA\Files_DownloadLimit\Capabilities;
 use OCA\Files\Event\LoadSidebar;
 use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
@@ -53,6 +55,8 @@ class Application extends App implements IBootstrap {
 		$eventDispatcher->addServiceListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
 		$eventDispatcher->addServiceListener(LoadSidebar::class, LoadSidebarListener::class);
 		$eventDispatcher->addServiceListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
+
+		$context->registerCapability(Capabilities::class);
 	}
 
 	public function boot(IBootContext $context): void {
