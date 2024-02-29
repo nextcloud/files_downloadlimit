@@ -44,28 +44,14 @@ use OCP\Share\IShare;
 
 class ApiController extends OCSController {
 
-	/** @var IConfig */
-	private $config;
-
-	/** @var IManager */
-	private $shareManager;
-
-	/** @var IUserSession */
-	private $userSession;
-
-	/** @var LimitMapper */
-	private $mapper;
-
-	public function __construct(IRequest $request,
-								IConfig $config,
-								IManager $shareManager,
-								IUserSession $userSession,
-								LimitMapper $mapper) {
+	public function __construct(
+		IRequest $request,
+		private IConfig $config,
+		private IManager $shareManager,
+		private IUserSession $userSession,
+		private LimitMapper $mapper,
+	) {
 		parent::__construct(Application::APP_ID, $request);
-		$this->config = $config;
-		$this->shareManager = $shareManager;
-		$this->userSession = $userSession;
-		$this->mapper = $mapper;
 	}
 
 	/**
