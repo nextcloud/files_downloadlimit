@@ -58,6 +58,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 			'downloads' => $shareLimit->getDownloads(),
 		]);
 
+		Util::addStyle(Application::APP_ID, Application::APP_ID . '-public');
 		Util::addScript(Application::APP_ID, Application::APP_ID . '-public');
 	}
 }
