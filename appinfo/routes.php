@@ -24,10 +24,14 @@ declare(strict_types=1);
  *
  */
 
+$requirements = [
+	'version' => '1',
+];
+
 return [
 	'ocs' => [
-		['name' => 'api#getDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'GET'],
-		['name' => 'api#setDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'PUT'],
-		['name' => 'api#removeDownloadLimit', 'url' => '/{token}/limit', 'verb' => 'DELETE'],
+		['name' => 'Api#getDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'GET', 'requirements' => $requirements],
+		['name' => 'Api#setDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'PUT', 'requirements' => $requirements],
+		['name' => 'Api#removeDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'DELETE', 'requirements' => $requirements],
 	]
 ];
