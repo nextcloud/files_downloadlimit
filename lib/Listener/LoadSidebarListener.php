@@ -33,6 +33,7 @@ use OCP\EventDispatcher\IEventListener;
 use OCP\Util;
 
 class LoadSidebarListener implements IEventListener {
+
 	public function handle(Event $event): void {
 		if (!($event instanceof LoadSidebar)) {
 			return;

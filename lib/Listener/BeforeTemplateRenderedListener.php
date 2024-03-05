@@ -36,16 +36,10 @@ use OCP\Util;
 
 class BeforeTemplateRenderedListener implements IEventListener {
 
-	/** @var IInitialState  */
-	private $initialStateService;
-
-	/** @var LimitMapper  */
-	private $limitMapper;
-
-	public function __construct(IInitialState $initialStateService,
-								LimitMapper $limitMapper) {
-		$this->initialStateService = $initialStateService;
-		$this->limitMapper = $limitMapper;
+	public function __construct(
+		private IInitialState $initialStateService,
+		private LimitMapper $limitMapper,
+	) {
 	}
 
 	public function handle(Event $event): void {
@@ -55,9 +49,6 @@ class BeforeTemplateRenderedListener implements IEventListener {
 
 		try {
 			$shareLimit = $this->limitMapper->get($event->getShare()->getToken());
-		} catch (\Exception $e) {
-			// No limits are set, ignoring...
-			return;
 		} catch (\Throwable $e) {
 			// No limits are set, ignoring...
 			return;
@@ -67,6 +58,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 			'limit' => $shareLimit->getLimit(),
 			'downloads' => $shareLimit->getDownloads(),
 		]);
+
 		Util::addScript(Application::APP_ID, Application::APP_ID . '-public');
 	}
 }
