@@ -37,9 +37,10 @@
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
-				:value.sync="limit"
+				:value="limit"
 				:helper-text="helperText"
-				:error="Boolean(helperText)" />
+				:error="Boolean(helperText)"
+				@update:value="handleUpdateLimit" />
 			<NcNoteCard v-show="limitEnabled && showResetNote"
 				class="action__reset-note"
 				type="warning">
@@ -121,12 +122,6 @@ export default defineComponent({
 		},
 	},
 
-	watch: {
-		limit(limit) {
-			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
-		},
-	},
-
 	async created() {
 		logger.debug('Loading download limit', { share: this.share })
 		this.loading = true
@@ -146,6 +141,10 @@ export default defineComponent({
 	},
 
 	methods: {
+		handleUpdateLimit(limit: string) {
+			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
+		},
+
 		async onSave() {
 			const isValid = typeof this.limit === 'number' && this.limit > 0
 			if (!isValid) {
