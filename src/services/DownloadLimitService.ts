@@ -1,9 +1,10 @@
 /**
  * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
  *
+ * @author Christopher Ng <chrng8@gmail.com>
  * @author John Molakvoæ <skjnldsv@protonmail.com>
  *
- * @license GNU AGPL version 3 or any later version
+ * @license AGPL-3.0-or-later
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -19,22 +20,30 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 import axios from '@nextcloud/axios'
 import { generateOcsUrl } from '@nextcloud/router'
 
-export const getDownloadLimit = async function(token) {
-	const response = await axios.get(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }))
+type Nullable<T> = null | T
+
+export interface DownloadLimit {
+	limit: Nullable<number>,
+	count: Nullable<number>,
+}
+
+export const getDownloadLimit = async (token: string): Promise<DownloadLimit> => {
+	const response = await axios.get(generateOcsUrl('/apps/files_downloadlimit/api/v1/{token}/limit', { token }))
 	return response.data.ocs.data
 }
 
-export const setDownloadLimit = async function(token, limit) {
-	const response = await axios.put(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }), {
+export const setDownloadLimit = async (token: string, limit: number): Promise<[]> => {
+	const response = await axios.put(generateOcsUrl('/apps/files_downloadlimit/api/v1/{token}/limit', { token }), {
 		limit,
 	})
 	return response.data.ocs.data
 }
 
-export const deleteDownloadLimit = async function(token) {
-	const response = await axios.delete(generateOcsUrl(`/apps/${appName}/{token}/limit`, { token }))
+export const deleteDownloadLimit = async (token: string): Promise<[]> => {
+	const response = await axios.delete(generateOcsUrl('/apps/files_downloadlimit/api/v1/{token}/limit', { token }))
 	return response.data.ocs.data
 }
