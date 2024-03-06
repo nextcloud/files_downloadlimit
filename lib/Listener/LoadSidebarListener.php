@@ -38,6 +38,7 @@ class LoadSidebarListener implements IEventListener {
 			return;
 		}
 
+		Util::addStyle(Application::APP_ID, Application::APP_ID . '-main');
 		Util::addScript(Application::APP_ID, Application::APP_ID . '-main');
 	}
 }
