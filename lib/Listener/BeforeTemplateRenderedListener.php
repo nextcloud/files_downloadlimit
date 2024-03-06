@@ -35,7 +35,6 @@ use OCP\EventDispatcher\IEventListener;
 use OCP\Util;
 
 class BeforeTemplateRenderedListener implements IEventListener {
-
 	public function __construct(
 		private IInitialState $initialStateService,
 		private LimitMapper $limitMapper,

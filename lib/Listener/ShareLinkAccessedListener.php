@@ -35,7 +35,6 @@ use OCP\IConfig;
 use OCP\Share\IManager;
 
 class ShareLinkAccessedListener implements IEventListener {
-
 	public function __construct(
 		private IConfig $config,
 		private IManager $manager,

@@ -43,7 +43,6 @@ use OCP\Share\IManager;
 use OCP\Share\IShare;
 
 class ApiController extends OCSController {
-
 	public function __construct(
 		IRequest $request,
 		private IConfig $config,
