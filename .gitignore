@@ -14,9 +14,6 @@ yarn-error.log*
 
 .marginalia
 
-js/
-# Generated css
-css/files_downloadlimit-*.css
 build/
 coverage*
 vendor/
