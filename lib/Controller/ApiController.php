@@ -30,8 +30,8 @@ use OCA\Files_DownloadLimit\AppInfo\Application;
 use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCP\AppFramework\Db\DoesNotExistException;
+use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\DataResponse;
-use OCP\AppFramework\Http\Response;
 use OCP\AppFramework\OCS\OCSBadRequestException;
 use OCP\AppFramework\OCS\OCSNotFoundException;
 use OCP\AppFramework\OCSController;
@@ -43,37 +43,21 @@ use OCP\Share\IManager;
 use OCP\Share\IShare;
 
 class ApiController extends OCSController {
-
-	/** @var IConfig */
-	private $config;
-
-	/** @var IManager */
-	private $shareManager;
-
-	/** @var IUserSession */
-	private $userSession;
-
-	/** @var LimitMapper */
-	private $mapper;
-
-	public function __construct(IRequest $request,
-								IConfig $config,
-								IManager $shareManager,
-								IUserSession $userSession,
-								LimitMapper $mapper) {
+	public function __construct(
+		IRequest $request,
+		private IConfig $config,
+		private IManager $shareManager,
+		private IUserSession $userSession,
+		private LimitMapper $mapper,
+	) {
 		parent::__construct(Application::APP_ID, $request);
-		$this->config = $config;
-		$this->shareManager = $shareManager;
-		$this->userSession = $userSession;
-		$this->mapper = $mapper;
 	}
 
 	/**
-	 * @NoAdminRequired
-	 *
 	 * Set the download limit for a given link share
 	 */
-	public function setDownloadLimit(string $token, int $limit): Response {
+	#[NoAdminRequired]
+	public function setDownloadLimit(string $token, int $limit): DataResponse {
 		$this->validateToken($token);
 
 		// Count needs to be at least 1
@@ -106,11 +90,10 @@ class ApiController extends OCSController {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 *
 	 * Remove the download limit for a given link share
 	 */
-	public function removeDownloadLimit(string $token): Response {
+	#[NoAdminRequired]
+	public function removeDownloadLimit(string $token): DataResponse {
 		$this->validateToken($token);
 
 		try {
@@ -119,16 +102,15 @@ class ApiController extends OCSController {
 		} catch (DoesNotExistException $e) {
 			// Ignore if does not exists
 		}
-	
+
 		return new DataResponse();
 	}
 
 	/**
-	 * @NoAdminRequired
-	 *
 	 * Get the download limit for a given link share
 	 */
-	public function getDownloadLimit(string $token): Response {
+	#[NoAdminRequired]
+	public function getDownloadLimit(string $token): DataResponse {
 		$this->validateToken($token);
 
 		try {

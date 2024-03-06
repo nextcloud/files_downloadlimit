@@ -26,7 +26,6 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\Listener;
 
-use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
 use OCP\AppFramework\Db\DoesNotExistException;
@@ -36,22 +35,11 @@ use OCP\IConfig;
 use OCP\Share\IManager;
 
 class ShareLinkAccessedListener implements IEventListener {
-
-	/** @var IConfig */
-	private $config;
-
-	/** @var IManager */
-	private $manager;
-
-	/** @var LimitMapper */
-	private $mapper;
-
-	public function __construct(IConfig $config,
-								IManager $manager,
-								LimitMapper $mapper) {
-		$this->config = $config;
-		$this->manager = $manager;
-		$this->mapper = $mapper;
+	public function __construct(
+		private IConfig $config,
+		private IManager $manager,
+		private LimitMapper $mapper,
+	) {
 	}
 
 	public function handle(Event $event): void {
@@ -81,7 +69,7 @@ class ShareLinkAccessedListener implements IEventListener {
 				$this->mapper->delete($shareLimit);
 				return;
 			}
-			
+
 			// Else, we just update the current download count
 			$shareLimit->setDownloads($downloads);
 			$this->mapper->update($shareLimit);
