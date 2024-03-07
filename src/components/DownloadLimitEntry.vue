@@ -53,6 +53,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Fragment } from 'vue-frag'
+import { loadState } from '@nextcloud/initial-state'
 import { showError } from '@nextcloud/dialogs'
 
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
@@ -65,6 +66,10 @@ import {
 	deleteDownloadLimit,
 } from '../services/DownloadLimitService.ts'
 import { logger } from '../logger.ts'
+
+const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
+// If a default is not set (-1) then the input should be empty
+const limit: '' | number = defaultDownloadLimit === -1 ? '' : defaultDownloadLimit
 
 export default defineComponent({
 	name: 'DownloadLimitEntry',
@@ -87,7 +92,7 @@ export default defineComponent({
 		return {
 			limitEnabled: false,
 			initialLimit: null,
-			limit: '', // input should be empty at first so initialize as empty string
+			limit,
 			count: null,
 			loading: false,
 			hasError: false,
