@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
+ * @copyright 2024 Christopher Ng <chrng8@gmail.com>
  *
- * @author John Molakvoæ <skjnldsv@protonmail.com>
+ * @author Christopher Ng <chrng8@gmail.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -16,7 +16,7 @@ declare(strict_types=1);
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
@@ -24,34 +24,39 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Files_DownloadLimit\Listener;
+namespace OCA\Files_DownloadLimit\Settings\Admin;
 
 use OCA\Files_DownloadLimit\AppInfo\Application;
-use OCA\Files\Event\LoadSidebar;
+use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\EventDispatcher\Event;
-use OCP\EventDispatcher\IEventListener;
 use OCP\IAppConfig;
+use OCP\Settings\ISettings;
 use OCP\Util;
 
-class LoadSidebarListener implements IEventListener {
+class Settings implements ISettings {
 	public function __construct(
 		private IInitialState $initialState,
 		private IAppConfig $appConfig,
 	) {
 	}
 
-	public function handle(Event $event): void {
-		if (!($event instanceof LoadSidebar)) {
-			return;
-		}
-
+	public function getForm(): TemplateResponse {
 		$this->initialState->provideInitialState(
 			'default-download-limit',
 			$this->appConfig->getValueInt(Application::APP_ID, 'default-download-limit', -1),
 		);
 
-		Util::addStyle(Application::APP_ID, Application::APP_ID . '-main');
-		Util::addScript(Application::APP_ID, Application::APP_ID . '-main');
+		Util::addStyle(Application::APP_ID, Application::APP_ID . '-admin');
+		Util::addScript(Application::APP_ID, Application::APP_ID . '-admin');
+
+		return new TemplateResponse(Application::APP_ID, 'admin', [], TemplateResponse::RENDER_AS_USER);
+	}
+
+	public function getSection(): string {
+		return 'sharing';
+	}
+
+	public function getPriority(): int {
+		return 10;
 	}
 }
