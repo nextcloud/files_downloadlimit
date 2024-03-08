@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "The minimum limit is 1" : "La limite minimum est 1",
     "Limit downloads" : "Limiter le nombre de téléchargements",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 téléchargement autorisé restant","{count} téléchargements autorisés restants","{count} téléchargements autorisés restants"],
     "Set download limit" : "Définir le nombre maximal de téléchargements autorisés",

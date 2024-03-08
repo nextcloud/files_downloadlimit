@@ -1,9 +1,13 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "The minimum limit is 1" : "Die Mindestgrenze beträgt 1.",
+    "Failed to set download limit" : "Fehler beim Festlegen des Download-Limits",
+    "Failed to remove download limit" : "Fehler beim Entfernen des Download-Limits",
     "Limit downloads" : "Downloads begrenzen",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 verbleibender Download erlaubt","{count} verbleibende Downloads erlaubt"],
     "Set download limit" : "Download-Limit festlegen",
+    "Setting a new limit will reset the download count" : "Das Festlegen eines neuen Limits setzt die Download-Zählung zurück.",
     "Files download limit" : "Downloadlimit für Dateien",
     "File link share download limit" : "Downloadlimit für Dateifreigabe",
     "Allow to limit the number of downloads for link shares" : "Begrenzung der Anzahl von Downloads für Linkfreigaben erlauben",
