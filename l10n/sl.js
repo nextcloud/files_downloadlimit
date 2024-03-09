@@ -1,10 +1,11 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Limit downloads" : "Omeji prejemanje",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dovoljen je še {count} prejem","Dovoljena sta še {count} prejema","Dovoljeni so še {count} prejemi","Dovoljenih je še {count} prejemov"],
-    "Set download limit" : "Nastavi omejitev prejema",
     "Files download limit" : "Omejitev prejemanja datotek",
+    "Limit downloads" : "Omeji prejemanje",
+    "Set download limit" : "Nastavi omejitev prejema",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dovoljen je še {count} prejem","Dovoljena sta še {count} prejema","Dovoljeni so še {count} prejemi","Dovoljenih je še {count} prejemov"],
+    "Download limit" : "Omejitev prejemanja",
     "You have reached the maximum amount of downloads allowed" : "Dosegli ste največje dovoljeno število prenosov.",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Mesto souporabe ima določeno omejeno število prenosov. Ali ste prepričani, da želite začetii nov prenos?"
 },

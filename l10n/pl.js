@@ -1,12 +1,13 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Limit downloads" : "Ogranicz pobieranie",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dozwolone jest jeszcze 1 pobranie","Dozwolone są jeszcze {count} pobrania","Dozwolone jest jeszcze {count} pobrań","Dozwolone jest jeszcze {count} pobrań"],
-    "Set download limit" : "Ustaw limit pobierania",
     "Files download limit" : "Limit pobierania plików",
     "File link share download limit" : "Limit pobierania udostępnionego pliku przez link",
     "Allow to limit the number of downloads for link shares" : "Zezwalaj na ograniczenie liczby pobrań dla udostępnionych linków",
+    "Limit downloads" : "Ogranicz pobieranie",
+    "Set download limit" : "Ustaw limit pobierania",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dozwolone jest jeszcze 1 pobranie","Dozwolone są jeszcze {count} pobrania","Dozwolone jest jeszcze {count} pobrań","Dozwolone jest jeszcze {count} pobrań"],
+    "Download limit" : "Limit pobierania",
     "You have reached the maximum amount of downloads allowed" : "Osiągnąłeś maksymalną dozwoloną liczbę pobrań",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Te udostępnienie ma ograniczoną liczbę pobrań. Czy na pewno chcesz uruchomić nowe pobieranie?"
 },

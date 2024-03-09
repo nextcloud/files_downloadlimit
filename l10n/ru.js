@@ -1,12 +1,13 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Limit downloads" : "Лимит загрузок",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} оставшаяся разрешённая загрузка","{count} оставшихся разрешённых загрузки","{count} оставшихся разрешённых загрузок","{count} оставшихся разрешённых загрузок"],
-    "Set download limit" : "Установите лимит загрузки",
     "Files download limit" : "Лимит загрузки файлов",
     "File link share download limit" : "Ограничение на скачивание файловой ссылки",
     "Allow to limit the number of downloads for link shares" : "Разрешить ограничивать количество скачиваний для обмена ссылками",
+    "Limit downloads" : "Лимит загрузок",
+    "Set download limit" : "Установите лимит загрузки",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} оставшаяся разрешённая загрузка","{count} оставшихся разрешённых загрузки","{count} оставшихся разрешённых загрузок","{count} оставшихся разрешённых загрузок"],
+    "Download limit" : "Лимит скачивания",
     "You have reached the maximum amount of downloads allowed" : "Вы достигли максимально допустимого количества загрузок",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "У этого общего ресурса ограниченное количество загрузок. Вы уверены, что хотите запустить новую загрузку?"
 },

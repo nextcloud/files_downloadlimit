@@ -1,12 +1,13 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
-    "Limit downloads" : "Limita scaricamenti",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 scaricamento permesso rimasto","{count} scaricamenti permessi rimasti","{count} scaricamenti permessi rimasti"],
-    "Set download limit" : "Imposta il limite di scaricamento",
     "Files download limit" : "Limite download dei file",
     "File link share download limit" : "Limite download di condivisioni file",
     "Allow to limit the number of downloads for link shares" : "Permetti di limitare il numero di scaricamenti per le condivisioni",
+    "Limit downloads" : "Limita scaricamenti",
+    "Set download limit" : "Imposta il limite di scaricamento",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 scaricamento permesso rimasto","{count} scaricamenti permessi rimasti","{count} scaricamenti permessi rimasti"],
+    "Download limit" : "Limite di scaricamento",
     "You have reached the maximum amount of downloads allowed" : "Hai raggiunto il numero massimo di scaricamenti consentiti",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Questa condivisione ha un numero limitato di scaricamenti. Sei sicuro di voler attivare un nuovo scaricamento?"
 },
