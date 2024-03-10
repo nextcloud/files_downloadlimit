@@ -12,6 +12,9 @@ OC.L10N.register(
     "Failed to remove download limit" : "移除下載限制失敗",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["允許剩餘 {count} 次下載"],
     "Download limit" : "下載限制",
+    "Configure the default download limit for external shares." : "配置外部分享的默認下載限制。",
+    "Set default download limit" : "設置默認下載限制",
+    "Failed to set default download limit" : "無法設置默認下載限制",
     "You have reached the maximum amount of downloads allowed" : "您已到達允許的最大下載量",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "此分享的下載次數有限。您確定要觸發新的下載嗎？"
 },

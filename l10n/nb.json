@@ -9,6 +9,10 @@
     "Failed to set download limit" : "Innstilling av nedlastingsgrensen feilet",
     "Failed to remove download limit" : "Fjerning av nedlastingsgrensen feilet",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 tillat nedlasting gjenstår","{count} tillate nedlastinger gjenstår"],
+    "Download limit" : "Nedlastingsgrense",
+    "Configure the default download limit for external shares." : "Konfigurer standard nedlastingsgrense for eksterne delte ressurser.",
+    "Set default download limit" : "Angi standard nedlastingsgrense",
+    "Failed to set default download limit" : "Innstilling av standard nedlastingsgrense feilet",
     "You have reached the maximum amount of downloads allowed" : "Du har nådd maksimumsgrensen for antall nedlastinger",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne fildelingen har en grense for antall nedlastninger. Er du sikker på at du vil starte en ny nedlasting?"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

@@ -11,6 +11,10 @@ OC.L10N.register(
     "Failed to set download limit" : "تعذّر تعيين حد للتنزيل",
     "Failed to remove download limit" : "تعذّرت إزالة حد التنزيل",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} تنزيلات متبقية مسموح بها","1 تنزيل متبقى مسموح به","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها"],
+    "Download limit" : "حد التنزيل",
+    "Configure the default download limit for external shares." : "تهيئة حد التنزيل الافتراضي للمشاركات الخارجية",
+    "Set default download limit" : "تعيين حد التنزيل الافتراضي",
+    "Failed to set default download limit" : "تعذّر تعيين حد التنزيل الافتراضي",
     "You have reached the maximum amount of downloads allowed" : "أنت وصلت إلى الحد الأقصى من التنزيلات المسموح بها",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "هذه المُشاركة لها عدد معيّن من التنزيلات. هل أنت متأكد أنك تريد إطلاق تنزيل جديد؟"
 },
