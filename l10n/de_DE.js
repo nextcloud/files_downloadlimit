@@ -7,7 +7,7 @@ OC.L10N.register(
     "Limit downloads" : "Downloads begrenzen",
     "Set download limit" : "Download-Limit festlegen",
     "Setting a new limit will reset the download count" : "Das Festlegen eines neuen Limits setzt die Download-Zählung zurück.",
-    "The minimum limit is 1" : "Die Mindestgrenze beträgt 1.",
+    "The minimum limit is 1" : "Die Mindestgrenze beträgt 1",
     "Failed to set download limit" : "Fehler beim Festlegen des Download-Limits",
     "Failed to remove download limit" : "Fehler beim Entfernen des Download-Limits",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 verbleibender Download erlaubt","{count} verbleibende Downloads erlaubt"],
