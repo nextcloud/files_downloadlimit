@@ -11,6 +11,10 @@ OC.L10N.register(
     "Failed to set download limit" : "Није успело постављање границе преузимања",
     "Failed to remove download limit" : "Није успело уклањање границе преузимања",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["дозољено је још 1 преостало преузимање","дозољена су још {count} преостала преузимања","дозољено је још {count} преосталих преузимања"],
+    "Download limit" : "Ограничење преузимања",
+    "Configure the default download limit for external shares." : "Подешавање подразумеваног ограничења за спољна дељења.",
+    "Set default download limit" : "Постави подразумевано ограничење преузимања",
+    "Failed to set default download limit" : "Није успело постављање подразумеване границе преузимања",
     "You have reached the maximum amount of downloads allowed" : "Dostigli ste maksimalnu dozvoljenu količinu preuzimanja",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ovo deljenje ima ograničen broj preuzimanja. Da li ste sigurni da želite da pokrenete novo preuzimanje?"
 },
