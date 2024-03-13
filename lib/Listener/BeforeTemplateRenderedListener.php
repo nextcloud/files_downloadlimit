@@ -34,6 +34,7 @@ use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Util;
 
+/** @template-implements IEventListener<BeforeTemplateRenderedEvent> */
 class BeforeTemplateRenderedListener implements IEventListener {
 	public function __construct(
 		private IInitialState $initialStateService,

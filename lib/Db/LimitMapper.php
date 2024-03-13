@@ -28,6 +28,7 @@ namespace OCA\Files_DownloadLimit\Db;
 use OCP\IDBConnection;
 use OCP\AppFramework\Db\QBMapper;
 
+/** @template-extends QBMapper<Limit> */
 class LimitMapper extends QBMapper {
 	public function __construct(IDBConnection $db) {
 		parent::__construct($db, 'shares_limits', Limit::class);

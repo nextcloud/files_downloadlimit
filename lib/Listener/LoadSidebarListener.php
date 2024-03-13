@@ -34,6 +34,7 @@ use OCP\EventDispatcher\IEventListener;
 use OCP\IAppConfig;
 use OCP\Util;
 
+/** @template-implements IEventListener<LoadSidebar> */
 class LoadSidebarListener implements IEventListener {
 	public function __construct(
 		private IInitialState $initialState,

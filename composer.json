@@ -2,11 +2,19 @@
 	"name": "nextcloud/files_downloadlimit",
 	"require-dev": {
 		"nextcloud/coding-standard": "^1.0.0",
-		"vimeo/psalm": "^4.3.2"
+		"nextcloud/ocp": "dev-master",
+		"vimeo/psalm": "^5.23"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OCP\\": "vendor/nextcloud/ocp/OCP"
+		}
 	},
 	"config": {
+		"optimize-autoloader": true,
+		"classmap-authoritative": true,
 		"platform": {
-			"php": "7.3"
+			"php": "8.0.2"
 		},
 		"sort-packages": true
 	},
