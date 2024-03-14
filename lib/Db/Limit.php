@@ -25,9 +25,19 @@ declare(strict_types=1);
  */
 namespace OCA\Files_DownloadLimit\Db;
 
-use \JsonSerializable;
+use JsonSerializable;
 use OCP\AppFramework\Db\Entity;
 
+/**
+ * @method void setId(string $id)
+ * @method string getId()
+ *
+ * @method void setLimit(int $limit)
+ * @method int getLimit()
+ *
+ * @method void setDownloads(int $downloads)
+ * @method int getDownloads()
+ */
 class Limit extends Entity implements JsonSerializable {
 	protected $limit;
 	protected $downloads;
@@ -38,7 +48,7 @@ class Limit extends Entity implements JsonSerializable {
 		$this->addType('downloads', 'integer');
 	}
 
-	public function jsonSerialize() {
+	public function jsonSerialize(): array {
 		return [
 			'id' => $this->id,
 			'limit' => $this->limit,

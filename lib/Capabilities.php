@@ -30,7 +30,7 @@ use OCP\Capabilities\ICapability;
 class Capabilities implements ICapability {
 
 	/**
-	 * @return array{files: array{downloadlimit: bool}}
+	 * @return array{downloadlimit: array{enabled: true}}
 	 */
 	public function getCapabilities(): array {
 		return [

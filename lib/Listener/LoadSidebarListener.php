@@ -26,14 +26,15 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\Listener;
 
-use OCA\Files_DownloadLimit\AppInfo\Application;
 use OCA\Files\Event\LoadSidebar;
+use OCA\Files_DownloadLimit\AppInfo\Application;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IAppConfig;
 use OCP\Util;
 
+/** @template-implements IEventListener<LoadSidebar> */
 class LoadSidebarListener implements IEventListener {
 	public function __construct(
 		private IInitialState $initialState,

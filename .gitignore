@@ -18,5 +18,5 @@ build/
 coverage*
 vendor/
 
-.php_cs.cache
+/.php-cs-fixer.cache
 composer.phar
