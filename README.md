@@ -40,6 +40,41 @@ jsonpath "$.ocs.data.limit" exists
 jsonpath "$.ocs.data.count" exists
 ```
 
+#### PropFind
+
+```sh
+hurl propfind.hurl --variable owner=admin --variable path=/welcome.txt
+```
+
+> propfind.hurl
+````hurl
+PROPFIND https://nextcloud.local/remote.php/dav/files/{{owner}}/{{path}}
+
+[BasicAuth]
+{{owner}}: {{owner}}
+
+```xml
+<?xml version="1.0"?>
+<d:propfind xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+	<d:prop>
+		<oc:fileid />
+		<d:displayname />
+		<d:getlastmodified />
+		<d:getcontenttype />
+		<oc:size />
+		<oc:owner-id />
+		<oc:share-types />
+		<nc:sharees />
+		<nc:share-download-limits />
+	</d:prop>
+</d:propfind>
+```
+
+HTTP 207
+[Asserts]
+xpath "//nc:share-download-limits" isCollection
+````
+
 #### Set
 
 ```sh
