@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Begränsning för hämtningar",
     "File link share download limit" : "Hämtningsbegränsning för länk-delningar",
-    "Allow to limit the number of downloads for link shares" : "Tillåter att sätta en begränsning på antalet nerladdningar för länk-delningar",
     "Limit downloads" : "Begränsa hämtningar",
     "Set download limit" : "Ställ in nedladdningsgräns",
     "Setting a new limit will reset the download count" : "Om du ställer in en ny gräns återställs antalet nedladdningar",

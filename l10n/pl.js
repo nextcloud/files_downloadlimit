@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Limit pobierania plików",
     "File link share download limit" : "Limit pobierania udostępnionego pliku przez link",
-    "Allow to limit the number of downloads for link shares" : "Zezwalaj na ograniczenie liczby pobrań dla udostępnionych linków",
     "Limit downloads" : "Ogranicz pobieranie",
     "Set download limit" : "Ustaw limit pobierania",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dozwolone jest jeszcze 1 pobranie","Dozwolone są jeszcze {count} pobrania","Dozwolone jest jeszcze {count} pobrań","Dozwolone jest jeszcze {count} pobrań"],

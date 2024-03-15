@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Limite de téléchargement de fichiers",
     "File link share download limit" : "Limite de téléchargement de fichier partagé par lien",
-    "Allow to limit the number of downloads for link shares" : "Permettre de limiter le nombre de téléchargements",
     "Limit downloads" : "Limiter le nombre de téléchargements",
     "Set download limit" : "Définir le nombre maximal de téléchargements autorisés",
     "The minimum limit is 1" : "La limite minimum est 1",

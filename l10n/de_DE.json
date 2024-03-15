@@ -1,7 +1,6 @@
 { "translations": {
     "Files download limit" : "Downloadlimit für Dateien",
     "File link share download limit" : "Downloadlimit für Dateifreigabe",
-    "Allow to limit the number of downloads for link shares" : "Begrenzung der Anzahl von Downloads für Linkfreigaben erlauben",
     "Limit downloads" : "Downloads begrenzen",
     "Set download limit" : "Download-Limit festlegen",
     "Setting a new limit will reset the download count" : "Das Festlegen eines neuen Limits setzt die Download-Zählung zurück.",

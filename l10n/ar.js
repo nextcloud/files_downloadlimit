@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "حد أقصى لتنزيل الملفات",
     "File link share download limit" : "حد أقصى لروابط المشاركة لتنزيل الملفات",
-    "Allow to limit the number of downloads for link shares" : "إسمح بتقييد عدد التنزيلات لروابط المشاركة",
     "Limit downloads" : "تقييد التنزيلات",
     "Set download limit" : "عيّن حداً أقصى للتنزيل",
     "Setting a new limit will reset the download count" : "تعيين حد جديد سيؤدي إلى إعادة ضبط عداد التنزيلات",

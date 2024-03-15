@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Fájlletöltési korlátozás",
     "File link share download limit" : "Fájlmegosztási hivatkozások letöltési korlátja",
-    "Allow to limit the number of downloads for link shares" : "Lehetővé teszi a hivatkozásos megosztások letöltéseinek korlátozását",
     "Limit downloads" : "Letöltések korlátozása",
     "Set download limit" : "Letöltési korlát beállítása",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : [" {count} további letöltés engedélyezett"," {count} további letöltés engedélyezett"],

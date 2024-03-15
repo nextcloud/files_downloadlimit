@@ -1,7 +1,6 @@
 { "translations": {
     "Files download limit" : "Ograničenje preuzimanja datoteka ",
     "File link share download limit" : "Ograničenje preuzimanja deljenja linka datoteke",
-    "Allow to limit the number of downloads for link shares" : "Dozvolite da ograničite broj preuzimanja za deljenje linkova",
     "Limit downloads" : "Ograniči preuzimanja",
     "Set download limit" : "Podesite ograničenje preuzimanja",
     "Setting a new limit will reset the download count" : "Постављање нове границе ће ресетовати број преузимања",

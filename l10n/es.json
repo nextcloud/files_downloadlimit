@@ -1,7 +1,6 @@
 { "translations": {
     "Files download limit" : "Límite de descarga de archivos",
     "File link share download limit" : "Límite de descarga de archivos en enlaces compartidos",
-    "Allow to limit the number of downloads for link shares" : "Permitir el límite de descarga de archivos para enlaces compartidos",
     "Limit downloads" : "Limitar las descargas",
     "Set download limit" : "Establecer el límite de descarga",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Queda 1 descarga permitida","Quedan {count} descargas permitidas","Quedan {count} descargas permitidas"],

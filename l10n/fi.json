@@ -1,7 +1,6 @@
 { "translations": {
     "Files download limit" : "Tiedostojen latausrajoitus",
     "File link share download limit" : "Tiedosto-osoitejaon latausrajoitus",
-    "Allow to limit the number of downloads for link shares" : "Salli rajoittaaksesi latausten määrää linkkijaoille",
     "Limit downloads" : "Rajoita latauksia",
     "Set download limit" : "Aseta latausraja",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 lataus enää sallittu","{count} latausta enää sallittu"],

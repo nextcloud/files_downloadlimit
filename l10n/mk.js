@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Лимит за преземање на датотеки",
     "File link share download limit" : "Лимит за преземање на споделените  датотеки со линкови",
-    "Allow to limit the number of downloads for link shares" : "Дозволен лимит на преземања за споделување со линк",
     "Limit downloads" : "Ограничување за преземањата",
     "Set download limit" : "Постави лимит за преземања",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Преостанато е уште {count} преземање","Преостанати се уште {count} преземања"],

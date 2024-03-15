@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Dosyalar indirme sınırı",
     "File link share download limit" : "Dosya bağlantısı paylaşımı indirme sınırı",
-    "Allow to limit the number of downloads for link shares" : "Bağlantı paylaşımları için indirme sayısı sınırlanabilsin",
     "Limit downloads" : "İndirmeleri sınırla",
     "Set download limit" : "İndirme sınırını ayarla",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 indirme daha yapılabilir","{count} indirme daha yapılabilir"],

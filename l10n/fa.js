@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Files download limit",
     "File link share download limit" : "File link share download limit",
-    "Allow to limit the number of downloads for link shares" : "Allow to limit the number of downloads for link shares",
     "Limit downloads" : "Limit downloads",
     "Set download limit" : "Set download limit",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 remaining download allowed","{count} remaining downloads allowed"],

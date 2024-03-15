@@ -1,7 +1,6 @@
 { "translations": {
     "Files download limit" : "Обмеження завантаження файлів",
     "File link share download limit" : "Обмеження завантаження файлу за посиланням",
-    "Allow to limit the number of downloads for link shares" : "Дозволити обмежити кількість завантажень за посиланнями спільного доступу",
     "Limit downloads" : "Обмежте завантаження",
     "Set download limit" : "Встановити ліміт завантаження",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Дозволено ще 1 завантаження","Залишилося завантажень: {count}","Залишилося завантажень: {count}","Залишилося завантажень: {count}"],

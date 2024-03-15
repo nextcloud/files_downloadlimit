@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Limita de descărcare a fișierelor",
     "File link share download limit" : "Limita de descărcare a link-ului de partajare",
-    "Allow to limit the number of downloads for link shares" : "Permite limitarea numărului de descărcări pentru fișierele partajate",
     "Limit downloads" : "Limitează descărcările",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 descărcare permisă rămasă","{count} descărcări permise rămase","{count} descărcări permise rămase"],
     "Download limit" : "Limită de descărcare"
