@@ -30,6 +30,11 @@ Accept: application/json
 
 [BasicAuth]
 alice: alice
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data.limit" exists
+jsonpath "$.ocs.data.count" exists
 ```
 
 #### Set
@@ -51,6 +56,10 @@ alice: alice
 {
 	"limit": {{limit}}
 }
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```
 
 #### Remove
@@ -68,6 +77,10 @@ Accept: application/json
 
 [BasicAuth]
 alice: alice
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```
 
 ### Default limit
@@ -91,4 +104,8 @@ admin: admin
 {
     "limit": {{limit}}
 }
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```
