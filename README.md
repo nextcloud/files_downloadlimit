@@ -11,6 +11,9 @@ This app allows limitng the number of downloads for external link shares.
 
 The examples below can be run using [hurl](https://github.com/Orange-OpenSource/hurl).
 
+> [!TIP]
+> To ignore assertions pass the `--ignore-asserts` flag.
+
 ### External share limit
 
 An external share limit may be queried by its token.
