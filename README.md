@@ -3,7 +3,7 @@
 [![Node GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Node/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ANode)
 [![Lint GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Lint/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ALint)
 
-This app allows limitng the number of downloads for external link shares.
+This app allows limiting the number of downloads for external link shares.
 
 ---
 
