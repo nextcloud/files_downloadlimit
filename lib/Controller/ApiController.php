@@ -137,8 +137,8 @@ class ApiController extends OCSController {
 			throw new OCSNotFoundException('Unknown share');
 		}
 
-		// Make sure the user is owner of the share or initiator
-		if ($user == null || ($share->getShareOwner() !== $user->getUID() && $share->getSharedBy() !== $user->getUID())) {
+		// Make sure the user is the owner of the share
+		if ($user == null || ($share->getSharedBy() !== $user->getUID())) {
 			throw new OCSNotFoundException('Unknown share');
 		}
 
