@@ -5,6 +5,7 @@ OC.L10N.register(
     "File link share download limit" : "Ograničenje preuzimanja poveznice dijeljenja datoteke",
     "Limit downloads" : "Ograniči preuzimanja",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dopušteno je 1 preostalo preuzimanje","Dopuštena su {count} preostala preuzimanja","Dopušteno je {count} preostalih preuzimanja"],
-    "Download limit" : "Ograničenje preuzimanja"
+    "Download limit" : "Ograničenje preuzimanja",
+    "Allow to limit the number of downloads for link shares" : "Dopustite kako biste ograničili broj preuzimanja poveznica dijeljenja"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

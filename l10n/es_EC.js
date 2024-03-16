@@ -7,6 +7,8 @@ OC.L10N.register(
     "Set download limit" : "Establecer límite de descarga",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 descarga restante permitida","{count} descargas restantes permitidas","{count} descargas restantes permitidas"],
     "You have reached the maximum amount of downloads allowed" : "Has alcanzado el número máximo de descargas permitidas",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esta compartición tiene un número limitado de descargas. ¿Estás seguro de que deseas iniciar una nueva descarga?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esta compartición tiene un número limitado de descargas. ¿Estás seguro de que deseas iniciar una nueva descarga?",
+    "Allow to limit the number of downloads for link shares" : "Permite limitar el número de descargas para enlaces compartidos",
+    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Esta compartición ha sido limitada a {limit} descargas. Aún quedan {countLeft} permitidas."
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -1,6 +1,7 @@
 { "translations": {
     "Files download limit" : "حد أقصى لتنزيل الملفات",
     "File link share download limit" : "حد أقصى لروابط المشاركة لتنزيل الملفات",
+    "This app allows limitng the number of downloads for external link shares." : "هذا التطبيق يسمح بتقييد عدد التنزيلات للمشاركات عبر رابط خارجي.",
     "Limit downloads" : "تقييد التنزيلات",
     "Set download limit" : "عيّن حداً أقصى للتنزيل",
     "Setting a new limit will reset the download count" : "تعيين حد جديد سيؤدي إلى إعادة ضبط عداد التنزيلات",
