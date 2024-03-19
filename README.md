@@ -3,13 +3,16 @@
 [![Node GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Node/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ANode)
 [![Lint GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Lint/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ALint)
 
-This app allows limitng the number of downloads for external link shares.
+This app allows limiting the number of downloads for external link shares.
 
 ---
 
 ## API
 
 The examples below can be run using [hurl](https://github.com/Orange-OpenSource/hurl).
+
+> [!TIP]
+> To ignore assertions pass the `--ignore-asserts` flag.
 
 ### External share limit
 
@@ -30,6 +33,11 @@ Accept: application/json
 
 [BasicAuth]
 alice: alice
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data.limit" exists
+jsonpath "$.ocs.data.count" exists
 ```
 
 #### Set
@@ -51,6 +59,10 @@ alice: alice
 {
 	"limit": {{limit}}
 }
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```
 
 #### Remove
@@ -68,6 +80,10 @@ Accept: application/json
 
 [BasicAuth]
 alice: alice
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```
 
 ### Default limit
@@ -91,4 +107,8 @@ admin: admin
 {
     "limit": {{limit}}
 }
+
+HTTP 200
+[Asserts]
+jsonpath "$.ocs.data" isEmpty
 ```

@@ -4,7 +4,7 @@
 	<name>Files download limit</name>
 	<summary>File link share download limit</summary>
 
-	<description>This app allows limitng the number of downloads for external link shares.</description>
+	<description>This app allows limiting the number of downloads for external link shares.</description>
 	<version>2.0.0</version>
 	<licence>agpl</licence>
 	<author mail="skjnldsv@protonmail.com">John Molakvoæ</author>
