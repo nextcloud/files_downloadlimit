@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Files download limit" : "Grense for antall nedlastinger",
     "File link share download limit" : "Grense for nedlasting fra delt lenke",
-    "This app allows limitng the number of downloads for external link shares." : "Denne appen tillater begrensning av antall nedlastinger for eksterne delingskoblinger.",
     "Limit downloads" : "Begrens antall nedlastinger",
     "Set download limit" : "Spesifiser nedlastings-grense",
     "Setting a new limit will reset the download count" : "Hvis du angir en ny grense, tilbakestilles nedlastingsantallet",
