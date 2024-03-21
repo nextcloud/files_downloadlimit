@@ -21,6 +21,7 @@
  *
  */
 
+import { getCurrentUser } from '@nextcloud/auth'
 import { Type as ShareType } from '@nextcloud/sharing'
 
 import DownloadLimitEntry from '../components/DownloadLimitEntry.vue'
@@ -46,7 +47,7 @@ export class DownloadLimitAction {
 
 	data({ share, fileInfo }: ActionData) {
 		// Only works for files and existing shares
-		if (typeof share.token !== 'string' || fileInfo.type !== 'file') {
+		if (typeof share.token !== 'string' || fileInfo.type !== 'file' || share.owner !== getCurrentUser()?.uid) {
 			return {}
 		}
 
