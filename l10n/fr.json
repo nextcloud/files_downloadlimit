@@ -1,6 +1,7 @@
 { "translations": {
     "Files download limit" : "Limite de téléchargement de fichiers",
     "File link share download limit" : "Limite de téléchargement de fichier partagé par lien",
+    "This app allows limiting the number of downloads for external link shares." : "Cette application permet de limiter le nombre de téléchargements pour les partages de liens externes. ",
     "Limit downloads" : "Limiter le nombre de téléchargements",
     "Set download limit" : "Définir le nombre maximal de téléchargements autorisés",
     "Setting a new limit will reset the download count" : "Définir une nouvelle limite réinitialisera le compteur de téléchargement",

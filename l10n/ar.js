@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "حد أقصى لتنزيل الملفات",
     "File link share download limit" : "حد أقصى لروابط المشاركة لتنزيل الملفات",
+    "This app allows limiting the number of downloads for external link shares." : "يسمح هذا التطبيق بتفييذ عدد التنزيلات لمشاركات الروابط الخارجية.",
     "Limit downloads" : "تقييد التنزيلات",
     "Set download limit" : "عيّن حداً أقصى للتنزيل",
     "Setting a new limit will reset the download count" : "تعيين حد جديد سيؤدي إلى إعادة ضبط عداد التنزيلات",
