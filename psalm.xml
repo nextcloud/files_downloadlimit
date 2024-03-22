@@ -19,17 +19,21 @@
 	<issueHandlers>
 		<UndefinedClass>
 			<errorLevel type="suppress">
+				<referencedClass name="Doctrine\DBAL\Types\Types" />
+				<referencedClass name="OCA\DAV\Events\SabrePluginAddEvent" />
 				<referencedClass name="OCA\Files_Sharing\Event\BeforeTemplateRenderedEvent" />
 				<referencedClass name="OCA\Files_Sharing\Event\ShareLinkAccessedEvent" />
-				<referencedClass name="Doctrine\DBAL\Types\Types" />
 				<referencedClass name="OCA\Files\Event\LoadSidebar" />
+				<referencedClass name="Sabre\DAV\ServerPlugin" />
+				<referencedClass name="Sabre\Xml\XmlSerializable" />
 			</errorLevel>
 		</UndefinedClass>
 		<UndefinedDocblockClass>
 			<errorLevel type="suppress">
+				<referencedClass name="Doctrine\DBAL\Schema\Table" />
+				<referencedClass name="OCA\DAV\Events\SabrePluginAddEvent" />
 				<referencedClass name="OCA\Files_Sharing\Event\BeforeTemplateRenderedEvent" />
 				<referencedClass name="OCA\Files_Sharing\Event\ShareLinkAccessedEvent" />
-				<referencedClass name="Doctrine\DBAL\Schema\Table" />
 				<referencedClass name="OCA\Files\Event\LoadSidebar" />
 			</errorLevel>
 		</UndefinedDocblockClass>
