@@ -24,4 +24,15 @@
 			<code>$event</code>
 		</ImplementedParamTypeMismatch>
 	</file>
+	<file src="lib/Listener/SabrePluginAddListener.php">
+		<InvalidTemplateParam>
+			<code>IEventListener</code>
+		</InvalidTemplateParam>
+		<ImplementedParamTypeMismatch>
+			<code>$event</code>
+		</ImplementedParamTypeMismatch>
+		<MissingDependency>
+			<code>PropFindPlugin</code>
+		</MissingDependency>
+	</file>
 </files>
