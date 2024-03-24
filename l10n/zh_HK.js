@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "檔案下載限制 ",
     "File link share download limit" : "檔案共享下載限制 ",
+    "This app allows limiting the number of downloads for external link shares." : "此應用程式提供限制外部連結共享下載數量的功能。",
     "Limit downloads" : "限制下載",
     "Set download limit" : "設定下載限制",
     "Setting a new limit will reset the download count" : "設定新限制將會重設下載次數",

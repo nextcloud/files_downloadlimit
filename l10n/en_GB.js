@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "Files download limit",
     "File link share download limit" : "File link share download limit",
+    "This app allows limiting the number of downloads for external link shares." : "This app offers the capability to restrict the number of downloads for external link shares.",
     "Limit downloads" : "Limit downloads",
     "Set download limit" : "Set download limit",
     "Setting a new limit will reset the download count" : "Setting a new limit will reset the download count",
