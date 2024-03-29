@@ -4,6 +4,7 @@
     "Limit downloads" : "Обмежити звантаження",
     "Set download limit" : "Встановити обмеження на звантаження",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Дозволено ще 1 завантаження","Залишилося завантажень: {count}","Залишилося завантажень: {count}","Дозволена кількість звантажень: {count}"],
+    "Download limit" : "Обмеження на звантаження",
     "You have reached the maximum amount of downloads allowed" : "Ви досягли максимально дозволеної кількості звантажень",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Цей ресурс має обмежену кількість звантажень. Ви впевнені, що хочете запустити нове завантаження?",
     "Allow to limit the number of downloads for link shares" : "Дозволити обмежити кількість завантажень за посиланнями спільного доступу",
