@@ -1,13 +1,21 @@
 { "translations": {
     "Files download limit" : "Límite de descarga de archivos",
     "File link share download limit" : "Límite de descarga de archivos en enlaces compartidos",
+    "This app allows limiting the number of downloads for external link shares." : "Esta app permite limitar el número de descargas para los recursos compartidos mediante enlaces externos.",
     "Limit downloads" : "Limitar las descargas",
     "Set download limit" : "Establecer el límite de descarga",
+    "Setting a new limit will reset the download count" : "Establecer un nuevo límite reinicializara el conteo de descargas",
+    "The minimum limit is 1" : "El límite mínimo es 1",
+    "Failed to set download limit" : "Fallo al establecer el límite de descargas",
+    "Failed to remove download limit" : "Fallo al quitar el límite de descargas",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Queda 1 descarga permitida","Quedan {count} descargas permitidas","Quedan {count} descargas permitidas"],
     "Download limit" : "Límite de descargas",
-    "You have reached the maximum amount of downloads allowed" : "Has llegado al máximo de descargas permitidas",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esta acción tiene un número limitado de descargas. Está seguro de que quiere activar una nueva descarga?",
-    "Allow to limit the number of downloads for link shares" : "Permitir el límite de descarga de archivos para enlaces compartidos",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Esta acción estaba limitada a {limit} descargas. Todavía queda {countLeft} permitido."
+    "Configure the default download limit for external shares." : "Configurar el límite prederterminado de descargas para los recursos compartidos mediante enlace externo.",
+    "Set default download limit" : "Establecer el límite de descargas prederterminado",
+    "Failed to set default download limit" : "Fallo al establecer el límite predeterminado de descargas",
+    "You have reached the maximum amount of downloads allowed" : "Ha llegado al máximo de descargas permitidas",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Este recurso compartido tiene un número limitado de descargas. ¿Está seguro de que quiere activar una nueva descarga?",
+    "Allow to limit the number of downloads for link shares" : "Permitir limitar el número de descargas para recursos compartidos mediante enlaces",
+    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Este recurso compartido fue limitado a {limit} descargas. Todavía restan {countLeft} permitidas. "
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
