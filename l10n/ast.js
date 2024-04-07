@@ -1,0 +1,11 @@
+OC.L10N.register(
+    "files_downloadlimit",
+    {
+    "Files download limit" : "Llende de la descarga de ficheros",
+    "Limit downloads" : "Llendar les descargues",
+    "The minimum limit is 1" : "La llende mínima ye 1",
+    "Failed to remove download limit" : "Nun se pue quitar la llende de descargues",
+    "You have reached the maximum amount of downloads allowed" : "Algamesti la cantidá máxima de descargues permitíes",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esti elementu compartíu tien un númberu llendáu de descargues. ¿De xuru que quies aicionar una descarga nueva?"
+},
+"nplurals=2; plural=(n != 1);");
