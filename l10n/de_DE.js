@@ -14,7 +14,7 @@ OC.L10N.register(
     "Download limit" : "Download-Limit",
     "Configure the default download limit for external shares." : "Standard-Downloadlimit für externe Freigaben konfigurieren.",
     "Set default download limit" : "Standard-Downloadlimit festlegen",
-    "Failed to set default download limit" : "Fehler beim Fetslegen des Standard-Downloadlimits",
+    "Failed to set default download limit" : "Fehler beim Festlegen des Standard-Downloadlimits",
     "You have reached the maximum amount of downloads allowed" : "Sie haben die maximal zulässige Anzahl an Downloads erreicht",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Diese Freigabe hat eine begrenzte Anzahl von Downloads. Möchten Sie wirklich einen neuen Download auslösen?",
     "Allow to limit the number of downloads for link shares" : "Begrenzung der Anzahl von Downloads für Linkfreigaben erlauben",
