@@ -29,7 +29,7 @@ version: 2.2.0
 license: GPL-3.0-or-later
 
 @nextcloud/l10n
-version: 2.2.0
+version: 3.1.0
 license: GPL-3.0-or-later
 
 @nextcloud/logger
@@ -37,7 +37,7 @@ version: 3.0.1
 license: GPL-3.0-or-later
 
 @nextcloud/router
-version: 2.2.1
+version: 2.2.0
 license: GPL-3.0-or-later
 
 @nextcloud/sharing
@@ -60,12 +60,8 @@ axios
 version: 1.6.8
 license: MIT
 
-core-js
-version: 3.33.0
-license: MIT
-
 dompurify
-version: 3.0.5
+version: 3.1.2
 license: (MPL-2.0 OR Apache-2.0)
 
 escape-html
