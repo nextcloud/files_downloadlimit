@@ -7,6 +7,8 @@ OC.L10N.register(
     "Set download limit" : "Установите лимит загрузки",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} оставшаяся разрешённая загрузка","{count} оставшихся разрешённых загрузки","{count} оставшихся разрешённых загрузок","{count} оставшихся разрешённых загрузок"],
     "Download limit" : "Лимит скачивания",
+    "Configure the default download limit for external shares." : "Настройка ограничения загрузки по умолчанию для внешних общих ресурсов.",
+    "Set default download limit" : "Установить лимит загрузки по умолчанию",
     "You have reached the maximum amount of downloads allowed" : "Вы достигли максимально допустимого количества загрузок",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "У этого общего ресурса ограниченное количество загрузок. Вы уверены, что хотите запустить новую загрузку?",
     "Allow to limit the number of downloads for link shares" : "Разрешить ограничивать количество скачиваний для обмена ссылками",
