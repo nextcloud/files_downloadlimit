@@ -3,10 +3,17 @@
     "File link share download limit" : "파일 링크 공유 다운로드 제한",
     "Limit downloads" : "다운로드 제한",
     "Set download limit" : "다운로드 제한 설정",
+    "Setting a new limit will reset the download count" : "새 값을 입력할 경우 기존 공유의 다운로드 횟수가 초기화됩니다",
+    "Failed to set download limit" : "다운로드 횟수 제한을 설정할 수 없음",
+    "Failed to remove download limit" : "다운로드 횟수 제한을 제거할 수 없음",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count}번의 다운로드 횟수가 남았습니다."],
+    "Download limit" : "다운로드 횟수 제한",
+    "Configure the default download limit for external shares." : "외부 공유에 대해 기본 다운로드 횟수 제한을 설정하십시오.",
+    "Set default download limit" : "기본 다운로드 횟수 제한 설정",
+    "Failed to set default download limit" : "기본 다운로드 횟수 제한을 설정할 수 없음",
     "You have reached the maximum amount of downloads allowed" : "가능한 최대 다운로드 횟수에 도달 했습니다.",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "이 공유는 다운로드 횟수가 제한되어 있습니다. 새 다운로드 트리거를 원하는 게 확실합니까?",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "이 공유는 다운로드 횟수가 제한되어 있습니다. 다운로드 하겠습니까?",
     "Allow to limit the number of downloads for link shares" : "링크 공유 다운로드 횟수 제한 허가하기",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "이 공유는 {limit} 번 만 다운로드 가능합니다. 아직 {countLeft} 다운로드 가능합니다."
+    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "이 공유는 {limit} 번 만 다운로드 가능합니다. 아직 {countLeft} 번 다운로드 가능합니다."
 },"pluralForm" :"nplurals=1; plural=0;"
 }
