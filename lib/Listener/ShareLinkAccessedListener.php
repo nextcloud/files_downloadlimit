@@ -33,6 +33,7 @@ use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IConfig;
 use OCP\Share\IManager;
+use Psr\Log\LoggerInterface;
 
 /** @template-implements IEventListener<ShareLinkAccessedEvent> */
 class ShareLinkAccessedListener implements IEventListener {
@@ -40,6 +41,7 @@ class ShareLinkAccessedListener implements IEventListener {
 		private IConfig $config,
 		private IManager $manager,
 		private LimitMapper $mapper,
+		private LoggerInterface $logger
 	) {
 	}
 
@@ -53,8 +55,12 @@ class ShareLinkAccessedListener implements IEventListener {
 			return;
 		}
 
-		// Make sure we have a valid limit
 		$token = $event->getShare()->getToken();
+		if ($token === null) {
+			return;
+		}
+
+		// Make sure we have a valid limit
 		try {
 			$shareLimit = $this->mapper->get($token);
 			$limit = $shareLimit->getLimit();
@@ -76,6 +82,8 @@ class ShareLinkAccessedListener implements IEventListener {
 			$this->mapper->update($shareLimit);
 		} catch (DoesNotExistException $e) {
 			// No limit is set, ignore
+		} catch (\Exception $e) {
+			$this->logger->error('Error while handling share link accessed event: ' . $e->getMessage());
 		}
 	}
 }
