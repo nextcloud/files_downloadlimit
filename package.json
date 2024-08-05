@@ -15,13 +15,13 @@
     "download"
   ],
   "bugs": {
-    "url": "https://github.com/skjnldsv/files_downloadlimit/issues"
+    "url": "https://github.com/nextcloud/files_downloadlimit/issues"
   },
   "repository": {
-    "url": "https://github.com/skjnldsv/files_downloadlimit",
+    "url": "https://github.com/nextcloud/files_downloadlimit",
     "type": "git"
   },
-  "homepage": "https://github.com/skjnldsv/files_downloadlimit",
+  "homepage": "https://github.com/nextcloud/files_downloadlimit",
   "license": "AGPL-3.0-or-later",
   "private": true,
   "scripts": {
