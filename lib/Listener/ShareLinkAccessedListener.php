@@ -47,12 +47,17 @@ class ShareLinkAccessedListener implements IEventListener {
 	/** @var LimitMapper */
 	private $mapper;
 
+	/** @var LoggerInterface */
+	private $logger;
+
 	public function __construct(IConfig $config,
 								IManager $manager,
-								LimitMapper $mapper) {
+								LimitMapper $mapper,
+								LoggerInterface $logger) {
 		$this->config = $config;
 		$this->manager = $manager;
 		$this->mapper = $mapper;
+		$this->logger = $logger;
 	}
 
 	public function handle(Event $event): void {
