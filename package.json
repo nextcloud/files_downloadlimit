@@ -22,7 +22,7 @@
     "type": "git"
   },
   "homepage": "https://github.com/skjnldsv/files_downloadlimit",
-  "license": "agpl",
+  "license": "AGPL-3.0-or-later",
   "private": true,
   "scripts": {
     "dev": "vite build --mode development",
