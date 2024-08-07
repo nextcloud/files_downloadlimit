@@ -27,8 +27,8 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\AppInfo;
 
-use OCA\Files_DownloadLimit\Capabilities;
 use OCA\Files\Event\LoadSidebar;
+use OCA\Files_DownloadLimit\Capabilities;
 use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
 use OCA\Files_DownloadLimit\Listener\ShareLinkAccessedListener;

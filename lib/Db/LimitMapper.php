@@ -25,8 +25,8 @@ declare(strict_types=1);
  */
 namespace OCA\Files_DownloadLimit\Db;
 
-use OCP\IDBConnection;
 use OCP\AppFramework\Db\QBMapper;
+use OCP\IDBConnection;
 
 class LimitMapper extends QBMapper {
 	public function __construct(IDBConnection $db) {

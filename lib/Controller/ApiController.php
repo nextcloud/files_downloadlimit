@@ -57,10 +57,10 @@ class ApiController extends OCSController {
 	private $mapper;
 
 	public function __construct(IRequest $request,
-								IConfig $config,
-								IManager $shareManager,
-								IUserSession $userSession,
-								LimitMapper $mapper) {
+		IConfig $config,
+		IManager $shareManager,
+		IUserSession $userSession,
+		LimitMapper $mapper) {
 		parent::__construct(Application::APP_ID, $request);
 		$this->config = $config;
 		$this->shareManager = $shareManager;

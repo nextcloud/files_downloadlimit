@@ -43,7 +43,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 	private $limitMapper;
 
 	public function __construct(IInitialState $initialStateService,
-								LimitMapper $limitMapper) {
+		LimitMapper $limitMapper) {
 		$this->initialStateService = $initialStateService;
 		$this->limitMapper = $limitMapper;
 	}
