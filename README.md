@@ -4,6 +4,7 @@
 -->
 # Files download limit
 
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/files_downloadlimit)](https://api.reuse.software/info/github.com/nextcloud/files_downloadlimit)
 [![Node GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Node/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ANode)
 [![Lint GitHub Action](https://github.com/nextcloud/files_downloadlimit/workflows/Lint/badge.svg)](https://github.com/nextcloud/files_downloadlimit/actions?query=workflow%3ALint)
 
