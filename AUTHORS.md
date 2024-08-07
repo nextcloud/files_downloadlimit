@@ -5,5 +5,6 @@
 # Authors
 
 - Christopher Ng <chrng8@gmail.com>
+- Ferdinand Thiessen <opensource@fthiessen.de>
 - John Molakvoæ <skjnldsv@protonmail.com>
 - Stephan Orbaugh <stephan.orbaugh@nextcloud.com>
