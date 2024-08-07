@@ -11,4 +11,11 @@ export default createAppConfig({
 },
 {
 	inlineCSS: false,
+	thirdPartyLicense: false,
+	extractLicenseInformation: {
+		includeSourceMaps: true,
+		overwriteLicenses: {
+			'@nextcloud/axios': 'GPL-3.0-or-later',
+		},
+	},
 })
