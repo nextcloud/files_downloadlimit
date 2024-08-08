@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Adding double-download warning
-	const downloadButtons = document.querySelectorAll<HTMLAnchorElement>('a[href*="/download/"]') || []
+	const downloadButtons = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href*="/download/"]'))
 	new Set(downloadButtons).forEach(button => {
 		button.addEventListener('click', (event) => {
 			// Warn about download limits

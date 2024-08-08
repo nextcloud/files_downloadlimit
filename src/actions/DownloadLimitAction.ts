@@ -4,7 +4,7 @@
  */
 
 import { getCurrentUser } from '@nextcloud/auth'
-import { Type as ShareType } from '@nextcloud/sharing'
+import { ShareType } from '@nextcloud/sharing'
 
 import DownloadLimitEntry from '../components/DownloadLimitEntry.vue'
 
@@ -22,8 +22,8 @@ export class DownloadLimitAction {
 
 	get shareType() {
 		return [
-			ShareType.SHARE_TYPE_LINK,
-			ShareType.SHARE_TYPE_EMAIL,
+			ShareType.Link,
+			ShareType.Email,
 		]
 	}
 

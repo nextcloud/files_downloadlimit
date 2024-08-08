@@ -34,10 +34,11 @@
 </template>
 
 <script lang="ts">
+import { showError } from '@nextcloud/dialogs'
+import { loadState } from '@nextcloud/initial-state'
+import { n, t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 import { Fragment } from 'vue-frag'
-import { loadState } from '@nextcloud/initial-state'
-import { showError } from '@nextcloud/dialogs'
 
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
 import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
@@ -74,9 +75,9 @@ export default defineComponent({
 	data() {
 		return {
 			limitEnabled: false,
-			initialLimit: null,
+			initialLimit: null as number | null,
 			limit,
-			count: null,
+			count: null as number | null,
 			loading: false,
 			hasError: false,
 		}
@@ -84,11 +85,11 @@ export default defineComponent({
 
 	computed: {
 		remainingCount() {
-			return this.initialLimit - this.count
+			return (this.initialLimit ?? 0) - (this.count ?? 0)
 		},
 
 		helperText() {
-			if (this.limit > 0) {
+			if (this.limit && this.limit > 0) {
 				return ''
 			}
 			return t('files_downloadlimit', 'The minimum limit is 1')
@@ -129,13 +130,15 @@ export default defineComponent({
 	},
 
 	methods: {
+		n,
+		t,
+
 		handleUpdateLimit(limit: string) {
 			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
 		},
 
 		async onSave() {
-			const isValid = typeof this.limit === 'number' && this.limit > 0
-			if (!isValid) {
+			if (typeof this.limit !== 'number' || this.limit <= 0) {
 				return
 			}
 
