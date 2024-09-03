@@ -3,8 +3,12 @@ OC.L10N.register(
     {
     "Files download limit" : "Лимит загрузки файлов",
     "File link share download limit" : "Ограничение на скачивание файловой ссылки",
+    "This app allows limiting the number of downloads for external link shares." : "Это приложение позволяет ограничить количество загрузок для обмена внешними ссылками.",
     "Limit downloads" : "Лимит загрузок",
     "Set download limit" : "Установите лимит загрузки",
+    "Setting a new limit will reset the download count" : "Установка нового лимита приведет к сбросу количества загрузок",
+    "The minimum limit is 1" : "Минимальный предел составляет 1",
+    "Failed to set download limit" : "Не удалось установить лимит загрузки",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} оставшаяся разрешённая загрузка","{count} оставшихся разрешённых загрузки","{count} оставшихся разрешённых загрузок","{count} оставшихся разрешённых загрузок"],
     "Download limit" : "Лимит скачивания",
     "Configure the default download limit for external shares." : "Настройка ограничения загрузки по умолчанию для внешних общих ресурсов.",
