@@ -37,16 +37,16 @@ This file is generated from multiple sources. Included packages:
 	- version: 3.0.1
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.16.0
+	- version: 8.18.0
 	- license: AGPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.16.0
+	- version: 8.18.0
 	- license: AGPL-3.0-or-later
 - @vueuse/core
-	- version: 10.9.0
+	- version: 11.0.3
 	- license: MIT
 - @vueuse/shared
-	- version: 10.9.0
+	- version: 11.0.3
 	- license: MIT
 - axios
 	- version: 1.7.4
@@ -232,8 +232,8 @@ This file is generated from multiple sources. Included packages:
 	- version: 2.7.16
 	- license: MIT
 - vue-demi
-	- version: 0.14.7
+	- version: 0.14.10
 	- license: MIT
 - vue-demi
-	- version: 0.14.7
+	- version: 0.14.10
 	- license: MIT
