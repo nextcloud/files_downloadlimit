@@ -2,7 +2,7 @@
 	"name": "nextcloud/files_downloadlimit",
 	"require-dev": {
 		"nextcloud/coding-standard": "^1.0.0",
-		"nextcloud/ocp": "dev-master",
+		"nextcloud/ocp": "dev-stable30",
 		"vimeo/psalm": "^5.23"
 	},
 	"autoload-dev": {
