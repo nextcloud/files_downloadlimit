@@ -33,14 +33,17 @@ This file is generated from multiple sources. Included packages:
 - @nextcloud/l10n
 	- version: 3.1.0
 	- license: GPL-3.0-or-later
+- @nextcloud/l10n
+	- version: 3.1.0
+	- license: GPL-3.0-or-later
 - @nextcloud/router
 	- version: 3.0.1
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.18.0
+	- version: 8.19.0
 	- license: AGPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.18.0
+	- version: 8.19.0
 	- license: AGPL-3.0-or-later
 - @vueuse/core
 	- version: 11.0.3
