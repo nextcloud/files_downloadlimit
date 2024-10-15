@@ -5,7 +5,7 @@ OC.L10N.register(
     "File link share download limit" : "حد أقصى لروابط المشاركة لتنزيل الملفات",
     "This app allows limiting the number of downloads for external link shares." : "يسمح هذا التطبيق بتفييذ عدد التنزيلات لمشاركات الروابط الخارجية.",
     "Limit downloads" : "تقييد التنزيلات",
-    "Set download limit" : "عيّن حداً أقصى للتنزيل",
+    "Set download limit" : "تعيين حد أقصى للتنزيل",
     "Setting a new limit will reset the download count" : "تعيين حد جديد سيؤدي إلى إعادة ضبط عداد التنزيلات",
     "The minimum limit is 1" : "الحد الأدني هو 1",
     "Failed to set download limit" : "تعذّر تعيين حد للتنزيل",
@@ -16,7 +16,7 @@ OC.L10N.register(
     "Set default download limit" : "تعيين حد التنزيل الافتراضي",
     "Failed to set default download limit" : "تعذّر تعيين حد التنزيل الافتراضي",
     "You have reached the maximum amount of downloads allowed" : "أنت وصلت إلى الحد الأقصى من التنزيلات المسموح بها",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "هذه المُشاركة لها عدد معيّن من التنزيلات. هل أنت متأكد أنك تريد إطلاق تنزيل جديد؟",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "هذه المُشاركة لها عدد محدد من التنزيلات. هل أنت متأكد أنك تريد بدء تنزيل جديد؟",
     "Allow to limit the number of downloads for link shares" : "إسمح بتقييد عدد التنزيلات لروابط المشاركة",
     "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "هذه المشاركة مُقيّدة بعدد {limit} تنزيل؛ مازال مٌتاحاً منها {countLeft} فقط. "
 },
