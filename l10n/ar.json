@@ -5,7 +5,7 @@
     "Limit downloads" : "تقييد التنزيلات",
     "Set download limit" : "تعيين حد أقصى للتنزيل",
     "Setting a new limit will reset the download count" : "تعيين حد جديد سيؤدي إلى إعادة ضبط عداد التنزيلات",
-    "The minimum limit is 1" : "الحد الأدني هو 1",
+    "The minimum limit is 1" : "الحد الأدنى هو 1",
     "Failed to set download limit" : "تعذّر تعيين حد للتنزيل",
     "Failed to remove download limit" : "تعذّرت إزالة حد التنزيل",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count} تنزيلات متبقية مسموح بها","1 تنزيل متبقى مسموح به","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها","{count} تنزيلات متبقية مسموح بها"],
