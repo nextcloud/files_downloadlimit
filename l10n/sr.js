@@ -10,7 +10,7 @@ OC.L10N.register(
     "The minimum limit is 1" : "Минимална граница је 1",
     "Failed to set download limit" : "Није успело постављање границе преузимања",
     "Failed to remove download limit" : "Није успело уклањање границе преузимања",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["дозољено је још 1 преостало преузимање","дозољена су још {count} преостала преузимања","дозољено је још {count} преосталих преузимања"],
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["дозвољено је још 1 преостало преузимање","дозвољена су још {count} преостала преузимања","дозвољено је још {count} преосталих преузимања"],
     "Download limit" : "Ограничење преузимања",
     "Configure the default download limit for external shares." : "Подешавање подразумеваног ограничења за спољна дељења.",
     "Set default download limit" : "Постави подразумевано ограничење преузимања",
