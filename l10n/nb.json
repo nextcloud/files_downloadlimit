@@ -14,8 +14,6 @@
     "Set default download limit" : "Angi standard nedlastingsgrense",
     "Failed to set default download limit" : "Innstilling av standard nedlastingsgrense feilet",
     "You have reached the maximum amount of downloads allowed" : "Du har nådd maksimumsgrensen for antall nedlastinger",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne fildelingen har en grense for antall nedlastninger. Er du sikker på at du vil starte en ny nedlasting?",
-    "Allow to limit the number of downloads for link shares" : "Tillatt begrensning på antall nedlastninger fra en lenke",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Denne fildelingen er begrenset til {limit} nedlastinger. Det er {countLeft} tillate nedlastinger igjen."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne fildelingen har en grense for antall nedlastninger. Er du sikker på at du vil starte en ny nedlasting?"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

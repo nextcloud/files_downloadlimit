@@ -12,8 +12,6 @@ OC.L10N.register(
     "Download limit" : "Latausrajoitus",
     "Set default download limit" : "Aseta oletusarvoinen latausraja",
     "You have reached the maximum amount of downloads allowed" : "Sallitujen latausten enimmäismäärä on tullut täyteen",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Tällä jaolla on rajoitettu määrä latausmahdollisuuksia. Haluatko varmasti toteuttaa uuden latauksen?",
-    "Allow to limit the number of downloads for link shares" : "Salli rajoittaaksesi latausten määrää linkkijaoille",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Tämä jako rajattiin {limit} lataukseen. Latauskertoja on vielä {countLeft} jäljellä."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Tällä jaolla on rajoitettu määrä latausmahdollisuuksia. Haluatko varmasti toteuttaa uuden latauksen?"
 },
 "nplurals=2; plural=(n != 1);");
