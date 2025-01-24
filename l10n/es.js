@@ -16,8 +16,6 @@ OC.L10N.register(
     "Set default download limit" : "Establecer el límite de descargas prederterminado",
     "Failed to set default download limit" : "Fallo al establecer el límite predeterminado de descargas",
     "You have reached the maximum amount of downloads allowed" : "Ha llegado al máximo de descargas permitidas",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Este recurso compartido tiene un número limitado de descargas. ¿Está seguro de que quiere activar una nueva descarga?",
-    "Allow to limit the number of downloads for link shares" : "Permitir limitar el número de descargas para recursos compartidos mediante enlaces",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Este recurso compartido fue limitado a {limit} descargas. Todavía restan {countLeft} permitidas. "
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Este recurso compartido tiene un número limitado de descargas. ¿Está seguro de que quiere activar una nueva descarga?"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

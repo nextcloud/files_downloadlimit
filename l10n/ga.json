@@ -14,8 +14,6 @@
     "Set default download limit" : "Socraigh teorainn íoslódála réamhshocraithe",
     "Failed to set default download limit" : "Theip ar an teorainn íoslódála réamhshocraithe a shocrú",
     "You have reached the maximum amount of downloads allowed" : "Tá an t-uasmhéid íoslódálacha ceadaithe agat",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Tá líon teoranta íoslódálacha ag an sciar seo. An bhfuil tú cinnte gur mhaith leat íosluchtú nua a spreagadh?",
-    "Allow to limit the number of downloads for link shares" : "Ceadaigh teorainn a chur le líon na n-íoslódálacha le haghaidh scaireanna nasc",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Bhí an sciar seo teoranta d'íoslódálacha {limit}. Tá {countLeft} fágtha fós ceadaithe."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Tá líon teoranta íoslódálacha ag an sciar seo. An bhfuil tú cinnte gur mhaith leat íosluchtú nua a spreagadh?"
 },"pluralForm" :"nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);"
 }

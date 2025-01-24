@@ -14,8 +14,6 @@ OC.L10N.register(
     "Set default download limit" : "기본 다운로드 횟수 제한 설정",
     "Failed to set default download limit" : "기본 다운로드 횟수 제한을 설정할 수 없음",
     "You have reached the maximum amount of downloads allowed" : "가능한 최대 다운로드 횟수에 도달 했습니다.",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "이 공유는 다운로드 횟수가 제한되어 있습니다. 다운로드 하겠습니까?",
-    "Allow to limit the number of downloads for link shares" : "링크 공유 다운로드 횟수 제한 허가하기",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "이 공유는 {limit} 번 만 다운로드 가능합니다. 아직 {countLeft} 번 다운로드 가능합니다."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "이 공유는 다운로드 횟수가 제한되어 있습니다. 다운로드 하겠습니까?"
 },
 "nplurals=1; plural=0;");
