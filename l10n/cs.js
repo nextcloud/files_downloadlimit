@@ -16,8 +16,6 @@ OC.L10N.register(
     "Set default download limit" : "Vyberte výchozí limit stahování",
     "Failed to set default download limit" : "Nepodařilo se nastavit limit počtu stahování",
     "You have reached the maximum amount of downloads allowed" : "Dosáhli jste nejvyššího umožněného počtu umožněných stažení",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Pro toto sdílení je omezen počet stahování. Opravdu chcete spustit nové stahování?",
-    "Allow to limit the number of downloads for link shares" : "Umožňuje omezit počet stahování pro sdílení odkazem",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Toto sdílení bylo omezeno na {limit} stažení. Pořád ještě zbývá {countLeft} umožněných."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Pro toto sdílení je omezen počet stahování. Opravdu chcete spustit nové stahování?"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

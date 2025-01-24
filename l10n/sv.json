@@ -14,8 +14,6 @@
     "Set default download limit" : "Ställ in standardgräns för nedladdning",
     "Failed to set default download limit" : "Kunde inte ange standardgräns för nedladdning",
     "You have reached the maximum amount of downloads allowed" : "Du har nått det högsta tillåtna antalet nedladdningar",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Den här delningen har ett begränsat antal nedladdningar. Är du säker på att du vill utföra en ny nedladdning?",
-    "Allow to limit the number of downloads for link shares" : "Tillåter att sätta en begränsning på antalet nerladdningar för länk-delningar",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Den här delningen var begränsad till {limit} nedladdningar. Det finns fortfarande {countLeft} kvar."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Den här delningen har ett begränsat antal nedladdningar. Är du säker på att du vill utföra en ny nedladdning?"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

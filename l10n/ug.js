@@ -15,8 +15,6 @@ OC.L10N.register(
     "Set default download limit" : "سۈكۈتتىكى چۈشۈرۈش چەكلىمىسىنى بەلگىلەڭ",
     "Failed to set default download limit" : "سۈكۈتتىكى چۈشۈرۈش چېكى بېكىتىلمىدى",
     "You have reached the maximum amount of downloads allowed" : "چۈشۈرۈشكە رۇخسەت قىلىنغان ئەڭ يۇقىرى چەككە يەتتىڭىز",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "بۇ ھەمبەھىرنىڭ چۈشۈرۈش سانى چەكلىك. يېڭى چۈشۈرۈشنى قوزغىتىشنى خالامسىز؟",
-    "Allow to limit the number of downloads for link shares" : "ئۇلىنىش ھەمبەھىرلىرىنىڭ چۈشۈرۈش سانىنى چەكلەشكە يول قويۇڭ",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "بۇ ئۈلۈش {limit} چۈشۈرۈش بىلەنلا چەكلەندى. يەنىلا {countLeft} قالدى."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "بۇ ھەمبەھىرنىڭ چۈشۈرۈش سانى چەكلىك. يېڭى چۈشۈرۈشنى قوزغىتىشنى خالامسىز؟"
 },
 "nplurals=2; plural=(n != 1);");
