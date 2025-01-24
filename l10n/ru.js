@@ -16,8 +16,6 @@ OC.L10N.register(
     "Set default download limit" : "Установить лимит загрузки по умолчанию",
     "Failed to set default download limit" : "Не удалось установить лимит загрузок по умолчанию",
     "You have reached the maximum amount of downloads allowed" : "Вы достигли максимально допустимого количества загрузок",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "У этого общего ресурса ограниченное количество загрузок. Вы уверены, что хотите запустить новую загрузку?",
-    "Allow to limit the number of downloads for link shares" : "Разрешить ограничивать количество скачиваний для обмена ссылками",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Этот ресурс был ограничен {limit} загрузками. Осталось {countLeft} загрузок."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "У этого общего ресурса ограниченное количество загрузок. Вы уверены, что хотите запустить новую загрузку?"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");

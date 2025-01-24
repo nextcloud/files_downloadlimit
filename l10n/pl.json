@@ -8,8 +8,6 @@
     "Set default download limit" : "Ustaw domyślny limit pobierania",
     "Failed to set default download limit" : "Nie można ustawić domyślnego limitu pobierania",
     "You have reached the maximum amount of downloads allowed" : "Osiągnąłeś maksymalną dozwoloną liczbę pobrań",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Te udostępnienie ma ograniczoną liczbę pobrań. Czy na pewno chcesz uruchomić nowe pobieranie?",
-    "Allow to limit the number of downloads for link shares" : "Zezwalaj na ograniczenie liczby pobrań dla udostępnionych linków",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Udostępnienie jest ograniczone do ilości pobrań: {limit}. Pozostało jeszcze dozwolonych: {countLeft}."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Te udostępnienie ma ograniczoną liczbę pobrań. Czy na pewno chcesz uruchomić nowe pobieranie?"
 },"pluralForm" :"nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);"
 }

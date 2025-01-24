@@ -14,8 +14,6 @@
     "Set default download limit" : "Ezarri deskarga muga lehenetsia",
     "Failed to set default download limit" : "Ezin izan da ezarri deskarga-muga lehenetsia",
     "You have reached the maximum amount of downloads allowed" : "Onartutako gehieneko deskarga kopurura iritsi zara",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Partekatze honek deskarga kopuru mugatua du. Ziur deskarga berri bat abiarazi nahi duzula?",
-    "Allow to limit the number of downloads for link shares" : "Partekatutako esteken deskargak mugatzea baimentzen du",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Partekatze hau {limit} deskargara mugatu zen. Oraindik {countLeft} geratzen da baimenduta."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Partekatze honek deskarga kopuru mugatua du. Ziur deskarga berri bat abiarazi nahi duzula?"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

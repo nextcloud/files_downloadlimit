@@ -16,8 +16,6 @@ OC.L10N.register(
     "Set default download limit" : "Set default download limit",
     "Failed to set default download limit" : "Failed to set default download limit",
     "You have reached the maximum amount of downloads allowed" : "You have reached the maximum amount of downloads allowed",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "This share has a limited number of downloads. Are you sure you want to trigger a new download?",
-    "Allow to limit the number of downloads for link shares" : "Enables you to limit the number of downloads for link shares",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "This share was limited to {limit} downloads. There is still {countLeft} left allowed."
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "This share has a limited number of downloads. Are you sure you want to trigger a new download?"
 },
 "nplurals=2; plural=(n != 1);");

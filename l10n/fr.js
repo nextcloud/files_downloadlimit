@@ -16,8 +16,6 @@ OC.L10N.register(
     "Set default download limit" : "Définir la limite de téléchargement par défaut",
     "Failed to set default download limit" : "Échec de définition de la limite de téléchargement par défaut",
     "You have reached the maximum amount of downloads allowed" : "Vous avez atteint le nombre maximal de téléchargements autorisés.",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ce partage ne peut être téléchargé qu'un nombre limité de fois. Etes-vous certain de vouloir déclencher un nouveau téléchargement ?",
-    "Allow to limit the number of downloads for link shares" : "Permettre de limiter le nombre de téléchargements",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Ce partage est limité à {limit} téléchargements. Il reste encore {countLeft} téléchargements autorisés"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ce partage ne peut être téléchargé qu'un nombre limité de fois. Etes-vous certain de vouloir déclencher un nouveau téléchargement ?"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

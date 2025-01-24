@@ -6,8 +6,6 @@ OC.L10N.register(
     "Limit downloads" : "Beperk downloads",
     "Set download limit" : "Stel downloadlimiet in",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 resterende download toegestaan","{count} resterende downloads toegestaan"],
-    "Download limit" : "Downloadlimiet",
-    "Allow to limit the number of downloads for link shares" : "Sta toe om het aantal downloads voor link shares te limiteren",
-    "This share was limited to {limit} downloads. There is still {countLeft} left allowed." : "Dit gedeelde bestand was beperkt tot {limit} downloads. Daarvan zijn er nog {countLeft} over."
+    "Download limit" : "Downloadlimiet"
 },
 "nplurals=2; plural=(n != 1);");
