@@ -31,7 +31,7 @@
   "dependencies": {
     "@nextcloud/auth": "^2.4.0",
     "@nextcloud/axios": "^2.5.1",
-    "@nextcloud/dialogs": "^5.3.7",
+    "@nextcloud/dialogs": "^6.3.1",
     "@nextcloud/initial-state": "^2.2.0",
     "@nextcloud/l10n": "^3.1.0",
     "@nextcloud/logger": "^3.0.2",
@@ -42,7 +42,7 @@
     "vue-frag": "^1.4.3"
   },
   "engines": {
-    "node": "^20.0.0",
+    "node": "^22.0.0",
     "npm": "^10.0.0"
   },
   "devDependencies": {
