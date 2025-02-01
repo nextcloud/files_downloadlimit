@@ -1,0 +1,5 @@
+{ "translations": {
+    "Set download limit" : "Setja takmörk niðurhals",
+    "Download limit" : "Takmörk niðurhals"
+},"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
+}
