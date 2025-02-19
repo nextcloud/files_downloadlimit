@@ -1,9 +1,11 @@
 { "translations": {
     "Files download limit" : "파일 다운로드 제한",
     "File link share download limit" : "파일 링크 공유 다운로드 제한",
+    "This app allows limiting the number of downloads for external link shares." : "이 앱은 외부 링크 공유의 다운로드 횟수를 제한할 수 있도록 합니다.",
     "Limit downloads" : "다운로드 제한",
     "Set download limit" : "다운로드 제한 설정",
     "Setting a new limit will reset the download count" : "새 값을 입력할 경우 기존 공유의 다운로드 횟수가 초기화됩니다",
+    "The minimum limit is 1" : "제한 최솟값은 1입니다",
     "Failed to set download limit" : "다운로드 횟수 제한을 설정할 수 없음",
     "Failed to remove download limit" : "다운로드 횟수 제한을 제거할 수 없음",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["{count}번의 다운로드 횟수가 남았습니다."],
