@@ -3,11 +3,11 @@ OC.L10N.register(
     {
     "Files download limit" : "Tiedostojen latausrajoitus",
     "File link share download limit" : "Tiedosto-osoitejaon latausrajoitus",
-    "Limit downloads" : "Rajoita latauksia",
-    "Set download limit" : "Aseta latausraja",
     "The minimum limit is 1" : "Vähimmäisraja on 1",
     "Failed to set download limit" : "Latausrajan asettaminen epäonnistui",
     "Failed to remove download limit" : "Latausrajan poistaminen epäonnistui",
+    "Limit downloads" : "Rajoita latauksia",
+    "Set download limit" : "Aseta latausraja",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 lataus enää sallittu","{count} latausta enää sallittu"],
     "Download limit" : "Latausrajoitus",
     "Set default download limit" : "Aseta oletusarvoinen latausraja",
