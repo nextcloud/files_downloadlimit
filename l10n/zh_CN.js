@@ -6,9 +6,9 @@ OC.L10N.register(
     "Limit downloads" : "限制下载",
     "Set download limit" : "设置下载限制",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["还允许下载 {count} 次"],
+    "Failed to set default download limit" : "设置默认下载限制失败",
     "Download limit" : "下载限制",
     "Configure the default download limit for external shares." : "配置外部共享的默认下载限制",
-    "Set default download limit" : "设置默认下载限制",
-    "Failed to set default download limit" : "设置默认下载限制失败"
+    "Set default download limit" : "设置默认下载限制"
 },
 "nplurals=1; plural=0;");
