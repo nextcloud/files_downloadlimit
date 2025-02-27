@@ -6,10 +6,10 @@ OC.L10N.register(
     "Limit downloads" : "Обмежити звантаження",
     "Set download limit" : "Встановити обмеження на звантаження",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Дозволено ще 1 завантаження","Залишилося завантажень: {count}","Залишилося завантажень: {count}","Дозволена кількість звантажень: {count}"],
+    "Failed to set default download limit" : "Не вдалося встановити типове обмеження на звантаження",
     "Download limit" : "Обмеження на звантаження",
     "Configure the default download limit for external shares." : "Налаштуйте типове обмеження на звантаження для зовнішніх спільних ресурсів.",
     "Set default download limit" : "Встановити типове обмеження на звантаження",
-    "Failed to set default download limit" : "Не вдалося встановити типове обмеження на звантаження",
     "You have reached the maximum amount of downloads allowed" : "Ви досягли максимально дозволеної кількості звантажень",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Цей ресурс має обмежену кількість звантажень. Ви впевнені, що хочете запустити нове завантаження?"
 },
