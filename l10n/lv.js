@@ -1,0 +1,7 @@
+OC.L10N.register(
+    "files_downloadlimit",
+    {
+    "This app allows limiting the number of downloads for external link shares." : "Šī lietotne ļauj ārējo saišu kopīgojumu lejupielāžu skaita ierobežošanu.",
+    "Configure the default download limit for external shares." : "Konfigurēt noklusējuma ārējo koplietojumu lejupielāžu ierobežojumu."
+},
+"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");
