@@ -5,7 +5,9 @@ SPDX-License-Identifier: MIT
 SPDX-FileCopyrightText: Christoph Wurst
 SPDX-FileCopyrightText: David Myers <hello@davidmyers.dev>
 SPDX-FileCopyrightText: Dr.-Ing. Mario Heiderich, Cure53 <mario@cure53.de> (https://cure53.de/)
+SPDX-FileCopyrightText: Evan You
 SPDX-FileCopyrightText: GitHub Inc.
+SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: escape-html developers
 
 This file is generated from multiple sources. Included packages:
@@ -15,66 +17,27 @@ This file is generated from multiple sources. Included packages:
 - @nextcloud/browser-storage
 	- version: 0.4.0
 	- license: GPL-3.0-or-later
-- @nextcloud/browser-storage
-	- version: 0.4.0
-	- license: GPL-3.0-or-later
-- @nextcloud/browser-storage
-	- version: 0.4.0
-	- license: GPL-3.0-or-later
-- @nextcloud/browser-storage
-	- version: 0.4.0
-	- license: GPL-3.0-or-later
-- @nextcloud/browser-storage
-	- version: 0.4.0
-	- license: GPL-3.0-or-later
-- @nextcloud/browser-storage
-	- version: 0.4.0
-	- license: GPL-3.0-or-later
 - @nextcloud/event-bus
-	- version: 3.3.1
+	- version: 3.3.2
 	- license: GPL-3.0-or-later
 - @nextcloud/initial-state
 	- version: 2.2.0
 	- license: GPL-3.0-or-later
 - @nextcloud/l10n
-	- version: 3.1.0
+	- version: 3.2.0
 	- license: GPL-3.0-or-later
 - dompurify
-	- version: 3.1.6
+	- version: 3.2.6
 	- license: (MPL-2.0 OR Apache-2.0)
 - escape-html
 	- version: 1.0.3
 	- license: MIT
 - semver
-	- version: 7.6.2
+	- version: 7.7.2
 	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
-- semver
-	- version: 7.6.2
-	- license: ISC
+- vite
+	- version: 5.4.19
+	- license: MIT
 - vite-plugin-node-polyfills
-	- version: 0.22.0
+	- version: 0.23.0
 	- license: MIT
