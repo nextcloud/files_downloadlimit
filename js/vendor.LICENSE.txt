@@ -21,11 +21,11 @@ version: 0.4.0
 license: GPL-3.0-or-later
 
 @nextcloud/dialogs
-version: 5.3.7
+version: 5.3.8
 license: AGPL-3.0-or-later
 
 @nextcloud/event-bus
-version: 3.3.1
+version: 3.3.2
 license: GPL-3.0-or-later
 
 @nextcloud/initial-state
@@ -49,8 +49,20 @@ version: 0.1.0
 license: GPL-3.0-or-later
 
 @nextcloud/vue
-version: 8.19.0
+version: 8.27.0
 license: AGPL-3.0-or-later
+
+@vue/reactivity
+version: 3.5.17
+license: MIT
+
+@vue/runtime-core
+version: 3.5.17
+license: MIT
+
+@vue/shared
+version: 3.5.17
+license: MIT
 
 @vueuse/core
 version: 11.0.3
@@ -61,7 +73,7 @@ version: 11.0.3
 license: MIT
 
 axios
-version: 1.7.7
+version: 1.10.0
 license: MIT
 
 core-js
@@ -69,7 +81,7 @@ version: 3.37.0
 license: MIT
 
 dompurify
-version: 3.1.6
+version: 3.2.6
 license: (MPL-2.0 OR Apache-2.0)
 
 escape-html
@@ -83,14 +95,6 @@ license: MIT
 focus-trap
 version: 7.5.4
 license: MIT
-
-lodash.get
-version: 4.4.2
-license: MIT
-
-node-gettext
-version: 3.0.0
-license: (MIT)
 
 path-browserify
 version: 1.0.1
@@ -109,7 +113,7 @@ version: 1.12.0
 license: MIT
 
 vite-plugin-node-polyfills
-version: 0.22.0
+version: 0.23.0
 license: MIT
 
 vue
