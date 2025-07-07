@@ -43,6 +43,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	const span = document.createElement('span')
 	span.setAttribute('style', 'color: var(--color-primary-text); padding: 0 10px;')
+	span.setAttribute('data-cy-downloads-count-message', `${count}`)
+	span.classList.add('downloads-count-message')
+
 	updateCounter(span, count)
 	container.prepend(span)
 
