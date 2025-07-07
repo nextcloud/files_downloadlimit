@@ -7,19 +7,22 @@
 	errorLevel="4"
 	resolveFromConfigFile="true"
 	phpVersion="8.1"
+	findUnusedCode="false"
 	errorBaseline="tests/psalm-baseline.xml"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="https://getpsalm.org/schema/config"
-	xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+	xsi:schemaLocation="https://getpsalm.org/schema/config vendor-bin/psalm/vendor/vimeo/psalm/config.xsd"
 >
 	<projectFiles>
 		<directory name="lib" />
 		<ignoreFiles>
 			<directory name="vendor" />
+			<directory name="vendor-bin" />
 		</ignoreFiles>
 	</projectFiles>
 	<extraFiles>
 		<directory name="vendor" />
+		<directory name="vendor-bin/psalm/vendor" />
 	</extraFiles>
 	<issueHandlers>
 		<UndefinedClass>
@@ -43,4 +46,7 @@
 			</errorLevel>
 		</UndefinedDocblockClass>
 	</issueHandlers>
+	<stubs>
+		<file name="tests/stubs/oca-files_sharing-events.php" />
+	</stubs>
 </psalm>
