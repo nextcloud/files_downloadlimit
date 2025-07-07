@@ -3,40 +3,29 @@
   - SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
-<files psalm-version="5.23.1@8471a896ccea3526b26d082f4461eeea467f10a4">
-	<file src="lib/Listener/BeforeTemplateRenderedListener.php">
-		<InvalidTemplateParam>
-			<code>IEventListener</code>
-		</InvalidTemplateParam>
-		<ImplementedParamTypeMismatch>
-			<code>$event</code>
-		</ImplementedParamTypeMismatch>
-	</file>
-	<file src="lib/Listener/LoadSidebarListener.php">
-		<InvalidTemplateParam>
-			<code>IEventListener</code>
-		</InvalidTemplateParam>
-		<ImplementedParamTypeMismatch>
-			<code>$event</code>
-		</ImplementedParamTypeMismatch>
-	</file>
-	<file src="lib/Listener/ShareLinkAccessedListener.php">
-		<InvalidTemplateParam>
-			<code>IEventListener</code>
-		</InvalidTemplateParam>
-		<ImplementedParamTypeMismatch>
-			<code>$event</code>
-		</ImplementedParamTypeMismatch>
-	</file>
-	<file src="lib/Listener/SabrePluginAddListener.php">
-		<InvalidTemplateParam>
-			<code>IEventListener</code>
-		</InvalidTemplateParam>
-		<ImplementedParamTypeMismatch>
-			<code>$event</code>
-		</ImplementedParamTypeMismatch>
-		<MissingDependency>
-			<code>PropFindPlugin</code>
-		</MissingDependency>
-	</file>
+<files psalm-version="6.4.0@04f312ac6ea48ba1c3e5db4d815bf6d74641c0ee">
+  <file src="lib/Controller/ApiController.php">
+    <InvalidArgument>
+      <code><![CDATA[$token]]></code>
+    </InvalidArgument>
+  </file>
+  <file src="lib/Listener/LoadSidebarListener.php">
+    <ImplementedParamTypeMismatch>
+      <code><![CDATA[$event]]></code>
+    </ImplementedParamTypeMismatch>
+    <InvalidTemplateParam>
+      <code><![CDATA[IEventListener]]></code>
+    </InvalidTemplateParam>
+  </file>
+  <file src="lib/Listener/SabrePluginAddListener.php">
+    <ImplementedParamTypeMismatch>
+      <code><![CDATA[$event]]></code>
+    </ImplementedParamTypeMismatch>
+    <InvalidTemplateParam>
+      <code><![CDATA[IEventListener]]></code>
+    </InvalidTemplateParam>
+    <MissingDependency>
+      <code><![CDATA[PropFindPlugin]]></code>
+    </MissingDependency>
+  </file>
 </files>

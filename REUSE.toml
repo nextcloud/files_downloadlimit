@@ -6,7 +6,7 @@ SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
 SPDX-PackageDownloadLocation = "https://github.com/nextcloud/files_downloadlimit"
 
 [[annotations]]
-path = [".tx/config", "l10n/**.js", "l10n/**.json", "composer.json", "composer.lock", "package.json", "package-lock.json"]
+path = [".tx/config", "l10n/**.js", "l10n/**.json", "composer.json", "composer.lock", "vendor-bin/*/composer.json", "vendor-bin/*/composer.lock", "package.json", "package-lock.json"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2021 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
