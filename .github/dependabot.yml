@@ -2,24 +2,61 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 version: 2
 updates:
-- package-ecosystem: composer
-  directory: "/"
-  schedule:
-    interval: weekly
-    day: saturday
-    time: "03:00"
-    timezone: Europe/Paris
-  labels:
-    - "3. to review"
-    - "dependencies"
+  - package-ecosystem: composer
+    target-branch: "master"
+    directories:
+      - "/"
+      - "/vendor-bin/psalm/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "03:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 10
+    labels:
+      - 3. to review
+      - dependencies
 
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: weekly
-    day: saturday
-    time: "03:00"
-    timezone: Europe/Paris
-  labels:
-    - "3. to review"
-    - "dependencies"
+  - package-ecosystem: npm
+    target-branch: "main"
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "03:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 10
+    labels:
+      - 3. to review
+      - dependencies
+
+  - package-ecosystem: github-actions
+    target-branch: "master"
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "03:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 10
+    labels:
+      - 3. to review
+      - dependencies
+
+  # Latest stable branch
+  - package-ecosystem: npm
+    target-branch: stable31
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "04:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 20
+    labels:
+      - "3. to review"
+      - "feature: dependencies"
+    ignore:
+      # no major updates on stable branches
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
