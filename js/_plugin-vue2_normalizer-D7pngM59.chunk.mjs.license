@@ -42,19 +42,19 @@ This file is generated from multiple sources. Included packages:
 	- version: 2.3.3
 	- license: MIT
 - @vueuse/core
-	- version: 11.0.3
+	- version: 11.3.0
 	- license: MIT
 - @vueuse/shared
-	- version: 11.0.3
+	- version: 11.3.0
 	- license: MIT
 - axios
-	- version: 1.9.0
+	- version: 1.10.0
 	- license: MIT
 - floating-vue
 	- version: 1.0.0-beta.19
 	- license: MIT
 - focus-trap
-	- version: 7.5.4
+	- version: 7.6.5
 	- license: MIT
 - path-browserify
 	- version: 1.0.1
