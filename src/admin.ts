@@ -4,10 +4,9 @@
  */
 
 import Vue from 'vue'
-
 import AdminSettings from './views/AdminSettings.vue'
 
 const instance = new Vue({
-	render: h => h(AdminSettings),
+	render: (h) => h(AdminSettings),
 })
 instance.$mount('#admin-download-limit')

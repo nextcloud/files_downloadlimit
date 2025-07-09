@@ -4,11 +4,10 @@
  */
 
 import { loadState } from '@nextcloud/initial-state'
-import { translate as t, translatePlural as n } from '@nextcloud/l10n'
+import { translatePlural as n, translate as t } from '@nextcloud/l10n'
+import { logger } from './logger.ts'
 
 import '../css/public.css'
-
-import { logger } from './logger.ts'
 
 const { limit, downloads } = loadState('files_downloadlimit', 'download_limit', { limit: -1, downloads: 0 })
 logger.debug('Download limit', { limit, downloads })
@@ -23,7 +22,7 @@ let clicks = 0
  * @param span html span element to update
  * @param count number of remaining downloads allowed
  */
-const updateCounter = (span: HTMLSpanElement, count: number) => {
+function updateCounter(span: HTMLSpanElement, count: number) {
 	if (count === 0) {
 		span.innerText = t('files_downloadlimit', 'You have reached the maximum amount of downloads allowed')
 	} else {
@@ -60,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Adding double-download warning
 	const downloadButtons = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href*="/download/"]'))
-	new Set(downloadButtons).forEach(button => {
+	new Set(downloadButtons).forEach((button: HTMLAnchorElement) => {
 		button.addEventListener('click', (event) => {
 			// Warn about download limits
 			if (clicks > 0) {
@@ -78,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			// Remove the buttons if share is now expired
 			if (count === 0) {
-				[...downloadButtons].forEach(button => button.remove())
+				[...downloadButtons].forEach((button) => button.remove())
 			}
 		})
 	})

@@ -4,10 +4,12 @@
 -->
 
 <template>
-	<NcSettingsSection :name="t('files_downloadlimit', 'Download limit')"
+	<NcSettingsSection
+		:name="t('files_downloadlimit', 'Download limit')"
 		:description="t('files_downloadlimit', 'Configure the default download limit for external shares.')">
 		<form @submit.prevent="handleSave">
-			<NcTextField class="settings__field"
+			<NcTextField
+				class="settings__field"
 				:label="t('files_downloadlimit', 'Set default download limit')"
 				type="number"
 				min="1"
@@ -24,14 +26,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { showError } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { translate as t } from '@nextcloud/l10n'
-import { showError } from '@nextcloud/dialogs'
-
-import NcSettingsSection from '@nextcloud/vue/dist/Components/NcSettingsSection.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-
+import { defineComponent } from 'vue'
+import NcSettingsSection from '@nextcloud/vue/components/NcSettingsSection'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
+import { logger } from '../logger.ts'
 import { setDefaultLimit } from '../services/AdminService.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
@@ -89,8 +90,11 @@ export default defineComponent({
 				await setDefaultLimit(this.limit)
 				this.savedLimit = this.limit
 				this.showSuccess = true
-				setTimeout(() => { this.showSuccess = false }, 3000)
+				setTimeout(() => {
+					this.showSuccess = false
+				}, 3000)
 			} catch (error) {
+				logger.error('Failed to set default download limit', { error })
 				showError(t('files_downloadlimit', 'Failed to set default download limit'))
 			}
 		},
