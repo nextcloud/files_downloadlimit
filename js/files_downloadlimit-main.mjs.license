@@ -7,7 +7,7 @@ SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 
 This file is generated from multiple sources. Included packages:
 - @nextcloud/sharing
-	- version: 0.2.3
+	- version: 0.2.5
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
 	- version: 8.27.0
