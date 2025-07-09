@@ -5,18 +5,21 @@
 
 <template>
 	<Fragment>
-		<NcCheckboxRadioSwitch :checked.sync="limitEnabled"
+		<NcCheckboxRadioSwitch
+			:checked.sync="limitEnabled"
 			:loading="loading"
 			:disabled="hasError">
 			{{ t('files_downloadlimit', 'Limit downloads') }}
 		</NcCheckboxRadioSwitch>
 		<template v-if="!loading && !hasError">
-			<NcNoteCard v-show="limitEnabled && showRemainingDownloadsNote"
+			<NcNoteCard
+				v-show="limitEnabled && showRemainingDownloadsNote"
 				class="action__count-note"
 				type="info">
 				{{ n('files_downloadlimit', '1 remaining download allowed', '{count} remaining downloads allowed', remainingCount, { count: remainingCount }) }}
 			</NcNoteCard>
-			<NcTextField v-show="limitEnabled"
+			<NcTextField
+				v-show="limitEnabled"
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
@@ -24,7 +27,8 @@
 				:helper-text="helperText"
 				:error="Boolean(helperText)"
 				@update:value="handleUpdateLimit" />
-			<NcNoteCard v-show="limitEnabled && showResetNote"
+			<NcNoteCard
+				v-show="limitEnabled && showResetNote"
 				class="action__reset-note"
 				type="warning">
 				{{ t('files_downloadlimit', 'Setting a new limit will reset the download count') }}
@@ -39,17 +43,15 @@ import { loadState } from '@nextcloud/initial-state'
 import { n, t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
 import { Fragment } from 'vue-frag'
-
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
+import { logger } from '../logger.ts'
 import {
+	deleteDownloadLimit,
 	getDownloadLimit,
 	setDownloadLimit,
-	deleteDownloadLimit,
 } from '../services/DownloadLimitService.ts'
-import { logger } from '../logger.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
 // If a default is not set (-1) then the input should be empty
@@ -146,6 +148,7 @@ export default defineComponent({
 				try {
 					await setDownloadLimit(this.share.token, this.limit)
 				} catch (error) {
+					logger.error('Failed to set the download limit', { error, limit: this.limit, share: this.share })
 					showError(t('files_downloadlimit', 'Failed to set download limit'))
 				}
 				return
@@ -155,6 +158,7 @@ export default defineComponent({
 				try {
 					await deleteDownloadLimit(this.share.token)
 				} catch (error) {
+					logger.error('Failed to remove the download limit', { error, share: this.share })
 					showError(t('files_downloadlimit', 'Failed to remove download limit'))
 				}
 			}

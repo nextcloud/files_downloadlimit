@@ -6,7 +6,12 @@
 import axios from '@nextcloud/axios'
 import { generateOcsUrl } from '@nextcloud/router'
 
-export const setDefaultLimit = async (limit: number): Promise<[]> => {
+/**
+ * Set the default download limit for all shares.
+ *
+ * @param limit - The new default limit
+ */
+export async function setDefaultLimit(limit: number): Promise<[]> {
 	const response = await axios.put(generateOcsUrl('/apps/files_downloadlimit/api/v1/limit'), {
 		limit,
 	})

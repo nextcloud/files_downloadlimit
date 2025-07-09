@@ -5,17 +5,15 @@
 
 import { getCurrentUser } from '@nextcloud/auth'
 import { ShareType } from '@nextcloud/sharing'
-
 import DownloadLimitEntry from '../components/DownloadLimitEntry.vue'
 
 interface ActionData {
-	share: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-	fileInfo: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-	[key: string]: unknown,
+	share: any // eslint-disable-line @typescript-eslint/no-explicit-any
+	fileInfo: any // eslint-disable-line @typescript-eslint/no-explicit-any
+	[key: string]: unknown
 }
 
 export class DownloadLimitAction {
-
 	get id() {
 		return 'files_downloadlimit'
 	}
@@ -46,5 +44,4 @@ export class DownloadLimitAction {
 	get handlers() {
 		return {}
 	}
-
 }

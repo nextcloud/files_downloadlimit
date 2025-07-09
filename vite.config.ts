@@ -4,18 +4,20 @@
  */
 import { createAppConfig } from '@nextcloud/vite-config'
 
-export default createAppConfig({
-	main: 'src/main.ts',
-	public: 'src/public.ts',
-	admin: 'src/admin.ts',
-},
-{
-	inlineCSS: false,
-	thirdPartyLicense: false,
-	extractLicenseInformation: {
-		includeSourceMaps: true,
-		overwriteLicenses: {
-			'@nextcloud/axios': 'GPL-3.0-or-later',
+export default createAppConfig(
+	{
+		main: 'src/main.ts',
+		public: 'src/public.ts',
+		admin: 'src/admin.ts',
+	},
+	{
+		inlineCSS: false,
+		thirdPartyLicense: false,
+		extractLicenseInformation: {
+			includeSourceMaps: true,
+			overwriteLicenses: {
+				'@nextcloud/axios': 'GPL-3.0-or-later',
+			},
 		},
 	},
-})
+)
