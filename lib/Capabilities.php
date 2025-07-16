@@ -16,7 +16,7 @@ use OCP\IAppConfig;
 class Capabilities implements ICapability {
 
 	public function __construct(
-		private readonly IAppConfig $config
+		private readonly IAppConfig $config,
 	) {
 	}
 

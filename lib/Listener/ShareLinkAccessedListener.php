@@ -24,7 +24,7 @@ class ShareLinkAccessedListener implements IEventListener {
 		private IConfig $config,
 		private IManager $manager,
 		private LimitMapper $mapper,
-		private LoggerInterface $logger
+		private LoggerInterface $logger,
 	) {
 	}
 
