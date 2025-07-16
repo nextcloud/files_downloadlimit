@@ -1,9 +1,8 @@
 {
 	"name": "nextcloud/files_downloadlimit",
 	"require-dev": {
-		"nextcloud/coding-standard": "^1.0.0",
-		"nextcloud/ocp": "dev-master",
-		"vimeo/psalm": "^5.23"
+		"bamarni/composer-bin-plugin": "^1.8",
+		"nextcloud/coding-standard": "^1.0.0"
 	},
 	"autoload-dev": {
 		"psr-4": {
@@ -11,12 +10,21 @@
 		}
 	},
 	"config": {
-		"optimize-autoloader": true,
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true
+		},
 		"classmap-authoritative": true,
+		"optimize-autoloader": true,
 		"platform": {
-			"php": "8.0.2"
+			"php": "8.1"
 		},
 		"sort-packages": true
+	},
+	"extra": {
+		"bamarni-bin": {
+			"bin-links": true,
+			"forward-command": true
+		}
 	},
 	"scripts": {
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
