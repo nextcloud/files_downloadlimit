@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const span = document.createElement('span')
-	span.setAttribute('style', 'color: var(--color-primary-text); padding: 0 10px;')
+	span.setAttribute('style', 'color: var(--color-background-plain-text, var(--color-primary-text)); padding: 0 10px;')
 	updateCounter(span, count)
 	container.prepend(span)
 
