@@ -3,8 +3,13 @@ OC.L10N.register(
     {
     "Files download limit" : "Обмеження на звантаження файлів",
     "File link share download limit" : "Обмеження на звантаження файлу за посиланням",
+    "This app allows limiting the number of downloads for external link shares." : "Ця програма дозволяє обмежити кількість завантажень для зовнішніх посилань.",
+    "The minimum limit is 1" : "Мінімальний ліміт становить 1",
+    "Failed to set download limit" : "Не вдалося встановити обмеження на завантаження",
+    "Failed to remove download limit" : "Не вдалося зняти обмеження на завантаження",
     "Limit downloads" : "Обмежити звантаження",
     "Set download limit" : "Встановити обмеження на звантаження",
+    "Setting a new limit will reset the download count" : "Встановлення нового обмеження призведе до скидання лічильника завантажень.",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Дозволено ще 1 завантаження","Залишилося завантажень: {count}","Залишилося завантажень: {count}","Дозволена кількість звантажень: {count}"],
     "Failed to set default download limit" : "Не вдалося встановити типове обмеження на звантаження",
     "Download limit" : "Обмеження на звантаження",
