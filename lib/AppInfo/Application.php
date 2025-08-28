@@ -12,6 +12,7 @@ namespace OCA\Files_DownloadLimit\AppInfo;
 use OCA\DAV\Events\SabrePluginAddEvent;
 use OCA\Files\Event\LoadSidebar;
 use OCA\Files_DownloadLimit\Capabilities;
+use OCA\Files_DownloadLimit\Listener\BeforeNodeReadListener;
 use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
 use OCA\Files_DownloadLimit\Listener\SabrePluginAddListener;
@@ -22,6 +23,7 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\Files\Events\Node\BeforeNodeReadEvent;
 
 class Application extends App implements IBootstrap {
 	public const APP_ID = 'files_downloadlimit';
@@ -36,6 +38,8 @@ class Application extends App implements IBootstrap {
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
 		$context->registerEventListener(LoadSidebar::class, LoadSidebarListener::class);
 		$context->registerEventListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
+		$context->registerEventListener(BeforeNodeReadEvent::class, BeforeNodeReadListener::class);
+
 
 		$context->registerCapability(Capabilities::class);
 	}
