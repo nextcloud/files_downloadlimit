@@ -3,9 +3,49 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { DownloadLimitAction } from './actions/DownloadLimitAction.ts'
+import type { INode } from '@nextcloud/files'
+import type { ILinkShare, IShare } from '@nextcloud/sharing'
+import type { ISidebarAction } from '@nextcloud/sharing/ui'
 
-window.addEventListener('DOMContentLoaded', () => {
-	// @ts-expect-error OCA is not public
-	OCA.Sharing.ExternalShareActions.registerAction(new DownloadLimitAction())
+import { FileType } from '@nextcloud/files'
+import { ShareType } from '@nextcloud/sharing'
+import { registerSidebarAction } from '@nextcloud/sharing/ui'
+import Vue from 'vue'
+import DownloadLimitEntry from './components/DownloadLimitEntry.vue'
+
+const CUSTOM_ELEMENT_ID = 'oca_files_downloadlimit-sharing_action'
+
+const sharingAction: ISidebarAction = {
+	id: 'files_downloadlimit',
+
+	element: CUSTOM_ELEMENT_ID,
+
+	order: 20,
+
+	enabled(share: IShare, node: INode) {
+		if (share.type !== ShareType.Email && share.type !== ShareType.Link) {
+			// only implemented for link and email shares
+			return false
+		}
+
+		if (!(share as ILinkShare).token) {
+			return false
+		}
+
+		return node.type === FileType.File
+	},
+}
+
+import wrap from '@vue/web-component-wrapper'
+
+const DownloadLimitEntryElement = wrap(Vue, DownloadLimitEntry) as unknown as CustomElementConstructor
+// In Vue 2, wrap doesn't support disabling shadow. Disable with a hack
+Object.defineProperty(DownloadLimitEntryElement.prototype, 'attachShadow', {
+	value() { return this },
 })
+Object.defineProperty(DownloadLimitEntryElement.prototype, 'shadowRoot', {
+	get() { return this },
+})
+
+window.customElements.define(CUSTOM_ELEMENT_ID, DownloadLimitEntryElement)
+registerSidebarAction(sharingAction)

@@ -43,6 +43,6 @@ class BeforeTemplateRenderedListener implements IEventListener {
 		]);
 
 		Util::addStyle(Application::APP_ID, Application::APP_ID . '-public');
-		Util::addScript(Application::APP_ID, Application::APP_ID . '-public');
+		Util::addInitScript(Application::APP_ID, Application::APP_ID . '-public');
 	}
 }
