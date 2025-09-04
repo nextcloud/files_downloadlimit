@@ -12,7 +12,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 8.29.2
 	- license: AGPL-3.0-or-later
 - files_downloadlimit
-	- version: 5.0.0-dev.0
+	- version: 5.1.0-dev.0
 	- license: AGPL-3.0-or-later
 - vue-frag
 	- version: 1.4.3
