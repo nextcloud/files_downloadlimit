@@ -10,7 +10,6 @@ SPDX-FileCopyrightText: David Myers <hello@davidmyers.dev>
 SPDX-FileCopyrightText: Evan You
 SPDX-FileCopyrightText: Guillaume Chau <guillaume.b.chau@gmail.com>
 SPDX-FileCopyrightText: James Halliday
-SPDX-FileCopyrightText: John Molakvoæ (skjnldsv) <skjnldsv@protonmail.com>
 SPDX-FileCopyrightText: Matt Zabriskie
 SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Varun A P
@@ -30,13 +29,13 @@ This file is generated from multiple sources. Included packages:
 	- version: 6.3.1
 	- license: AGPL-3.0-or-later
 - @nextcloud/l10n
-	- version: 3.3.0
+	- version: 3.4.0
 	- license: GPL-3.0-or-later
 - @nextcloud/router
 	- version: 3.0.1
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.27.0
+	- version: 8.29.2
 	- license: AGPL-3.0-or-later
 - @vitejs/plugin-vue2
 	- version: 2.3.3
@@ -66,7 +65,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 1.12.0
 	- license: MIT
 - vite-plugin-node-polyfills
-	- version: 0.23.0
+	- version: 0.24.0
 	- license: MIT
 - vue
 	- version: 2.7.16
