@@ -2,8 +2,8 @@ OC.L10N.register(
     "files_downloadlimit",
     {
     "Files download limit" : "Límite de descarga de ficheiros",
-    "File link share download limit" : "Límite de descarga para ficheiros con ligazóns compartidas",
-    "This app allows limiting the number of downloads for external link shares." : "Esta aplicación permite limitar o número de descargas de ligazóns externas compartidas",
+    "File link share download limit" : "Límite de descarga para ficheiros con ligazóns para compartir",
+    "This app allows limiting the number of downloads for external link shares." : "Esta aplicación permite limitar o número de descargas de ligazóns externas para compartir",
     "The minimum limit is 1" : "O límite mínimo é 1",
     "Failed to set download limit" : "Produciuse un fallo ao definir o límite de descarga",
     "Failed to remove download limit" : "Produciuse un fallo ao retirar o límite de descarga",
