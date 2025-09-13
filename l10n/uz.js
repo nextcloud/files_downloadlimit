@@ -1,0 +1,21 @@
+OC.L10N.register(
+    "files_downloadlimit",
+    {
+    "Files download limit" : "Fayllarni yuklab olish chegarasi",
+    "File link share download limit" : "Fayl havolasini almashish yuklab olish chegarasi",
+    "This app allows limiting the number of downloads for external link shares." : "Ushbu ilova tashqi havolalar uchun yuklab olishlar sonini cheklash imkonini beradi.",
+    "The minimum limit is 1" : "Minimal chegara - 1",
+    "Failed to set download limit" : "Yuklab olish cheklovini o‘rnatib bo‘lmadi",
+    "Failed to remove download limit" : "Yuklab olish cheklovini olib tashlab bo‘lmadi",
+    "Limit downloads" : "Yuklab olishni cheklash",
+    "Set download limit" : "Yuklab olish chegarasini belgilang",
+    "Setting a new limit will reset the download count" : "Yangi cheklov o'rnatilsa, yuklab olishlar sonini tiklaydi",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Qolgan {count} ta yuklab olishga ruxsat berilgan"],
+    "Failed to set default download limit" : "Standart yuklab olish chegarasini o‘rnatib bo‘lmadi",
+    "Download limit" : "Yuklab olish chegarasi",
+    "Configure the default download limit for external shares." : "Tashqi ulashishlar uchun standart yuklab olish chegarasini sozlang.",
+    "Set default download limit" : "Standart yuklab olish chegarasini o'rnating",
+    "You have reached the maximum amount of downloads allowed" : "Ruxsat etilgan yuklamalar soniga yetdingiz",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Bu ulushda yuklab olishlar soni cheklangan. Haqiqatan ham yangi yuklab olishni ishga tushirmoqchimisiz?"
+},
+"nplurals=1; plural=0;");
