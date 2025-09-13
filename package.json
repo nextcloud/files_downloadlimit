@@ -40,7 +40,7 @@
     "@nextcloud/logger": "^3.0.2",
     "@nextcloud/router": "^3.0.1",
     "@nextcloud/sharing": "^0.2.5",
-    "@nextcloud/vue": "^8.30.0",
+    "@nextcloud/vue": "^8.31.0",
     "vue": "^2.7.16",
     "vue-frag": "^1.4.3"
   },
