@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace OCA\Files_DownloadLimit\Controller;
 
 use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCP\AppFramework\Http\Attribute\ApiRoute;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCS\OCSBadRequestException;
 use OCP\AppFramework\OCSController;
@@ -24,12 +25,19 @@ class AdminController extends OCSController {
 		parent::__construct(Application::APP_ID, $request);
 	}
 
+	#[ApiRoute(verb: 'PUT', url: '/api/v{version}/limit', requirements: ['version' => 1])]
 	public function setDefaultLimit(int $limit): DataResponse {
 		if ($limit < 1) {
 			throw new OCSBadRequestException('Minimum limit is 1');
 		}
 
 		$this->appConfig->setValueInt(Application::APP_ID, 'default-download-limit', $limit);
+		return new DataResponse();
+	}
+
+	#[ApiRoute(verb: 'DELETE', url: '/api/v{version}/limit', requirements: ['version' => 1])]
+	public function removeDefaultLimit(): DataResponse {
+		$this->appConfig->deleteKey(Application::APP_ID, 'default-download-limit');
 		return new DataResponse();
 	}
 }

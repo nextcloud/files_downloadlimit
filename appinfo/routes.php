@@ -16,7 +16,5 @@ return [
 		['name' => 'Api#getDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'GET', 'requirements' => $requirements],
 		['name' => 'Api#setDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'PUT', 'requirements' => $requirements],
 		['name' => 'Api#removeDownloadLimit', 'url' => '/api/v{version}/{token}/limit', 'verb' => 'DELETE', 'requirements' => $requirements],
-
-		['name' => 'Admin#setDefaultLimit', 'url' => '/api/v{version}/limit', 'verb' => 'PUT', 'requirements' => $requirements],
 	]
 ];
