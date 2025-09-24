@@ -4,15 +4,16 @@
 -->
 
 <template>
-	<Fragment>
+	<div :class="$style.action__wrapper">
 		<NcCheckboxRadioSwitch :checked.sync="limitEnabled"
 			:loading="loading"
 			:disabled="hasError">
 			{{ t('files_downloadlimit', 'Limit downloads') }}
 		</NcCheckboxRadioSwitch>
+
 		<template v-if="!loading && !hasError">
 			<NcNoteCard v-show="limitEnabled && showRemainingDownloadsNote"
-				class="action__count-note"
+				:class="$style.action__countNote"
 				type="info">
 				{{ n('files_downloadlimit', '1 remaining download allowed', '{count} remaining downloads allowed', remainingCount, { count: remainingCount }) }}
 			</NcNoteCard>
@@ -25,12 +26,12 @@
 				:error="Boolean(helperText)"
 				@update:value="handleUpdateLimit" />
 			<NcNoteCard v-show="limitEnabled && showResetNote"
-				class="action__reset-note"
+				:class="$style.action__resetNote"
 				type="warning">
 				{{ t('files_downloadlimit', 'Setting a new limit will reset the download count') }}
 			</NcNoteCard>
 		</template>
-	</Fragment>
+	</div>
 </template>
 
 <script lang="ts">
@@ -38,12 +39,9 @@ import { showError } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { n, t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
-import { Fragment } from 'vue-frag'
-
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
 import {
 	getDownloadLimit,
 	setDownloadLimit,
@@ -59,7 +57,6 @@ export default defineComponent({
 	name: 'DownloadLimitEntry',
 
 	components: {
-		Fragment,
 		NcCheckboxRadioSwitch,
 		NcNoteCard,
 		NcTextField,
@@ -68,6 +65,11 @@ export default defineComponent({
 	props: {
 		share: {
 			type: Object,
+			required: true,
+		},
+
+		onSave: {
+			type: Function,
 			required: true,
 		},
 	},
@@ -111,22 +113,40 @@ export default defineComponent({
 		},
 	},
 
-	async created() {
-		logger.debug('Loading download limit', { share: this.share })
-		this.loading = true
-		try {
-			const { limit, count } = await getDownloadLimit(this.share.token)
-			if (typeof limit === 'number' && typeof count === 'number') {
-				this.limitEnabled = Boolean(limit)
-				this.initialLimit = limit
-				this.limit = limit
-				this.count = count
-			}
-		} catch (error) {
-			this.hasError = true
-			logger.error('Failed to load download limit', { error, share: this.share })
-		}
-		this.loading = false
+	watch: {
+		share: {
+			deep: true,
+			immediate: true,
+			async handler(share, oldShare) {
+				if (!share?.id || oldShare?.id) {
+					logger.debug('Skip undefined share')
+					return
+				}
+
+				this.onSave(this.save)
+
+				if (share.id === oldShare?.id && this.limit) {
+					logger.debug('Same share given, skip loading download limit', { share, oldShare })
+					return
+				}
+
+				logger.debug('Loading download limit', { share: this.share })
+				this.loading = true
+				try {
+					const { limit, count } = await getDownloadLimit(this.share.token)
+					if (typeof limit === 'number' && typeof count === 'number') {
+						this.limitEnabled = Boolean(limit)
+						this.initialLimit = limit
+						this.limit = limit
+						this.count = count
+					}
+				} catch (error) {
+					this.hasError = true
+					logger.error('Failed to load download limit', { error, share: this.share })
+				}
+				this.loading = false
+			},
+		},
 	},
 
 	methods: {
@@ -137,8 +157,9 @@ export default defineComponent({
 			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
 		},
 
-		async onSave() {
+		async save() {
 			if (typeof this.limit !== 'number' || this.limit <= 0) {
+				logger.debug('Skip saving invalid limit', { limit: this.limit })
 				return
 			}
 
@@ -163,13 +184,17 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style module lang="scss">
 .action {
-	&__count-note {
+	&__wrapper {
+		width: 100%;
+	}
+
+	&__countNote {
 		margin-top: 4px !important;
 	}
 
-	&__reset-note {
+	&__resetNote {
 		margin-bottom: 8px !important;
 	}
 }
