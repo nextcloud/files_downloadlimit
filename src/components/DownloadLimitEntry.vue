@@ -6,7 +6,7 @@
 <template>
 	<div :class="$style.action__wrapper">
 		<NcCheckboxRadioSwitch
-			:checked.sync="limitEnabled"
+			v-model="limitEnabled"
 			:loading="loading"
 			:disabled="hasError">
 			{{ t('files_downloadlimit', 'Limit downloads') }}
@@ -21,13 +21,12 @@
 			</NcNoteCard>
 			<NcTextField
 				v-show="limitEnabled"
+				v-model="limit"
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
-				:value="limit"
-				:helper-text="helperText"
-				:error="Boolean(helperText)"
-				@update:value="handleUpdateLimit" />
+				:error="helperText !== ''"
+				:helper-text="helperText" />
 			<NcNoteCard
 				v-show="limitEnabled && showResetNote"
 				:class="$style.action__resetNote"
@@ -54,8 +53,6 @@ import {
 } from '../services/DownloadLimitService.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
-// If a default is not set (-1) then the input should be empty
-const limit: '' | number = defaultDownloadLimit === -1 ? '' : defaultDownloadLimit
 
 export default defineComponent({
 	name: 'DownloadLimitEntry',
@@ -80,9 +77,9 @@ export default defineComponent({
 
 	data() {
 		return {
-			limitEnabled: false,
+			limitEnabled: defaultDownloadLimit !== -1,
 			initialLimit: null as number | null,
-			limit,
+			limit: defaultDownloadLimit === -1 ? 1 : defaultDownloadLimit,
 			count: null as number | null,
 			loading: false,
 			hasError: false,
@@ -156,10 +153,6 @@ export default defineComponent({
 	methods: {
 		n,
 		t,
-
-		handleUpdateLimit(limit: string) {
-			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
-		},
 
 		async save() {
 			if (typeof this.limit !== 'number' || this.limit <= 0) {
