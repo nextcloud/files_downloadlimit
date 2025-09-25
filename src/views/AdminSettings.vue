@@ -7,97 +7,94 @@
 	<NcSettingsSection
 		:name="t('files_downloadlimit', 'Download limit')"
 		:description="t('files_downloadlimit', 'Configure the default download limit for external shares.')">
-		<form @submit.prevent="handleSave">
-			<NcTextField
-				class="settings__field"
-				:label="t('files_downloadlimit', 'Set default download limit')"
-				type="number"
-				min="1"
-				:value="limit"
-				:helper-text="helperText"
-				:error="Boolean(helperText)"
-				:success="showSuccess"
-				:show-trailing-button="showTrailingButton"
-				trailing-button-icon="arrowRight"
-				@update:value="handleUpdateLimit"
-				@trailing-button-click="handleSave" />
-		</form>
+		<NcCheckboxRadioSwitch
+			v-model="enableDefaultLimit"
+			:loading="showLoading"
+			type="switch">
+			{{ t('files_downloadlimit', 'Default download limit for external shares') }}
+		</NcCheckboxRadioSwitch>
+
+		<NcTextField
+			v-show="enableDefaultLimit"
+			v-model="limit"
+			class="settings__field"
+			:disabled="!enableDefaultLimit || showLoading"
+			:label="t('files_downloadlimit', 'Set default download limit')"
+			type="number"
+			min="1"
+			:helper-text="helperText"
+			:error="Boolean(helperText)"
+			:success="showSuccess" />
+		<div v-show="!enableDefaultLimit" class="settings__placeholder" />
 	</NcSettingsSection>
 </template>
 
 <script lang="ts">
-import { showError } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { translate as t } from '@nextcloud/l10n'
 import { defineComponent } from 'vue'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcSettingsSection from '@nextcloud/vue/components/NcSettingsSection'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
-import { logger } from '../logger.ts'
-import { setDefaultLimit } from '../services/AdminService.ts'
+import { removeDefaultLimit, setDefaultLimit } from '../services/AdminService.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
-// If a default is not set (-1) then the input should be empty
-const limit: '' | number = defaultDownloadLimit === -1 ? '' : defaultDownloadLimit
 
 export default defineComponent({
 	name: 'AdminSettings',
 
 	components: {
+		NcCheckboxRadioSwitch,
 		NcSettingsSection,
 		NcTextField,
 	},
 
 	data() {
 		return {
-			limit,
-			savedLimit: limit,
+			limit: Math.max(defaultDownloadLimit, 1),
+			enableDefaultLimit: defaultDownloadLimit !== -1,
+			showLoading: false,
 			showSuccess: false,
 		}
 	},
 
 	computed: {
 		helperText() {
-			if (typeof this.limit !== 'number') {
-				return ''
+			if (typeof this.limit === 'number' && this.limit <= 0) {
+				return t('files_downloadlimit', 'The minimum limit is 1')
 			}
-			if (this.limit > 0) {
-				return ''
+			return ''
+		},
+	},
+
+	watch: {
+		async limit(limit: number) {
+			if (await setDefaultLimit(limit)) {
+				this.showSuccess = true
+				window.setTimeout(() => {
+					this.showSuccess = false
+				}, 1000)
 			}
-			return t('files_downloadlimit', 'The minimum limit is 1')
 		},
 
-		showTrailingButton() {
-			return typeof this.limit === 'number'
-				&& this.limit > 0
-				&& this.limit !== this.savedLimit
+		async enableDefaultLimit(enabled: boolean, oldValue: boolean) {
+			this.showLoading = true
+			let success: boolean
+			if (enabled) {
+				success = await setDefaultLimit(1)
+			} else {
+				success = await removeDefaultLimit()
+			}
+
+			if (!success) {
+				this.enableDefaultLimit = oldValue
+			}
+			this.showLoading = false
 		},
 	},
 
 	methods: {
 		t,
-
-		handleUpdateLimit(limit: string) {
-			this.limit = Number(limit) // emitted <input> value is string so we parse it to number
-		},
-
-		async handleSave() {
-			const isValid = typeof this.limit === 'number' && this.limit > 0
-			if (!isValid) {
-				return
-			}
-
-			try {
-				await setDefaultLimit(this.limit)
-				this.savedLimit = this.limit
-				this.showSuccess = true
-				setTimeout(() => {
-					this.showSuccess = false
-				}, 3000)
-			} catch (error) {
-				logger.error('Failed to set default download limit', { error })
-				showError(t('files_downloadlimit', 'Failed to set default download limit'))
-			}
-		},
 	},
 })
 </script>
@@ -106,6 +103,12 @@ export default defineComponent({
 .settings {
 	&__field {
 		max-width: 500px;
+		margin-top: calc(3 * var(--default-grid-baseline)) !important;
+	}
+
+	&__placeholder {
+		// ensure content does not jump when enable / disable the input
+		height: calc(var(--default-clickable-area) + 3 * var(--default-grid-baseline));
 	}
 }
 </style>
