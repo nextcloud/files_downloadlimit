@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "İndirme sınırını ayarla",
     "Setting a new limit will reset the download count" : "Yeni bir sınır ayarlandığında indirme sayısı sıfırlanır",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 indirme daha yapılabilir","{count} indirme daha yapılabilir"],
-    "Failed to set default download limit" : "Varsayılan indirme sınırı ayarlanamadı",
     "Download limit" : "İndirme sınırı",
     "Configure the default download limit for external shares." : "Dış paylaşımların varsayılan indirme sınırını yapılandırın.",
     "Set default download limit" : "Varsayılan indirme sınırını ayarla",
     "You have reached the maximum amount of downloads allowed" : "En fazla indirme sayısı sınırına ulaştınız",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Bu paylaşımın indirme sayısı sınırlanmış. Yeni bir indirme başlatmak istediğinize emin misiniz?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Bu paylaşımın indirme sayısı sınırlanmış. Yeni bir indirme başlatmak istediğinize emin misiniz?",
+    "Failed to set default download limit" : "Varsayılan indirme sınırı ayarlanamadı"
 },
 "nplurals=2; plural=(n > 1);");

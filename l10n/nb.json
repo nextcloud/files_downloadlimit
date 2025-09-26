@@ -9,11 +9,11 @@
     "Set download limit" : "Spesifiser nedlastings-grense",
     "Setting a new limit will reset the download count" : "Hvis du angir en ny grense, tilbakestilles nedlastingsantallet",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 tillat nedlasting gjenstår","{count} tillate nedlastinger gjenstår"],
-    "Failed to set default download limit" : "Innstilling av standard nedlastingsgrense feilet",
     "Download limit" : "Nedlastingsgrense",
     "Configure the default download limit for external shares." : "Konfigurer standard nedlastingsgrense for eksterne delte ressurser.",
     "Set default download limit" : "Angi standard nedlastingsgrense",
     "You have reached the maximum amount of downloads allowed" : "Du har nådd maksimumsgrensen for antall nedlastinger",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne fildelingen har en grense for antall nedlastninger. Er du sikker på at du vil starte en ny nedlasting?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne fildelingen har en grense for antall nedlastninger. Er du sikker på at du vil starte en ny nedlasting?",
+    "Failed to set default download limit" : "Innstilling av standard nedlastingsgrense feilet"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

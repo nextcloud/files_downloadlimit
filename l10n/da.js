@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "Indstil downloadgrænse",
     "Setting a new limit will reset the download count" : "Angivelse af en ny grænse vil nulstille download tællingen",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 resterende download tilladt","{count} resterende tilladte downloads"],
-    "Failed to set default download limit" : "Kunne ikke sætte standard downloadgrænse",
     "Download limit" : "Downloadgrænse",
     "Configure the default download limit for external shares." : "Konfigurer standard downloadgrænse for eksterne delinger.",
     "Set default download limit" : "Angiv standard downloadgrænse",
     "You have reached the maximum amount of downloads allowed" : "Du har nået det maksimale antal tilladte downloads",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne deling har et begrænset antal downloads. Er du sikker på, at du vil starte en ny download?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne deling har et begrænset antal downloads. Er du sikker på, at du vil starte en ny download?",
+    "Failed to set default download limit" : "Kunne ikke sætte standard downloadgrænse"
 },
 "nplurals=2; plural=(n != 1);");
