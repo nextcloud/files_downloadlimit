@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "Imposta il limite di scaricamento",
     "Setting a new limit will reset the download count" : "L'impostazione di un nuovo limite reimposterà il conteggio dei download",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 scaricamento permesso rimasto","{count} scaricamenti permessi rimasti","{count} scaricamenti permessi rimasti"],
-    "Failed to set default download limit" : "Impossibile impostare il limite di download predefinito",
     "Download limit" : "Limite di scaricamento",
     "Configure the default download limit for external shares." : "Configura il limite di download predefinito per le condivisioni esterne.",
     "Set default download limit" : "Imposta limite di download predefinito",
     "You have reached the maximum amount of downloads allowed" : "Hai raggiunto il numero massimo di scaricamenti consentiti",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Questa condivisione ha un numero limitato di scaricamenti. Sei sicuro di voler attivare un nuovo scaricamento?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Questa condivisione ha un numero limitato di scaricamenti. Sei sicuro di voler attivare un nuovo scaricamento?",
+    "Failed to set default download limit" : "Impossibile impostare il limite di download predefinito"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
