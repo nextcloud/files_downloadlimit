@@ -10,7 +10,7 @@ import type { ISidebarAction } from '@nextcloud/sharing/ui'
 import { FileType } from '@nextcloud/files'
 import { ShareType } from '@nextcloud/sharing'
 import { registerSidebarAction } from '@nextcloud/sharing/ui'
-import Vue from 'vue'
+import { defineCustomElement } from 'vue'
 import DownloadLimitEntry from './components/DownloadLimitEntry.vue'
 
 const CUSTOM_ELEMENT_ID = 'oca_files_downloadlimit-sharing_action'
@@ -36,16 +36,6 @@ const sharingAction: ISidebarAction = {
 	},
 }
 
-import wrap from '@vue/web-component-wrapper'
-
-const DownloadLimitEntryElement = wrap(Vue, DownloadLimitEntry) as unknown as CustomElementConstructor
-// In Vue 2, wrap doesn't support disabling shadow. Disable with a hack
-Object.defineProperty(DownloadLimitEntryElement.prototype, 'attachShadow', {
-	value() { return this },
-})
-Object.defineProperty(DownloadLimitEntryElement.prototype, 'shadowRoot', {
-	get() { return this },
-})
-
+const DownloadLimitEntryElement = defineCustomElement(DownloadLimitEntry, { shadowRoot: false })
 window.customElements.define(CUSTOM_ELEMENT_ID, DownloadLimitEntryElement)
 registerSidebarAction(sharingAction)
