@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "Pangilia ukomo wa apakuaji",
     "Setting a new limit will reset the download count" : "Kuweka kikomo kipya kutaweka upya hesabu ya upakuaji",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 remaining download allowed","{count}vipakuliwa vilivyosalia vinaruhusiwa "],
-    "Failed to set default download limit" : "Imeshindwa kuweka kikomo chaguomsingi cha upakuaji",
     "Download limit" : "Ukomo wa upakuaji",
     "Configure the default download limit for external shares." : "Sanidi kikomo chaguo-msingi cha upakuaji kwa hisa za nje.",
     "Set default download limit" : "Pangilia chaguo msingi la ukomo wa upakuaji",
     "You have reached the maximum amount of downloads allowed" : "Umefikia kiwango cha juu zaidi cha upakuaji unaoruhusiwa",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Shiriki hii ina idadi ndogo ya vipakuliwa. Je, una uhakika unataka kuanzisha upakuaji mpya?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Shiriki hii ina idadi ndogo ya vipakuliwa. Je, una uhakika unataka kuanzisha upakuaji mpya?",
+    "Failed to set default download limit" : "Imeshindwa kuweka kikomo chaguomsingi cha upakuaji"
 },
 "nplurals=2; plural=(n != 1);");

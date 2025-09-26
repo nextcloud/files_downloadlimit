@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "設定下載限制",
     "Setting a new limit will reset the download count" : "設定新限制將會重設下載次數",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["僅剩 {count} 次可下載"],
-    "Failed to set default download limit" : "設定預設下載限制失敗",
     "Download limit" : "下載限制",
     "Configure the default download limit for external shares." : "設定外部分享的預設下載限制。",
     "Set default download limit" : "設定預設下載限制",
     "You have reached the maximum amount of downloads allowed" : "您已到達允許的最大下載量",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "此分享的下載次數有限。您確定要觸發新的下載嗎？"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "此分享的下載次數有限。您確定要觸發新的下載嗎？",
+    "Failed to set default download limit" : "設定預設下載限制失敗"
 },
 "nplurals=1; plural=0;");

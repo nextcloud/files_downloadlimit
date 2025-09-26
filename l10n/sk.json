@@ -9,11 +9,11 @@
     "Set download limit" : "Nastaviť limit sťahovania",
     "Setting a new limit will reset the download count" : "Nastavením nového limitu sa vynuluje počet stiahnutí",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 zostávajúce povolené sťahovanie","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania"],
-    "Failed to set default download limit" : "Nepodarilo sa nastaviť predvolený limit pre sťahovanie",
     "Download limit" : "Limit sťahovania",
     "Configure the default download limit for external shares." : "Nakonfigurujte predvolený limit sťahovania pre externé zdieľané položky.",
     "Set default download limit" : "Nastaviť predvolený limit pre sťahovanie",
     "You have reached the maximum amount of downloads allowed" : "Dosiahli ste maximálny povolený počet stiahnutí",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Toto zdieľanie má obmedzený počet stiahnutí. Naozaj chcete spustiť nové sťahovanie?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Toto zdieľanie má obmedzený počet stiahnutí. Naozaj chcete spustiť nové sťahovanie?",
+    "Failed to set default download limit" : "Nepodarilo sa nastaviť predvolený limit pre sťahovanie"
 },"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }

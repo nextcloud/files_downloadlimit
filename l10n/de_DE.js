@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "Download-Limit festlegen",
     "Setting a new limit will reset the download count" : "Das Festlegen eines neuen Limits setzt die Download-Zählung zurück.",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 verbleibender Download erlaubt","{count} verbleibende Downloads erlaubt"],
-    "Failed to set default download limit" : "Standard-Downloadlimit konnte nicht festgelegt werden",
     "Download limit" : "Download-Limit",
     "Configure the default download limit for external shares." : "Standard-Downloadlimit für externe Freigaben konfigurieren.",
     "Set default download limit" : "Standard-Downloadlimit festlegen",
     "You have reached the maximum amount of downloads allowed" : "Sie haben die maximal zulässige Anzahl an Downloads erreicht",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Diese Freigabe hat eine begrenzte Anzahl von Downloads. Möchten Sie wirklich einen neuen Download auslösen?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Diese Freigabe hat eine begrenzte Anzahl von Downloads. Möchten Sie wirklich einen neuen Download auslösen?",
+    "Failed to set default download limit" : "Standard-Downloadlimit konnte nicht festgelegt werden"
 },
 "nplurals=2; plural=(n != 1);");

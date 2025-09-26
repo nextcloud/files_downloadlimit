@@ -11,11 +11,11 @@ OC.L10N.register(
     "Set download limit" : "Ställ in nedladdningsgräns",
     "Setting a new limit will reset the download count" : "Om du ställer in en ny gräns återställs antalet nedladdningar",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 tillåten hämtning återstår","{count} tillåtna hämtningar återstår"],
-    "Failed to set default download limit" : "Kunde inte ange standardgräns för nedladdning",
     "Download limit" : "Hämtningsbegränsning",
     "Configure the default download limit for external shares." : "Konfigurera standard nedladdningsgräns för externa delningar.",
     "Set default download limit" : "Ställ in standardgräns för nedladdning",
     "You have reached the maximum amount of downloads allowed" : "Du har nått det högsta tillåtna antalet nedladdningar",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Den här delningen har ett begränsat antal nedladdningar. Är du säker på att du vill utföra en ny nedladdning?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Den här delningen har ett begränsat antal nedladdningar. Är du säker på att du vill utföra en ny nedladdning?",
+    "Failed to set default download limit" : "Kunde inte ange standardgräns för nedladdning"
 },
 "nplurals=2; plural=(n != 1);");
