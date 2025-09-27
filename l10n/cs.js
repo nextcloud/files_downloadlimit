@@ -13,9 +13,11 @@ OC.L10N.register(
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Zbývá 1 umožněné stažení","Zbývají {count} umožněná stažení","Zbývá {count} umožněných stažení","Zbývají {count} umožněná stažení"],
     "Download limit" : "Limit stahování",
     "Configure the default download limit for external shares." : "Nastavit výchozí limit počtu stahování pro externí sdílení.",
+    "Default download limit for external shares" : "Výchozí limit počtu stahování pro externí sdílení",
     "Set default download limit" : "Vyberte výchozí limit stahování",
     "You have reached the maximum amount of downloads allowed" : "Dosáhli jste nejvyššího umožněného počtu umožněných stažení",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Pro toto sdílení je omezen počet stahování. Opravdu chcete spustit nové stahování?",
-    "Failed to set default download limit" : "Nepodařilo se nastavit limit počtu stahování"
+    "Failed to set default download limit" : "Nepodařilo se nastavit limit počtu stahování",
+    "Failed to remove default download limit" : "Nepodařilo se odebrat výchozí limit stahování"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");
