@@ -1,7 +1,23 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "Files download limit" : "Failide allalaadimiste piirang",
+    "File link share download limit" : "Failide allalaadimiste piirang lingiga jagamise korral",
+    "This app allows limiting the number of downloads for external link shares." : "See rakendus võimaldab piirata väliste lingiga jagamiste allalaadimiste arvu.",
+    "The minimum limit is 1" : "Väikseim piirang on 1",
+    "Failed to set download limit" : "Allalaadimiste piirangu seadistamine ei õnnestunud",
+    "Failed to remove download limit" : "Allalaadimiste piirangu eemaldamine ei õnnestunud",
+    "Limit downloads" : "Allalaadimiste piirang",
     "Set download limit" : "Määra allalaadimiste piirang",
-    "Download limit" : "Allalaadimiste piirang"
+    "Setting a new limit will reset the download count" : "Uue piirangu lisamine lähtestab senise allalaadimiste loenduri",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Jäänud on 1 allalaadimisvõimalus","Jäänud on {count} allalaadimisvõimalust"],
+    "Download limit" : "Allalaadimiste piirang",
+    "Configure the default download limit for external shares." : "Seadista väliste lingiga jagamiste allalaadimiste arvu.",
+    "Default download limit for external shares" : "Allalaadimiste vaikimisi piirang väliste jagamiste jaoks",
+    "Set default download limit" : "Määra allalaadimiste piirang",
+    "You have reached the maximum amount of downloads allowed" : "Lubatud allalaadimiste arv on käes",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Seda jaosmeediat saab laadida alla piiratud arv kordi. Kas oled kindel, et soovid alustada uut allalaadimist?",
+    "Failed to set default download limit" : "Allalaadimiste vaikimisi piirangu seadistamine ei õnnestunud",
+    "Failed to remove default download limit" : "Vaikimisi allalaadimiste piirangu eemaldamine ei õnnestunud"
 },
 "nplurals=2; plural=(n != 1);");
