@@ -13,6 +13,7 @@ OC.L10N.register(
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["ダウンロードできる回数は残り {count} 回です"],
     "Download limit" : "ダウンロード制限",
     "Configure the default download limit for external shares." : "外部共有のデフォルトのダウンロード制限を設定します。",
+    "Default download limit for external shares" : "外部共有のデフォルトのダウンロード制限",
     "Set default download limit" : "デフォルトのダウンロード制限の設定",
     "You have reached the maximum amount of downloads allowed" : "許可されているダウンロードの上限に達しました",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "この共有のダウンロード数には制限があります。新しいダウンロードを開始してもよろしいですか?",
