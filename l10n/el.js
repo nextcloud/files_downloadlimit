@@ -13,9 +13,11 @@ OC.L10N.register(
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Επιτρέπεται 1 ακόμη λήψη","Επιτρέπονται {count} ακόμη λήψεις"],
     "Download limit" : "Όριο λήψης",
     "Configure the default download limit for external shares." : "Διαμορφώστε το προεπιλεγμένο όριο λήψης για εξωτερικούς κοινόχρηστους συνδέσμους.",
+    "Default download limit for external shares" : "Προεπιλεγμένο όριο λήψης για εξωτερικούς συνδέσμους κοινής χρήσης",
     "Set default download limit" : "Ορισμός προεπιλεγμένου ορίου λήψης",
     "You have reached the maximum amount of downloads allowed" : "Έχετε φτάσει τον μέγιστο αριθμό επιτρεπόμενων λήψεων",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Αυτός ο κοινόχρηστος σύνδεσμος έχει περιορισμένο αριθμό λήψεων. Είστε σίγουροι ότι θέλετε να πραγματοποιήσετε μια νέα λήψη;",
-    "Failed to set default download limit" : "Αποτυχία ορισμού προεπιλεγμένου ορίου λήψης"
+    "Failed to set default download limit" : "Αποτυχία ορισμού προεπιλεγμένου ορίου λήψης",
+    "Failed to remove default download limit" : "Αποτυχία κατάργησης προεπιλεγμένου ορίου λήψης"
 },
 "nplurals=2; plural=(n != 1);");
