@@ -11,9 +11,11 @@
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Qolgan {count} ta yuklab olishga ruxsat berilgan"],
     "Download limit" : "Yuklab olish chegarasi",
     "Configure the default download limit for external shares." : "Tashqi ulashishlar uchun standart yuklab olish chegarasini sozlang.",
+    "Default download limit for external shares" : "Tashqi ulushlar uchun standart yuklab olish chegarasi",
     "Set default download limit" : "Standart yuklab olish chegarasini o'rnating",
     "You have reached the maximum amount of downloads allowed" : "Ruxsat etilgan yuklamalar soniga yetdingiz",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Bu ulushda yuklab olishlar soni cheklangan. Haqiqatan ham yangi yuklab olishni ishga tushirmoqchimisiz?",
-    "Failed to set default download limit" : "Standart yuklab olish chegarasini o‘rnatib bo‘lmadi"
+    "Failed to set default download limit" : "Standart yuklab olish chegarasini o‘rnatib bo‘lmadi",
+    "Failed to remove default download limit" : "Standart yuklab olish cheklovini olib tashlab bo‘lmadi"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
