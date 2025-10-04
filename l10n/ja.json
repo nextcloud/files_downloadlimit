@@ -15,6 +15,7 @@
     "Set default download limit" : "デフォルトのダウンロード制限の設定",
     "You have reached the maximum amount of downloads allowed" : "許可されているダウンロードの上限に達しました",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "この共有のダウンロード数には制限があります。新しいダウンロードを開始してもよろしいですか?",
-    "Failed to set default download limit" : "デフォルトのダウンロード制限の設定に失敗しました"
+    "Failed to set default download limit" : "デフォルトのダウンロード制限の設定に失敗しました",
+    "Failed to remove default download limit" : "デフォルトのダウンロード制限を削除できませんでした"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
