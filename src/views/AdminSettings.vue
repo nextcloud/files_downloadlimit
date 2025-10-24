@@ -51,7 +51,7 @@ export default defineComponent({
 
 	data() {
 		return {
-			limit: Math.max(defaultDownloadLimit, 1),
+			limit: Math.max(defaultDownloadLimit, 10),
 			enableDefaultLimit: defaultDownloadLimit !== -1,
 			showLoading: false,
 			showSuccess: false,
@@ -81,7 +81,7 @@ export default defineComponent({
 			this.showLoading = true
 			let success: boolean
 			if (enabled) {
-				success = await setDefaultLimit(1)
+				success = await setDefaultLimit(10)
 			} else {
 				success = await removeDefaultLimit()
 			}
