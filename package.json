@@ -46,7 +46,7 @@
     "vue-frag": "^1.4.3"
   },
   "devDependencies": {
-    "@nextcloud/browserslist-config": "^3.0.1",
+    "@nextcloud/browserslist-config": "^3.1.1",
     "@nextcloud/eslint-config": "^9.0.0-rc.5",
     "@nextcloud/vite-config": "^1.4.2",
     "@vue/tsconfig": "^0.5.1",
