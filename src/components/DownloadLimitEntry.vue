@@ -79,7 +79,7 @@ export default defineComponent({
 		return {
 			limitEnabled: defaultDownloadLimit !== -1,
 			initialLimit: null as number | null,
-			limit: defaultDownloadLimit === -1 ? 1 : defaultDownloadLimit,
+			limit: defaultDownloadLimit === -1 ? 10 : defaultDownloadLimit,
 			count: null as number | null,
 			loading: false,
 			hasError: false,
