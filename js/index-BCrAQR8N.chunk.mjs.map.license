@@ -12,16 +12,16 @@ SPDX-FileCopyrightText: escape-html developers
 
 This file is generated from multiple sources. Included packages:
 - @nextcloud/auth
-	- version: 2.5.2
+	- version: 2.5.3
 	- license: GPL-3.0-or-later
 - @nextcloud/browser-storage
-	- version: 0.4.0
+	- version: 0.5.0
 	- license: GPL-3.0-or-later
 - @nextcloud/event-bus
 	- version: 3.3.2
 	- license: GPL-3.0-or-later
 - @nextcloud/initial-state
-	- version: 2.2.0
+	- version: 3.0.0
 	- license: GPL-3.0-or-later
 - @nextcloud/l10n
 	- version: 3.4.0
@@ -30,16 +30,16 @@ This file is generated from multiple sources. Included packages:
 	- version: 3.0.2
 	- license: GPL-3.0-or-later
 - dompurify
-	- version: 3.2.6
+	- version: 3.3.0
 	- license: (MPL-2.0 OR Apache-2.0)
 - escape-html
 	- version: 1.0.3
 	- license: MIT
 - semver
-	- version: 7.7.2
+	- version: 7.7.3
 	- license: ISC
 - vite
-	- version: 5.4.19
+	- version: 7.1.12
 	- license: MIT
 - vite-plugin-node-polyfills
 	- version: 0.24.0
