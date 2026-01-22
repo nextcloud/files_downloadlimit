@@ -1,6 +1,6 @@
 {
   "name": "files_downloadlimit",
-  "version": "5.1.0-dev.0",
+  "version": "5.2.0-dev.0",
   "private": true,
   "description": "Nextcloud link share download counter.",
   "keywords": [
