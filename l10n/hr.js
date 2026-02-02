@@ -3,8 +3,21 @@ OC.L10N.register(
     {
     "Files download limit" : "Ograničenje preuzimanja datoteka",
     "File link share download limit" : "Ograničenje preuzimanja poveznice dijeljenja datoteke",
+    "This app allows limiting the number of downloads for external link shares." : "Ova aplikacija omogućuje ograničavanje broja preuzimanja za dijeljenja putem vanjskih poveznica.",
+    "The minimum limit is 1" : "Minimalno ograničenje je 1",
+    "Failed to set download limit" : "Postavljanje ograničenja preuzimanja nije uspjelo",
+    "Failed to remove download limit" : "Uklanjanje ograničenja preuzimanja nije uspjelo",
     "Limit downloads" : "Ograniči preuzimanja",
+    "Set download limit" : "Postavi ograničenje preuzimanja",
+    "Setting a new limit will reset the download count" : "Postavljanje novog ograničenja ponovno će postaviti brojač preuzimanja",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Dopušteno je 1 preostalo preuzimanje","Dopuštena su {count} preostala preuzimanja","Dopušteno je {count} preostalih preuzimanja"],
-    "Download limit" : "Ograničenje preuzimanja"
+    "Download limit" : "Ograničenje preuzimanja",
+    "Configure the default download limit for external shares." : "Konfigurirajte zadano ograničenje preuzimanja za vanjska dijeljenja.",
+    "Default download limit for external shares" : "Zadano ograničenje preuzimanja za vanjska dijeljenja",
+    "Set default download limit" : "Postavite zadano ograničenje preuzimanja",
+    "You have reached the maximum amount of downloads allowed" : "Dosegnuli ste maksimalan dopušten broj preuzimanja",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ovo dijeljenje ima ograničen broj preuzimanja. Jeste li sigurni da želite pokrenuti novo preuzimanje?",
+    "Failed to set default download limit" : "Postavljanje zadanog ograničenja preuzimanja nije uspjelo",
+    "Failed to remove default download limit" : "Uklanjanje zadanog ograničenja preuzimanja nije uspjelo"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");
