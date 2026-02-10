@@ -23,6 +23,7 @@ class Capabilities implements ICapability {
 	/**
 	 * @return array{downloadlimit: array{'default-limit': int, enabled: true}}
 	 */
+	#[\Override]
 	public function getCapabilities(): array {
 		return [
 			'downloadlimit' => [

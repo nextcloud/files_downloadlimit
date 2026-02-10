@@ -31,6 +31,7 @@ class Limit extends Entity implements JsonSerializable {
 		$this->addType('downloads', 'integer');
 	}
 
+	#[\Override]
 	public function jsonSerialize(): array {
 		return [
 			'id' => $this->id,
