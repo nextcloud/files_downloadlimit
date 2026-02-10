@@ -3,5 +3,5 @@ SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 
 This file is generated from multiple sources. Included packages:
 - files_downloadlimit
-	- version: 5.1.0-dev.0
+	- version: 5.2.0-dev.0
 	- license: AGPL-3.0-or-later
