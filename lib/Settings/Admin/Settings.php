@@ -23,6 +23,7 @@ class Settings implements ISettings {
 	) {
 	}
 
+	#[\Override]
 	public function getForm(): TemplateResponse {
 		$this->initialState->provideInitialState(
 			'default-download-limit',
@@ -35,10 +36,12 @@ class Settings implements ISettings {
 		return new TemplateResponse(Application::APP_ID, 'admin', [], TemplateResponse::RENDER_AS_USER);
 	}
 
+	#[\Override]
 	public function getSection(): string {
 		return 'sharing';
 	}
 
+	#[\Override]
 	public function getPriority(): int {
 		return 10;
 	}
