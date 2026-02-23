@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files download limit" : "Файл татах хязгаар",
     "File link share download limit" : "Файлын холбоос хуваалцалт татах хязгаар",
+    "This app allows limiting the number of downloads for external link shares." : "Энэ програм нь гадаад холбоосоор хуваалцсан файлуудын татан авалтын тоог хязгаарлах боломжийг олгоно.",
     "The minimum limit is 1" : "Хамгийн бага хязгаар нь 1",
     "Failed to set download limit" : "Татах хязгаар тохируулж чадсангүй",
     "Failed to remove download limit" : "Татах хязгаар устгаж чадсангүй",
