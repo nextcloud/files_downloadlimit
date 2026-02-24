@@ -16,6 +16,7 @@ OC.L10N.register(
     "Default download limit for external shares" : "Гадны хуваалцалтуудын өгөгдмөл татах хязгаар",
     "Set default download limit" : "Өгөгдмөл татах хязгаар тохируулах",
     "You have reached the maximum amount of downloads allowed" : "Та зөвшөөрөгдсөн татаж авах дээд хэмжээнд хүрсэн",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Энэ хуваалцсан файл нь хязгаарлагдсан тооны татаж авалттай. Та шинэ татаж авалт эхлүүлэхдээ итгэлтэй байна уу?",
     "Failed to set default download limit" : "Өгөгдмөл татах хязгаар тохируулж чадсангүй",
     "Failed to remove default download limit" : "Өгөгдмөл татах хязгаар устгаж чадсангүй"
 },
