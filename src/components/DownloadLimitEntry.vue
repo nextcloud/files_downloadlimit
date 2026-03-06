@@ -160,7 +160,7 @@ export default defineComponent({
 				return
 			}
 
-			if (this.isNewShare || this.limit !== this.initialLimit) {
+			if (this.limitEnabled && (this.isNewShare || this.limit !== this.initialLimit)) {
 				try {
 					await setDownloadLimit(this.share.token, this.limit)
 				} catch (error) {
