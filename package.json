@@ -29,7 +29,7 @@
     "lint:fix": "eslint --ext .js,.vue src --fix"
   },
   "dependencies": {
-    "@nextcloud/auth": "^2.5.3",
+    "@nextcloud/auth": "^2.6.0",
     "@nextcloud/axios": "^2.5.2",
     "@nextcloud/dialogs": "^5.3.7",
     "@nextcloud/initial-state": "^3.0.0",
