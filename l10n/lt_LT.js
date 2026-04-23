@@ -1,9 +1,23 @@
 OC.L10N.register(
     "files_downloadlimit",
     {
+    "Files download limit" : "Failų atsisiuntimo riba",
+    "File link share download limit" : "Failo nuorodos bendrinimo atsisiuntimo riba",
+    "This app allows limiting the number of downloads for external link shares." : "Ši programėlė leidžia apriboti atsisiuntimų skaičių, kai bendrinama išorinėmis nuorodomis.",
+    "The minimum limit is 1" : "Mažiausias limitas yra 1",
+    "Failed to set download limit" : "Nepavyko nustatyti atsisiuntimo limito",
+    "Failed to remove download limit" : "Nepavyko panaikinti atsisiuntimo limito",
     "Limit downloads" : "Riboti atsisiuntimus",
     "Set download limit" : "Nustatyti atsisiuntimo limitą",
+    "Setting a new limit will reset the download count" : "Nustatę naują limitą, atsisiuntimų skaičius bus iš naujo nustatytas",
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Liko 1 leidžiamas atsisiuntimas","Liko {count} leidžiami atsisiuntimai","Liko {count} leidžiamų atsisiuntimų","Liko {count} leidžiamas atsisiuntimas"],
-    "Download limit" : "Atsisiuntimų riba"
+    "Download limit" : "Atsisiuntimų riba",
+    "Configure the default download limit for external shares." : "Nustatykite numatytąjį atsisiuntimo limitą išoriniams bendrinimams.",
+    "Default download limit for external shares" : "Numatytasis išorinių bendrinimų atsisiuntimo limitas",
+    "Set default download limit" : "Nustatyti numatytąjį atsisiuntimo limitą",
+    "You have reached the maximum amount of downloads allowed" : "Jūs pasiekėte didžiausią leidžiamą atsisiuntimų kiekį",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Šis failas gali būti atsisiųstas tik ribotą skaičių kartų. Ar tikrai norite pradėti naują atsisiuntimą?",
+    "Failed to set default download limit" : "Nepavyko nustatyti numatyto atsisiuntimo limito",
+    "Failed to remove default download limit" : "Nepavyko panaikinti numatyto atsisiuntimo limito"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");
