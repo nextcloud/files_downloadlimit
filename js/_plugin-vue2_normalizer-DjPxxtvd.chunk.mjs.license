@@ -4,7 +4,6 @@ SPDX-License-Identifier: MIT
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
 SPDX-FileCopyrightText: Anthony Fu <anthonyfu117@hotmail.com>
 SPDX-FileCopyrightText: Anthony Fu <https://github.com/antfu>
-SPDX-FileCopyrightText: Christoph Wurst
 SPDX-FileCopyrightText: David Clark
 SPDX-FileCopyrightText: David Myers <hello@davidmyers.dev>
 SPDX-FileCopyrightText: Evan You
@@ -29,16 +28,25 @@ This file is generated from multiple sources. Included packages:
 	- version: 5.3.8
 	- license: AGPL-3.0-or-later
 - @nextcloud/l10n
-	- version: 3.4.0
+	- version: 3.4.1
 	- license: GPL-3.0-or-later
 - @nextcloud/router
-	- version: 3.0.1
+	- version: 3.1.0
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.33.0
+	- version: 8.38.0
 	- license: AGPL-3.0-or-later
 - @vitejs/plugin-vue2
 	- version: 2.3.4
+	- license: MIT
+- @vue/reactivity
+	- version: 3.5.33
+	- license: MIT
+- @vue/runtime-core
+	- version: 3.5.33
+	- license: MIT
+- @vue/shared
+	- version: 3.5.33
 	- license: MIT
 - @vueuse/core
 	- version: 11.3.0
@@ -47,19 +55,19 @@ This file is generated from multiple sources. Included packages:
 	- version: 11.3.0
 	- license: MIT
 - axios
-	- version: 1.13.0
+	- version: 1.16.0
 	- license: MIT
 - floating-vue
 	- version: 1.0.0-beta.19
 	- license: MIT
 - focus-trap
-	- version: 7.6.6
+	- version: 7.8.0
 	- license: MIT
 - path-browserify
 	- version: 1.0.1
 	- license: MIT
 - tabbable
-	- version: 6.3.0
+	- version: 6.4.0
 	- license: MIT
 - toastify-js
 	- version: 1.12.0
