@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdd77889b877d737fcdd8a13a295fc6a",
+    "content-hash": "10b2ecab8a97033db000f874bf0c7107",
     "packages": [],
     "packages-dev": [
         {
@@ -163,16 +163,16 @@
         },
         {
             "name": "nextcloud/ocp",
-            "version": "dev-master",
+            "version": "dev-stable34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextcloud-deps/ocp.git",
-                "reference": "f3fddf2af92f48d3f53569074f69f0ae4bad52b6"
+                "reference": "1ce31d2ac587e22269fedd9d5b231c4380d8c5af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/f3fddf2af92f48d3f53569074f69f0ae4bad52b6",
-                "reference": "f3fddf2af92f48d3f53569074f69f0ae4bad52b6",
+                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/1ce31d2ac587e22269fedd9d5b231c4380d8c5af",
+                "reference": "1ce31d2ac587e22269fedd9d5b231c4380d8c5af",
                 "shasum": ""
             },
             "require": {
@@ -183,11 +183,10 @@
                 "psr/http-client": "^1.0.3",
                 "psr/log": "^3.0.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "34.0.0-dev"
+                    "dev-stable34": "34.0.0-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -207,9 +206,9 @@
             "description": "Composer package containing Nextcloud's public OCP API and the unstable NCU API",
             "support": {
                 "issues": "https://github.com/nextcloud-deps/ocp/issues",
-                "source": "https://github.com/nextcloud-deps/ocp/tree/master"
+                "source": "https://github.com/nextcloud-deps/ocp/tree/stable34"
             },
-            "time": "2026-05-09T01:52:54+00:00"
+            "time": "2026-06-04T02:37:14+00:00"
         },
         {
             "name": "php-cs-fixer/shim",
