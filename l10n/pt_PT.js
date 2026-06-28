@@ -2,6 +2,7 @@ OC.L10N.register(
     "files_downloadlimit",
     {
     "Files download limit" : "Limite de descarga de ficheiros",
+    "File link share download limit" : "Limite de download de compartilhamento de link de arquivo",
     "This app allows limiting the number of downloads for external link shares." : "Este aplicativo permite limitar o número de downloads para compartilhamentos por links externos.",
     "Limit downloads" : "Limitar descargas",
     "Set download limit" : "Definir limite de descargas",
