@@ -124,7 +124,6 @@ class BeforeNodeReadListener implements IEventListener {
 		}
 		$this->cache->set($cacheKey, 'true', 3600);
 
-
 		$this->singleFileDownloaded($share);
 	}
 
@@ -159,7 +158,6 @@ class BeforeNodeReadListener implements IEventListener {
 		} catch (\Exception $e) {
 			$this->logger->error('Error while handling share link accessed event: ' . $e->getMessage());
 		}
-
 
 	}
 

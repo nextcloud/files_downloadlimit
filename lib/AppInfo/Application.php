@@ -41,7 +41,6 @@ class Application extends App implements IBootstrap {
 		$context->registerEventListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
 		$context->registerEventListener(BeforeNodeReadEvent::class, BeforeNodeReadListener::class);
 
-
 		$context->registerCapability(Capabilities::class);
 	}
 
