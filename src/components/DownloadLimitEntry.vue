@@ -26,7 +26,7 @@
 				type="number"
 				min="1"
 				:error="helperText !== ''"
-				:helper-text="helperText" />
+				:helperText="helperText" />
 			<NcNoteCard
 				v-show="limitEnabled && showResetNote"
 				:class="$style.action__resetNote"
