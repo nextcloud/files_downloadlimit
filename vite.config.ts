@@ -1,7 +1,8 @@
-/**
+/*!
  * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
+
 import { createAppConfig } from '@nextcloud/vite-config'
 
 export default createAppConfig(
@@ -12,12 +13,11 @@ export default createAppConfig(
 	},
 	{
 		inlineCSS: false,
-		thirdPartyLicense: false,
+		emptyOutputDirectory: {
+			additionalDirectories: ['css'],
+		},
 		extractLicenseInformation: {
 			includeSourceMaps: true,
-			overwriteLicenses: {
-				'@nextcloud/axios': 'GPL-3.0-or-later',
-			},
 		},
 	},
 )
