@@ -1,0 +1,11 @@
+{
+	"config": {
+		"platform": {
+			"php": "8.3.0"
+		}
+	},
+	"require-dev": {
+		"nextcloud/coding-standard": "^1.5",
+		"friendsofphp/php-cs-fixer": "^3.87"
+	}
+}
