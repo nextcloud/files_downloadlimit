@@ -3,12 +3,16 @@
     "File link share download limit" : "Limite de download de compartilhamento de link de arquivo",
     "This app allows limiting the number of downloads for external link shares." : "Este aplicativo permite limitar o número de downloads para compartilhamentos por links externos.",
     "The minimum limit is 1" : "O limite mínimo é 1",
+    "Failed to remove download limit" : "Falha ao remover o limite de download",
     "Limit downloads" : "Limitar descargas",
     "Set download limit" : "Definir limite de descargas",
+    "Setting a new limit will reset the download count" : "Definir um novo limite irá reinicializar a contagem de downloads",
     "Download limit" : "Limite de transferência",
     "Configure the default download limit for external shares." : "Configure o limite de download padrão para compartilhamentos externos.",
     "Default download limit for external shares" : "Limite padrão de download para compartilhamentos externos",
+    "Set default download limit" : "Definir limite de download padrão",
     "You have reached the maximum amount of downloads allowed" : "Atingiu o número máximo de descargas autorizadas",
-    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esta partilha tem um número limite de descargas. Tem a certeza que quer fazer uma nova descarga?"
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Esta partilha tem um número limite de descargas. Tem a certeza que quer fazer uma nova descarga?",
+    "Failed to remove default download limit" : "Não foi possível remover o limite de download padrão"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
