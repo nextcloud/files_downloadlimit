@@ -7,7 +7,7 @@ import { loadState } from '@nextcloud/initial-state'
 import { translatePlural as n, translate as t } from '@nextcloud/l10n'
 import { logger } from './logger.ts'
 
-import '../css/public.css'
+import './assets/public.css'
 
 const { limit, downloads } = loadState('files_downloadlimit', 'download_limit', { limit: -1, downloads: 0 })
 logger.debug('Download limit', { limit, downloads })

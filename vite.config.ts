@@ -13,6 +13,9 @@ export default createAppConfig(
 	{
 		inlineCSS: false,
 		thirdPartyLicense: false,
+		emptyOutputDirectory: {
+			additionalDirectories: ['css'],
+		},
 		extractLicenseInformation: {
 			includeSourceMaps: true,
 			overwriteLicenses: {
