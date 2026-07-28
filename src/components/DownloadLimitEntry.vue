@@ -25,6 +25,7 @@
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
+				:max="Number.MAX_SAFE_INTEGER"
 				:error="helperText !== ''"
 				:helperText="helperText" />
 			<NcNoteCard
