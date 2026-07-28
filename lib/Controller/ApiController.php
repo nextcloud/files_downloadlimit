@@ -38,6 +38,11 @@ class ApiController extends OCSController {
 
 	/**
 	 * Set the download limit for a given link share
+	 *
+	 * @param string $token The share token
+	 * @param int<1,9007199254740991> $limit The download limit
+	 *
+	 * @return DataResponse
 	 */
 	#[NoAdminRequired]
 	public function setDownloadLimit(string $token, int $limit): DataResponse {
