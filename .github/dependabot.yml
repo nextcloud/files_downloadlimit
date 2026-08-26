@@ -51,6 +51,25 @@ updates:
 
   # Latest stable branch
   - package-ecosystem: npm
+    target-branch: stable35
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "04:00"
+      timezone: Europe/Paris
+    cooldown:
+      default-days: 10
+    open-pull-requests-limit: 20
+    labels:
+      - "3. to review"
+      - "feature: dependencies"
+    ignore:
+      # no major updates on stable branches
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: npm
     target-branch: stable34
     directory: "/"
     schedule:
