@@ -6,5 +6,5 @@ This file is generated from multiple sources. Included packages:
 	- version: 9.9.0
 	- license: AGPL-3.0-or-later
 - files_downloadlimit
-	- version: 5.3.0-dev.0
+	- version: 6.0.0-dev.0
 	- license: AGPL-3.0-or-later

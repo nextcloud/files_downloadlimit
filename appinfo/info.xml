@@ -10,7 +10,7 @@
 	<summary>File link share download limit</summary>
 
 	<description>This app allows limiting the number of downloads for external link shares.</description>
-	<version>5.3.0-dev.0</version>
+	<version>6.0.0-dev.0</version>
 	<licence>AGPL-3.0-or-later</licence>
 	<author>Nextcloud GmbH and Nextcloud contributors</author>
 
@@ -22,7 +22,7 @@
 	<repository type="git">https://github.com/nextcloud/files_downloadlimit.git</repository>
 
 	<dependencies>
-		<nextcloud min-version="35" max-version="35" />
+		<nextcloud min-version="36" max-version="36" />
 	</dependencies>
 
 	<settings>
