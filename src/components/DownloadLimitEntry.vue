@@ -6,7 +6,7 @@
 <template>
 	<div :class="$style.action__wrapper">
 		<NcCheckboxRadioSwitch
-			:checked.sync="limitEnabled"
+			v-model="limitEnabled"
 			:loading="loading"
 			:disabled="hasError">
 			{{ t('files_downloadlimit', 'Limit downloads') }}
@@ -24,7 +24,7 @@
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
-				:value="limit"
+				:model-value="limit"
 				:helper-text="helperText"
 				:error="Boolean(helperText)"
 				@update:value="handleUpdateLimit" />
