@@ -11,9 +11,11 @@
     "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 zostávajúce povolené sťahovanie","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania"],
     "Download limit" : "Limit sťahovania",
     "Configure the default download limit for external shares." : "Nakonfigurujte predvolený limit sťahovania pre externé zdieľané položky.",
+    "Default download limit for external shares" : "Predvolený limit sťahovania pre externé zdieľania",
     "Set default download limit" : "Nastaviť predvolený limit pre sťahovanie",
     "You have reached the maximum amount of downloads allowed" : "Dosiahli ste maximálny povolený počet stiahnutí",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Toto zdieľanie má obmedzený počet stiahnutí. Naozaj chcete spustiť nové sťahovanie?",
-    "Failed to set default download limit" : "Nepodarilo sa nastaviť predvolený limit pre sťahovanie"
+    "Failed to set default download limit" : "Nepodarilo sa nastaviť predvolený limit pre sťahovanie",
+    "Failed to remove default download limit" : "Nepodarilo sa odstrániť predvolený limit sťahovania"
 },"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }
