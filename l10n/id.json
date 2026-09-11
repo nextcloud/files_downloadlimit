@@ -1,5 +1,21 @@
 { "translations": {
-    "Set download limit" : "Atur batas unduhan",
-    "Download limit" : "Batasan pengunduhan"
+    "Files download limit" : "Batas unduhan file",
+    "File link share download limit" : "Batas unduhan berbagi tautan file",
+    "This app allows limiting the number of downloads for external link shares." : "Aplikasi ini memungkinkan pembatasan jumlah unduhan untuk tautan berbagi eksternal.",
+    "The minimum limit is 1" : "Batas minimum adalah 1",
+    "Failed to set download limit" : "Gagal menetapkan batas unduhan",
+    "Failed to remove download limit" : "Gagal menghapus batas unduhan",
+    "Limit downloads" : "Batasi unduhan",
+    "Set download limit" : "Tetapkan batas unduhan",
+    "Setting a new limit will reset the download count" : "Menetapkan batas baru akan mengatur ulang jumlah unduhan",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Tersisa {count} unduhan yang diizinkan"],
+    "Download limit" : "Batas unduhan",
+    "Configure the default download limit for external shares." : "Konfigurasikan batas unduhan default untuk berbagi eksternal.",
+    "Default download limit for external shares" : "Batas unduhan default untuk berbagi eksternal",
+    "Set default download limit" : "Tetapkan batas unduhan default",
+    "You have reached the maximum amount of downloads allowed" : "Anda telah mencapai jumlah maksimum unduhan yang diizinkan",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Berbagi ini memiliki jumlah unduhan terbatas. Apakah Anda yakin ingin memulai unduhan baru?",
+    "Failed to set default download limit" : "Gagal menetapkan batas unduhan default",
+    "Failed to remove default download limit" : "Gagal menghapus batas unduhan default"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
