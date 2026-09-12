@@ -22,7 +22,7 @@
 			:label="t('files_downloadlimit', 'Set default download limit')"
 			type="number"
 			min="1"
-			:helper-text="helperText"
+			:helperText="helperText"
 			:error="Boolean(helperText)"
 			:success="showSuccess" />
 		<div v-show="!enableDefaultLimit" class="settings__placeholder" />
