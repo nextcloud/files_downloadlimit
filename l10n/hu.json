@@ -8,12 +8,14 @@
     "Limit downloads" : "Letöltések korlátozása",
     "Set download limit" : "Letöltési korlát beállítása",
     "Setting a new limit will reset the download count" : "Új korlát beállítása lenullázza a letöltésszámlálót.",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : [" {count} további letöltés engedélyezett"," {count} további letöltés engedélyezett"],
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 további letöltés engedélyezett","{count} további letöltés engedélyezett"],
     "Download limit" : "Letöltési korlát",
     "Configure the default download limit for external shares." : "Alapértelmezett letöltési korlát beállítása a külső megosztások számára.",
+    "Default download limit for external shares" : "Alapértelmezett letöltési korlát a külső megosztásokhoz",
     "Set default download limit" : "Alapértelmezett letöltési korlát beállítása",
     "You have reached the maximum amount of downloads allowed" : "Elérte az engedélyezett letöltések legnagyobb számát",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Ez a megosztás adott számú letöltésre korlátozott. Biztos, hogy új letöltést indít?",
-    "Failed to set default download limit" : "Nem sikerült beállítani az alapértelmezett letöltési korlátot"
+    "Failed to set default download limit" : "Nem sikerült beállítani az alapértelmezett letöltési korlátot",
+    "Failed to remove default download limit" : "Nem sikerült a letöltési korlát eltávolítása"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
