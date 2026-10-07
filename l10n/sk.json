@@ -8,7 +8,7 @@
     "Limit downloads" : "Limit sťahovania",
     "Set download limit" : "Nastaviť limit sťahovania",
     "Setting a new limit will reset the download count" : "Nastavením nového limitu sa vynuluje počet stiahnutí",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 zostávajúce povolené sťahovanie","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania","{count} zostávajúce povolené sťahovania"],
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 zostávajúce povolené stiahnutie","{count} zostávajúce povolené stiahnutia","{count} zostávajúcich povolených stiahnutí","{count} zostávajúcich povolených stiahnutí"],
     "Download limit" : "Limit sťahovania",
     "Configure the default download limit for external shares." : "Nakonfigurujte predvolený limit sťahovania pre externé zdieľané položky.",
     "Default download limit for external shares" : "Predvolený limit sťahovania pre externé zdieľania",
