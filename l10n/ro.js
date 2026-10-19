@@ -2,9 +2,22 @@ OC.L10N.register(
     "files_downloadlimit",
     {
     "Files download limit" : "Limita de descărcare a fișierelor",
-    "File link share download limit" : "Limita de descărcare a link-ului de partajare",
+    "File link share download limit" : "Limita de descărcare pentru partajările prin link",
+    "This app allows limiting the number of downloads for external link shares." : "Această aplicație permite limitarea numărului de descărcări pentru partajările prin link extern.",
+    "The minimum limit is 1" : "Limita minimă este 1",
+    "Failed to set download limit" : "Setarea limitei de descărcare a eșuat",
+    "Failed to remove download limit" : "Eliminarea limitei de descărcare a eșuat",
     "Limit downloads" : "Limitează descărcările",
-    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["1 descărcare permisă rămasă","{count} descărcări permise rămase","{count} descărcări permise rămase"],
-    "Download limit" : "Limită de descărcare"
+    "Set download limit" : "Setează limita de descărcare",
+    "Setting a new limit will reset the download count" : "Setarea unei limite noi va reseta numărul de descărcări",
+    "_1 remaining download allowed_::_{count} remaining downloads allowed_" : ["Mai este permisă 1 descărcare","Mai sunt permise {count} descărcări","Mai sunt permise {count} de descărcări"],
+    "Download limit" : "Limită de descărcare",
+    "Configure the default download limit for external shares." : "Configurează limita implicită de descărcare pentru partajările externe.",
+    "Default download limit for external shares" : "Limita implicită de descărcare pentru partajările externe",
+    "Set default download limit" : "Setează limita implicită de descărcare",
+    "You have reached the maximum amount of downloads allowed" : "Ai atins numărul maxim de descărcări permise",
+    "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Această partajare are un număr limitat de descărcări. Sigur vrei să pornești o nouă descărcare?",
+    "Failed to set default download limit" : "Setarea limitei implicite de descărcare a eșuat",
+    "Failed to remove default download limit" : "Eliminarea limitei implicite de descărcare a eșuat"
 },
 "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));");
