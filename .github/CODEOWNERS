@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-*                   @nextcloud/files
+# Ping backend
+/lib                @nextcloud/files-backend
+# Ping frontend
+/src                @nextcloud/files-frontend
+# App owner
 /appinfo/info.xml   @skjnldsv
