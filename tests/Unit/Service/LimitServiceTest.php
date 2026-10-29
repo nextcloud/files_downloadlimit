@@ -79,7 +79,7 @@ class LimitServiceTest extends TestCase {
 		$this->logger->expects($this->never())->method('error');
 		$share = $this->createShare();
 		$shareLimit = $this->createLimit(3, 2);
-		$this->mapper->method('get')->with('token')->willReturn($shareLimit);
+		$this->mapper->expects($this->once())->method('get')->with('token')->willReturn($shareLimit);
 		$this->manager->expects($this->once())->method('deleteShare')->with($share);
 		$this->mapper->expects($this->once())->method('delete')->with($shareLimit)->willReturnArgument(0);
 		$this->mapper->expects($this->never())->method('update');
@@ -101,7 +101,7 @@ class LimitServiceTest extends TestCase {
 	public function testCountDownloadBelowLimit(): void {
 		$this->logger->expects($this->never())->method('error');
 		$shareLimit = $this->createLimit(3, 1);
-		$this->mapper->method('get')->with('token')->willReturn($shareLimit);
+		$this->mapper->expects($this->once())->method('get')->with('token')->willReturn($shareLimit);
 		$this->manager->expects($this->never())->method('deleteShare');
 		$this->mapper->expects($this->once())->method('update')->with($shareLimit)->willReturnArgument(0);
 
@@ -113,7 +113,7 @@ class LimitServiceTest extends TestCase {
 
 	public function testCountDownloadWithoutLimit(): void {
 		$this->logger->expects($this->never())->method('error');
-		$this->mapper->method('get')->with('token')->willThrowException(new DoesNotExistException(''));
+		$this->mapper->expects($this->once())->method('get')->with('token')->willThrowException(new DoesNotExistException(''));
 		$this->manager->expects($this->never())->method('deleteShare');
 		$this->mapper->expects($this->never())->method('update');
 
@@ -133,7 +133,7 @@ class LimitServiceTest extends TestCase {
 	}
 
 	public function testCountDownloadDeleteShareFails(): void {
-		$this->mapper->method('get')->with('token')->willReturn($this->createLimit(1, 0));
+		$this->mapper->expects($this->once())->method('get')->with('token')->willReturn($this->createLimit(1, 0));
 		$this->manager->expects($this->once())
 			->method('deleteShare')
 			->willThrowException(new \RuntimeException('failed'));
@@ -165,7 +165,7 @@ class LimitServiceTest extends TestCase {
 		$this->logger->expects($this->never())->method('error');
 		$this->manager->expects($this->never())->method('deleteShare');
 		$this->configService->method('getMaximumLimit')->willReturn(5);
-		$this->mapper->method('get')->with('token')->willThrowException(new DoesNotExistException(''));
+		$this->mapper->expects($this->once())->method('get')->with('token')->willThrowException(new DoesNotExistException(''));
 		$this->mapper->expects($this->never())->method('update');
 		$this->mapper->expects($this->once())
 			->method('insert')
@@ -180,7 +180,7 @@ class LimitServiceTest extends TestCase {
 		$this->manager->expects($this->never())->method('deleteShare');
 		$this->configService->method('getMaximumLimit')->willReturn(5);
 		$shareLimit = $this->createLimit(10, 7);
-		$this->mapper->method('get')->with('token')->willReturn($shareLimit);
+		$this->mapper->expects($this->once())->method('get')->with('token')->willReturn($shareLimit);
 		$this->mapper->expects($this->never())->method('insert');
 		$this->mapper->expects($this->once())->method('update')->with($shareLimit)->willReturnArgument(0);
 

@@ -77,7 +77,7 @@ class ApiControllerTest extends TestCase {
 		$share->method('getSharedBy')->willReturn($sharedBy);
 		$share->method('getShareType')->willReturn(IShare::TYPE_LINK);
 		$share->method('getNodeType')->willReturn('file');
-		$this->shareManager->method('getShareByToken')->with('token')->willReturn($share);
+		$this->shareManager->expects($this->once())->method('getShareByToken')->with('token')->willReturn($share);
 	}
 
 	private function existingLimit(int $limit, int $downloads): Limit {
