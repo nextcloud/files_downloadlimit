@@ -69,6 +69,9 @@ jobs:
       matrix:
         php-versions: ${{ fromJson(needs.changes-and-matrix.outputs.php-version) }}
         server-versions: ${{ fromJson(needs.changes-and-matrix.outputs.server-max) }}
+        exclude:
+          # PHPUnit 13 requires PHP 8.4.1 or newer
+          - php-versions: '8.3'
 
     name: SQLite PHP ${{ matrix.php-versions }} Nextcloud ${{ matrix.server-versions }}
 
