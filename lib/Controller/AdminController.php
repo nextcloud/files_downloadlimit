@@ -10,10 +10,13 @@ declare(strict_types=1);
 namespace OCA\Files_DownloadLimit\Controller;
 
 use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\AuditLog\AuditEventFactory;
+use OCA\Files_DownloadLimit\AuditLog\Operation;
 use OCP\AppFramework\Http\Attribute\ApiRoute;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCS\OCSBadRequestException;
 use OCP\AppFramework\OCSController;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IAppConfig;
 use OCP\IRequest;
 
@@ -21,6 +24,7 @@ class AdminController extends OCSController {
 	public function __construct(
 		IRequest $request,
 		private IAppConfig $appConfig,
+		private IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct(Application::APP_ID, $request);
 	}
@@ -31,13 +35,44 @@ class AdminController extends OCSController {
 			throw new OCSBadRequestException('Minimum limit is 1');
 		}
 
-		$this->appConfig->setValueInt(Application::APP_ID, 'default-download-limit', $limit);
+		$previousLimit = $this->getDefaultLimit();
+		if (!$this->appConfig->setValueInt(Application::APP_ID, 'default-download-limit', $limit)) {
+			return new DataResponse();
+		}
+
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::DefaultLimitUpdated,
+			'The default download limit has been set to %s',
+			[
+				'limit' => $limit,
+				'previousLimit' => $previousLimit,
+			],
+		));
 		return new DataResponse();
 	}
 
 	#[ApiRoute(verb: 'DELETE', url: '/api/v{version}/limit', requirements: ['version' => 1])]
 	public function removeDefaultLimit(): DataResponse {
+		$previousLimit = $this->getDefaultLimit();
+		if ($previousLimit === null) {
+			return new DataResponse();
+		}
+
 		$this->appConfig->deleteKey(Application::APP_ID, 'default-download-limit');
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::DefaultLimitRemoved,
+			'The default download limit has been removed',
+			[
+				'previousLimit' => $previousLimit,
+			],
+		));
 		return new DataResponse();
+	}
+
+	private function getDefaultLimit(): ?int {
+		if (!$this->appConfig->hasKey(Application::APP_ID, 'default-download-limit')) {
+			return null;
+		}
+		return $this->appConfig->getValueInt(Application::APP_ID, 'default-download-limit');
 	}
 }
