@@ -27,18 +27,4 @@ namespace OCA\Files_Sharing\Event {
 		public function getScope(): ?string {
 		}
 	}
-
-	class ShareLinkAccessedEvent extends Event {
-		public function getShare(): IShare {
-		}
-
-		public function getStep(): string {
-		}
-
-		public function getErrorCode(): int {
-		}
-
-		public function getErrorMessage(): string {
-		}
-	}
 }
