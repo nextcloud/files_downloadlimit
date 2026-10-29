@@ -17,9 +17,7 @@ use OCA\Files_DownloadLimit\Listener\BeforeSabrePubliclyLoadedListener;
 use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
 use OCA\Files_DownloadLimit\Listener\SabrePluginAddListener;
-use OCA\Files_DownloadLimit\Listener\ShareLinkAccessedListener;
 use OCA\Files_Sharing\Event\BeforeTemplateRenderedEvent;
-use OCA\Files_Sharing\Event\ShareLinkAccessedEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
@@ -41,7 +39,6 @@ class Application extends App implements IBootstrap {
 
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
 		$context->registerEventListener(LoadSidebar::class, LoadSidebarListener::class);
-		$context->registerEventListener(ShareLinkAccessedEvent::class, ShareLinkAccessedListener::class);
 		$context->registerEventListener(BeforeNodeReadEvent::class, BeforeNodeReadListener::class);
 
 
