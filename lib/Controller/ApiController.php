@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace OCA\Files_DownloadLimit\Controller;
 
 use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\AuditLog\AuditEventFactory;
+use OCA\Files_DownloadLimit\AuditLog\Operation;
 use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCP\AppFramework\Db\DoesNotExistException;
@@ -18,6 +20,7 @@ use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCS\OCSBadRequestException;
 use OCP\AppFramework\OCS\OCSNotFoundException;
 use OCP\AppFramework\OCSController;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\IUserSession;
@@ -32,6 +35,7 @@ class ApiController extends OCSController {
 		private IManager $shareManager,
 		private IUserSession $userSession,
 		private LimitMapper $mapper,
+		private IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct(Application::APP_ID, $request);
 	}
@@ -46,7 +50,7 @@ class ApiController extends OCSController {
 	 */
 	#[NoAdminRequired]
 	public function setDownloadLimit(string $token, int $limit): DataResponse {
-		$this->validateToken($token);
+		$share = $this->validateToken($token);
 
 		// Count needs to be at least 1
 		if ($limit < 1) {
@@ -55,8 +59,12 @@ class ApiController extends OCSController {
 
 		// Getting existing limit and init if unset
 		$insert = false;
+		$previousLimit = null;
+		$previousDownloads = null;
 		try {
 			$shareLimit = $this->mapper->get($token);
+			$previousLimit = $shareLimit->getLimit();
+			$previousDownloads = $shareLimit->getDownloads();
 		} catch (DoesNotExistException $e) {
 			$shareLimit = new Limit();
 			$shareLimit->setId($token);
@@ -74,6 +82,17 @@ class ApiController extends OCSController {
 			$this->mapper->update($shareLimit);
 		}
 
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::ShareLimitSet,
+			'The download limit of the share with ID "%s" has been set to %s',
+			[
+				'shareId' => $share->getId(),
+				'limit' => $limit,
+				'previousLimit' => $previousLimit,
+				'previousDownloads' => $previousDownloads,
+			],
+		));
+
 		return new DataResponse();
 	}
 
@@ -82,14 +101,25 @@ class ApiController extends OCSController {
 	 */
 	#[NoAdminRequired]
 	public function removeDownloadLimit(string $token): DataResponse {
-		$this->validateToken($token);
+		$share = $this->validateToken($token);
 
 		try {
 			$shareLimit = $this->mapper->get($token);
 			$this->mapper->delete($shareLimit);
 		} catch (DoesNotExistException $e) {
 			// Ignore if does not exists
+			return new DataResponse();
 		}
+
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::ShareLimitRemoved,
+			'The download limit of the share with ID "%s" has been removed',
+			[
+				'shareId' => $share->getId(),
+				'previousLimit' => $shareLimit->getLimit(),
+				'previousDownloads' => $shareLimit->getDownloads(),
+			],
+		));
 
 		return new DataResponse();
 	}
@@ -116,7 +146,7 @@ class ApiController extends OCSController {
 		]);
 	}
 
-	protected function validateToken(string $token = '') {
+	protected function validateToken(string $token = ''): IShare {
 		$user = $this->userSession->getUser();
 
 		try {
@@ -140,5 +170,7 @@ class ApiController extends OCSController {
 		if ($share->getNodeType() !== 'file') {
 			throw new OCSNotFoundException('Invalid file type');
 		}
+
+		return $share;
 	}
 }

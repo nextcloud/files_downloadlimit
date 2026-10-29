@@ -19,6 +19,7 @@ yarn-error.log*
 build/
 coverage*
 vendor/
+/tests/.phpunit.cache
 
 /.php-cs-fixer.cache
 composer.phar
