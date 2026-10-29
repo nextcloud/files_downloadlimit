@@ -14,10 +14,12 @@ use OCA\Files_DownloadLimit\AuditLog\AuditEventFactory;
 use OCA\Files_DownloadLimit\AuditLog\Operation;
 use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCS\OCSBadRequestException;
+use OCP\AppFramework\OCS\OCSForbiddenException;
 use OCP\AppFramework\OCS\OCSNotFoundException;
 use OCP\AppFramework\OCSController;
 use OCP\EventDispatcher\IEventDispatcher;
@@ -36,6 +38,7 @@ class ApiController extends OCSController {
 		private IUserSession $userSession,
 		private LimitMapper $mapper,
 		private IEventDispatcher $eventDispatcher,
+		private ConfigService $configService,
 	) {
 		parent::__construct(Application::APP_ID, $request);
 	}
@@ -55,6 +58,11 @@ class ApiController extends OCSController {
 		// Count needs to be at least 1
 		if ($limit < 1) {
 			throw new OCSBadRequestException('Limit needs to be greater or equal than 1');
+		}
+
+		$maximumLimit = $this->configService->getMaximumLimit();
+		if ($maximumLimit !== null && $limit > $maximumLimit) {
+			throw new OCSBadRequestException('Limit needs to be less or equal than ' . $maximumLimit);
 		}
 
 		// Getting existing limit and init if unset
@@ -98,10 +106,16 @@ class ApiController extends OCSController {
 
 	/**
 	 * Remove the download limit for a given link share
+	 *
+	 * @throws OCSForbiddenException The download limit is enforced
 	 */
 	#[NoAdminRequired]
 	public function removeDownloadLimit(string $token): DataResponse {
 		$share = $this->validateToken($token);
+
+		if ($this->configService->isLimitEnforced()) {
+			throw new OCSForbiddenException('The download limit is enforced');
+		}
 
 		try {
 			$shareLimit = $this->mapper->get($token);

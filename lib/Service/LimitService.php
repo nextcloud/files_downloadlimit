@@ -11,6 +11,7 @@ namespace OCA\Files_DownloadLimit\Service;
 
 use OCA\Files_DownloadLimit\AuditLog\AuditEventFactory;
 use OCA\Files_DownloadLimit\AuditLog\Operation;
+use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\EventDispatcher\IEventDispatcher;
@@ -24,7 +25,43 @@ class LimitService {
 		private LimitMapper $mapper,
 		private IEventDispatcher $eventDispatcher,
 		private LoggerInterface $logger,
+		private ConfigService $configService,
 	) {
+	}
+
+	/**
+	 * Apply the default download limit to a new share if the download limit is enforced
+	 */
+	public function enforceLimit(IShare $share): void {
+		$limit = $this->configService->getMaximumLimit();
+		$token = $share->getToken();
+		if ($limit === null || $token === null) {
+			return;
+		}
+
+		// Download count limit only works on link and mail shares of single files
+		if (($share->getShareType() !== IShare::TYPE_LINK && $share->getShareType() !== IShare::TYPE_EMAIL)
+			|| $share->getNodeType() !== 'file') {
+			return;
+		}
+
+		// A custom token can be reused from a deleted share whose limit is still stored
+		$insert = false;
+		try {
+			$shareLimit = $this->mapper->get($token);
+		} catch (DoesNotExistException) {
+			$shareLimit = new Limit();
+			$shareLimit->setId($token);
+			$insert = true;
+		}
+
+		$shareLimit->setLimit($limit);
+		$shareLimit->setDownloads(0);
+		if ($insert) {
+			$this->mapper->insert($shareLimit);
+		} else {
+			$this->mapper->update($shareLimit);
+		}
 	}
 
 	/**

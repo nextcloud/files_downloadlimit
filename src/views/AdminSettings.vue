@@ -14,6 +14,16 @@
 			{{ t('files_downloadlimit', 'Default download limit for external shares') }}
 		</NcCheckboxRadioSwitch>
 
+		<NcCheckboxRadioSwitch
+			v-show="enableDefaultLimit"
+			:modelValue="enforceLimit"
+			:loading="showEnforceLoading"
+			:disabled="showLoading"
+			type="switch"
+			@update:modelValue="onUpdateEnforceLimit">
+			{{ t('files_downloadlimit', 'Enforce the default download limit as maximum') }}
+		</NcCheckboxRadioSwitch>
+
 		<NcTextField
 			v-show="enableDefaultLimit"
 			v-model="limit"
@@ -36,9 +46,10 @@ import { defineComponent } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcSettingsSection from '@nextcloud/vue/components/NcSettingsSection'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
-import { removeDefaultLimit, setDefaultLimit } from '../services/AdminService.ts'
+import { removeDefaultLimit, setDefaultLimit, setLimitEnforced } from '../services/AdminService.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
+const enforceDownloadLimit = loadState<boolean>('files_downloadlimit', 'enforce-download-limit', false)
 
 export default defineComponent({
 	name: 'AdminSettings',
@@ -53,7 +64,9 @@ export default defineComponent({
 		return {
 			limit: Math.max(defaultDownloadLimit, 10),
 			enableDefaultLimit: defaultDownloadLimit !== -1,
+			enforceLimit: enforceDownloadLimit,
 			showLoading: false,
+			showEnforceLoading: false,
 			showSuccess: false,
 		}
 	},
@@ -88,6 +101,9 @@ export default defineComponent({
 
 			if (!success) {
 				this.enableDefaultLimit = oldValue
+			} else if (!enabled) {
+				// removing the default limit also removes its enforcement
+				this.enforceLimit = false
 			}
 			this.showLoading = false
 		},
@@ -95,6 +111,14 @@ export default defineComponent({
 
 	methods: {
 		t,
+
+		async onUpdateEnforceLimit(enforced: boolean) {
+			this.showEnforceLoading = true
+			if (await setLimitEnforced(enforced)) {
+				this.enforceLimit = enforced
+			}
+			this.showEnforceLoading = false
+		},
 	},
 })
 </script>
@@ -108,7 +132,7 @@ export default defineComponent({
 
 	&__placeholder {
 		// ensure content does not jump when enable / disable the input
-		height: calc(var(--default-clickable-area) + 3 * var(--default-grid-baseline));
+		height: calc(2 * var(--default-clickable-area) + 3 * var(--default-grid-baseline));
 	}
 }
 </style>

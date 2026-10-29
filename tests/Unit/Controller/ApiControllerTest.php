@@ -12,9 +12,11 @@ namespace OCA\Files_DownloadLimit\Tests\Unit\Controller;
 use OCA\Files_DownloadLimit\Controller\ApiController;
 use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCA\Files_DownloadLimit\Tests\Unit\AuditLog\AuditLogHelper;
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\OCS\OCSBadRequestException;
+use OCP\AppFramework\OCS\OCSForbiddenException;
 use OCP\AppFramework\OCS\OCSNotFoundException;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventDispatcher;
@@ -34,6 +36,7 @@ class ApiControllerTest extends TestCase {
 	private IUserSession&Stub $userSession;
 	private LimitMapper&MockObject $mapper;
 	private IEventDispatcher&Stub $eventDispatcher;
+	private ConfigService&Stub $configService;
 	private ApiController $controller;
 
 	/** @var list<Event> */
@@ -51,6 +54,8 @@ class ApiControllerTest extends TestCase {
 				$this->dispatched[] = $event;
 			});
 
+		$this->configService = $this->createStub(ConfigService::class);
+
 		$this->controller = new ApiController(
 			$this->createStub(IRequest::class),
 			$this->createStub(IConfig::class),
@@ -58,6 +63,7 @@ class ApiControllerTest extends TestCase {
 			$this->userSession,
 			$this->mapper,
 			$this->eventDispatcher,
+			$this->configService,
 		);
 	}
 
@@ -199,5 +205,57 @@ class ApiControllerTest extends TestCase {
 		}
 
 		$this->assertSame([], $this->dispatched);
+	}
+
+	public function testSetDownloadLimitEnforcedMaximum(): void {
+		$this->mockShare();
+		$this->configService->method('getMaximumLimit')->willReturn(5);
+		$this->mapper->method('get')->willReturn($this->existingLimit(3, 2));
+		$this->mapper->expects($this->once())->method('update')->willReturnArgument(0);
+
+		$this->controller->setDownloadLimit('token', 5);
+
+		$this->assertCount(1, $this->dispatched);
+	}
+
+	public function testSetDownloadLimitAboveEnforcedMaximum(): void {
+		$this->mockShare();
+		$this->configService->method('getMaximumLimit')->willReturn(5);
+		$this->mapper->expects($this->never())->method('insert');
+		$this->mapper->expects($this->never())->method('update');
+
+		try {
+			$this->controller->setDownloadLimit('token', 6);
+			$this->fail('Expected OCSBadRequestException');
+		} catch (OCSBadRequestException) {
+		}
+
+		$this->assertSame([], $this->dispatched);
+	}
+
+	public function testRemoveDownloadLimitEnforced(): void {
+		$this->mockShare();
+		$this->configService->method('isLimitEnforced')->willReturn(true);
+		$this->mapper->expects($this->never())->method('delete');
+
+		try {
+			$this->controller->removeDownloadLimit('token');
+			$this->fail('Expected OCSForbiddenException');
+		} catch (OCSForbiddenException) {
+		}
+
+		$this->assertSame([], $this->dispatched);
+	}
+
+	public function testRemoveDownloadLimitEnforcedNotOwner(): void {
+		$this->mockShare('bob');
+		$this->configService->method('isLimitEnforced')->willReturn(true);
+		$this->mapper->expects($this->never())->method('delete');
+
+		try {
+			$this->controller->removeDownloadLimit('token');
+			$this->fail('Expected OCSNotFoundException');
+		} catch (OCSNotFoundException) {
+		}
 	}
 }

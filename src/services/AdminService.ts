@@ -40,3 +40,21 @@ export async function removeDefaultLimit(): Promise<boolean> {
 	}
 	return false
 }
+
+/**
+ * Enforce the default download limit as maximum download limit of all shares.
+ *
+ * @param enforced - Whether the limit should be enforced
+ */
+export async function setLimitEnforced(enforced: boolean): Promise<boolean> {
+	try {
+		await axios.put(generateOcsUrl('/apps/files_downloadlimit/api/v1/limit/enforced'), {
+			enforced,
+		})
+		return true
+	} catch (error) {
+		logger.error('Failed to change download limit enforcement', { error })
+		showError(t('files_downloadlimit', 'Failed to change download limit enforcement'))
+	}
+	return false
+}
