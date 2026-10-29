@@ -3,14 +3,15 @@
   - SPDX-FileCopyrightText: 2021 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
-<info>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>files_downloadlimit</id>
 	<name>Files download limit</name>
 	<summary>File link share download limit</summary>
 
 	<description>This app allows limiting the number of downloads for external link shares.</description>
 	<version>5.0.0</version>
-	<licence>agpl</licence>
+	<licence>AGPL-3.0-or-later</licence>
 	<author mail="skjnldsv@protonmail.com">John Molakvoæ</author>
 
 	<namespace>Files_DownloadLimit</namespace>
