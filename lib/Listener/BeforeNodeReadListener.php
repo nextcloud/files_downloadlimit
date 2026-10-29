@@ -9,8 +9,7 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit\Listener;
 
-use OCA\Files_DownloadLimit\Db\LimitMapper;
-use OCP\AppFramework\Db\DoesNotExistException;
+use OCA\Files_DownloadLimit\Service\LimitService;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Files\Events\BeforeZipCreatedEvent;
@@ -23,9 +22,7 @@ use OCP\ICache;
 use OCP\ICacheFactory;
 use OCP\IRequest;
 use OCP\ISession;
-use OCP\Share\IManager;
 use OCP\Share\IShare;
-use Psr\Log\LoggerInterface;
 
 /**
  * @template-implements IEventListener<BeforeNodeReadEvent|BeforeZipCreatedEvent|Event>
@@ -33,9 +30,7 @@ use Psr\Log\LoggerInterface;
 class BeforeNodeReadListener implements IEventListener {
 	private ICache $cache;
 	public function __construct(
-		private IManager $manager,
-		private LimitMapper $mapper,
-		private LoggerInterface $logger,
+		private LimitService $limitService,
 		private IRequest $request,
 		private ISession $session,
 		ICacheFactory $cacheFactory,
@@ -84,7 +79,7 @@ class BeforeNodeReadListener implements IEventListener {
 		/* Cache that that folder download activity was published */
 		$this->cache->set($this->request->getId(), $node->getPath(), 3600);
 
-		$this->singleFileDownloaded($share);
+		$this->limitService->countDownload($share);
 	}
 
 	public function handleBeforeNodeReadEvent(BeforeNodeReadEvent $event): void {
@@ -124,41 +119,6 @@ class BeforeNodeReadListener implements IEventListener {
 		}
 		$this->cache->set($cacheKey, 'true', 3600);
 
-		$this->singleFileDownloaded($share);
+		$this->limitService->countDownload($share);
 	}
-
-	protected function singleFileDownloaded(IShare $share): void {
-
-		$token = $share->getToken();
-		if ($token === null) {
-			return;
-		}
-		// Make sure we have a valid limit
-		try {
-			$shareLimit = $this->mapper->get($token);
-			$limit = $shareLimit->getLimit();
-
-			// Increment this download event
-			$downloads = $shareLimit->getDownloads() + 1;
-
-			// If we reached the maximum allowed download count
-			if ($downloads >= $limit) {
-				// Delete share
-				$this->manager->deleteShare($share);
-				// Delete limit
-				$this->mapper->delete($shareLimit);
-				return;
-			}
-
-			// Else, we just update the current download count
-			$shareLimit->setDownloads($downloads);
-			$this->mapper->update($shareLimit);
-		} catch (DoesNotExistException $e) {
-			// No limit is set, ignore
-		} catch (\Exception $e) {
-			$this->logger->error('Error while handling share link accessed event: ' . $e->getMessage());
-		}
-
-	}
-
 }

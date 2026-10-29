@@ -19,6 +19,7 @@ enum Operation: string {
 	case ShareLimitRemoved = 'files_downloadlimit.share_limit.removed';
 	case DefaultLimitUpdated = 'files_downloadlimit.default_limit.updated';
 	case DefaultLimitRemoved = 'files_downloadlimit.default_limit.removed';
+	case ShareLimitReached = 'files_downloadlimit.share_limit.reached';
 
 	public function description(): string {
 		return match ($this) {
@@ -26,6 +27,7 @@ enum Operation: string {
 			self::ShareLimitRemoved => 'A share owner removed the download limit of a link or mail share.',
 			self::DefaultLimitUpdated => 'An admin set or changed the default download limit for new link and mail shares.',
 			self::DefaultLimitRemoved => 'An admin removed the default download limit for new link and mail shares.',
+			self::ShareLimitReached => 'A link or mail share was deleted automatically because its download limit was reached.',
 		};
 	}
 }
