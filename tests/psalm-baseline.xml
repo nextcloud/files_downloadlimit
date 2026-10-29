@@ -37,4 +37,9 @@
       <code><![CDATA[PropFindPlugin]]></code>
     </MissingDependency>
   </file>
+  <file src="lib/Service/LimitService.php">
+    <InvalidArgument>
+      <code><![CDATA[$token]]></code>
+    </InvalidArgument>
+  </file>
 </files>

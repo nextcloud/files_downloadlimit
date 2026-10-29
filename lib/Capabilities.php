@@ -9,26 +9,26 @@ declare(strict_types=1);
 
 namespace OCA\Files_DownloadLimit;
 
-use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCP\Capabilities\ICapability;
-use OCP\IAppConfig;
 
 class Capabilities implements ICapability {
 
 	public function __construct(
-		private readonly IAppConfig $config,
+		private readonly ConfigService $configService,
 	) {
 	}
 
 	/**
-	 * @return array{downloadlimit: array{'default-limit': int, enabled: true}}
+	 * @return array{downloadlimit: array{'default-limit': int, enabled: true, enforced: bool}}
 	 */
 	#[\Override]
 	public function getCapabilities(): array {
 		return [
 			'downloadlimit' => [
 				'enabled' => true,
-				'default-limit' => $this->config->getValueInt(Application::APP_ID, 'default-download-limit', -1),
+				'default-limit' => $this->configService->getDefaultLimit() ?? -1,
+				'enforced' => $this->configService->isLimitEnforced(),
 			]
 		];
 	}

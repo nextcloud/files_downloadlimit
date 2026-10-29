@@ -11,17 +11,17 @@ namespace OCA\Files_DownloadLimit\Listener;
 
 use OCA\Files\Event\LoadSidebar;
 use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
-use OCP\IAppConfig;
 use OCP\Util;
 
 /** @template-implements IEventListener<LoadSidebar> */
 class LoadSidebarListener implements IEventListener {
 	public function __construct(
 		private IInitialState $initialState,
-		private IAppConfig $appConfig,
+		private ConfigService $configService,
 	) {
 	}
 
@@ -33,7 +33,11 @@ class LoadSidebarListener implements IEventListener {
 
 		$this->initialState->provideInitialState(
 			'default-download-limit',
-			$this->appConfig->getValueInt(Application::APP_ID, 'default-download-limit', -1),
+			$this->configService->getDefaultLimit() ?? -1,
+		);
+		$this->initialState->provideInitialState(
+			'enforce-download-limit',
+			$this->configService->isLimitEnforced(),
 		);
 
 		Util::addStyle(Application::APP_ID, Application::APP_ID . '-main');

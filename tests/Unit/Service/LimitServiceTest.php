@@ -11,6 +11,7 @@ namespace OCA\Files_DownloadLimit\Tests\Unit\Service;
 
 use OCA\Files_DownloadLimit\Db\Limit;
 use OCA\Files_DownloadLimit\Db\LimitMapper;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCA\Files_DownloadLimit\Service\LimitService;
 use OCA\Files_DownloadLimit\Tests\Unit\AuditLog\AuditLogHelper;
 use OCP\AppFramework\Db\DoesNotExistException;
@@ -19,7 +20,9 @@ use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Log\Audit\CriticalActionPerformedEvent;
 use OCP\Share\IManager;
 use OCP\Share\IShare;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -27,6 +30,7 @@ class LimitServiceTest extends TestCase {
 	private IManager&MockObject $manager;
 	private LimitMapper&MockObject $mapper;
 	private LoggerInterface&MockObject $logger;
+	private ConfigService&Stub $configService;
 	private LimitService $service;
 
 	/** @var list<Event> */
@@ -44,11 +48,14 @@ class LimitServiceTest extends TestCase {
 				$this->dispatched[] = $event;
 			});
 
+		$this->configService = $this->createStub(ConfigService::class);
+
 		$this->service = new LimitService(
 			$this->manager,
 			$this->mapper,
 			$eventDispatcher,
 			$this->logger,
+			$this->configService,
 		);
 	}
 
@@ -136,5 +143,70 @@ class LimitServiceTest extends TestCase {
 		$this->service->countDownload($this->createShare());
 
 		$this->assertSame([], $this->dispatched);
+	}
+
+	private function createNewShare(int $shareType = IShare::TYPE_LINK, string $nodeType = 'file', ?string $token = 'token'): IShare {
+		$share = $this->createStub(IShare::class);
+		$share->method('getToken')->willReturn($token);
+		$share->method('getShareType')->willReturn($shareType);
+		$share->method('getNodeType')->willReturn($nodeType);
+		return $share;
+	}
+
+	public static function dataEnforceLimitShareTypes(): array {
+		return [
+			'link' => [IShare::TYPE_LINK],
+			'mail' => [IShare::TYPE_EMAIL],
+		];
+	}
+
+	#[DataProvider('dataEnforceLimitShareTypes')]
+	public function testEnforceLimit(int $shareType): void {
+		$this->logger->expects($this->never())->method('error');
+		$this->manager->expects($this->never())->method('deleteShare');
+		$this->configService->method('getMaximumLimit')->willReturn(5);
+		$this->mapper->method('get')->with('token')->willThrowException(new DoesNotExistException(''));
+		$this->mapper->expects($this->never())->method('update');
+		$this->mapper->expects($this->once())
+			->method('insert')
+			->with($this->callback(fn (Limit $limit): bool => $limit->getId() === 'token' && $limit->getLimit() === 5 && $limit->getDownloads() === 0))
+			->willReturnArgument(0);
+
+		$this->service->enforceLimit($this->createNewShare($shareType));
+	}
+
+	public function testEnforceLimitReplacesStoredLimit(): void {
+		$this->logger->expects($this->never())->method('error');
+		$this->manager->expects($this->never())->method('deleteShare');
+		$this->configService->method('getMaximumLimit')->willReturn(5);
+		$shareLimit = $this->createLimit(10, 7);
+		$this->mapper->method('get')->with('token')->willReturn($shareLimit);
+		$this->mapper->expects($this->never())->method('insert');
+		$this->mapper->expects($this->once())->method('update')->with($shareLimit)->willReturnArgument(0);
+
+		$this->service->enforceLimit($this->createNewShare());
+
+		$this->assertSame(5, $shareLimit->getLimit());
+		$this->assertSame(0, $shareLimit->getDownloads());
+	}
+
+	public static function dataEnforceLimitSkipped(): array {
+		return [
+			'not enforced' => [null, IShare::TYPE_LINK, 'file', 'token'],
+			'user share' => [5, IShare::TYPE_USER, 'file', 'token'],
+			'folder' => [5, IShare::TYPE_LINK, 'folder', 'token'],
+			'no token' => [5, IShare::TYPE_LINK, 'file', null],
+		];
+	}
+
+	#[DataProvider('dataEnforceLimitSkipped')]
+	public function testEnforceLimitSkipped(?int $maximumLimit, int $shareType, string $nodeType, ?string $token): void {
+		$this->logger->expects($this->never())->method('error');
+		$this->manager->expects($this->never())->method('deleteShare');
+		$this->configService->method('getMaximumLimit')->willReturn($maximumLimit);
+		$this->mapper->expects($this->never())->method('insert');
+		$this->mapper->expects($this->never())->method('update');
+
+		$this->service->enforceLimit($this->createNewShare($shareType, $nodeType, $token));
 	}
 }

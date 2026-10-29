@@ -20,6 +20,8 @@ enum Operation: string {
 	case DefaultLimitUpdated = 'files_downloadlimit.default_limit.updated';
 	case DefaultLimitRemoved = 'files_downloadlimit.default_limit.removed';
 	case ShareLimitReached = 'files_downloadlimit.share_limit.reached';
+	case LimitEnforcementEnabled = 'files_downloadlimit.limit_enforcement.enabled';
+	case LimitEnforcementDisabled = 'files_downloadlimit.limit_enforcement.disabled';
 
 	public function description(): string {
 		return match ($this) {
@@ -28,6 +30,8 @@ enum Operation: string {
 			self::DefaultLimitUpdated => 'An admin set or changed the default download limit for new link and mail shares.',
 			self::DefaultLimitRemoved => 'An admin removed the default download limit for new link and mail shares.',
 			self::ShareLimitReached => 'A link or mail share was deleted automatically because its download limit was reached.',
+			self::LimitEnforcementEnabled => 'An admin enforced the default download limit as the maximum download limit of link and mail shares.',
+			self::LimitEnforcementDisabled => 'An admin stopped enforcing the maximum download limit of link and mail shares.',
 		};
 	}
 }

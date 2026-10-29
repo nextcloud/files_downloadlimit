@@ -8,7 +8,7 @@
 		<NcCheckboxRadioSwitch
 			v-model="limitEnabled"
 			:loading="loading"
-			:disabled="hasError">
+			:disabled="hasError || limitEnforced">
 			{{ t('files_downloadlimit', 'Limit downloads') }}
 		</NcCheckboxRadioSwitch>
 
@@ -25,7 +25,7 @@
 				:label="t('files_downloadlimit', 'Set download limit')"
 				type="number"
 				min="1"
-				:max="Number.MAX_SAFE_INTEGER"
+				:max="maximumLimit"
 				:error="helperText !== ''"
 				:helperText="helperText" />
 			<NcNoteCard
@@ -54,6 +54,7 @@ import {
 } from '../services/DownloadLimitService.ts'
 
 const defaultDownloadLimit = loadState<number>('files_downloadlimit', 'default-download-limit', -1)
+const enforceDownloadLimit = loadState<boolean>('files_downloadlimit', 'enforce-download-limit', false)
 
 export default defineComponent({
 	name: 'DownloadLimitEntry',
@@ -84,19 +85,27 @@ export default defineComponent({
 			count: null as number | null,
 			loading: false,
 			hasError: false,
+			limitEnforced: enforceDownloadLimit,
 		}
 	},
 
 	computed: {
+		maximumLimit() {
+			return this.limitEnforced ? defaultDownloadLimit : Number.MAX_SAFE_INTEGER
+		},
+
 		remainingCount() {
 			return (this.initialLimit ?? 0) - (this.count ?? 0)
 		},
 
 		helperText() {
-			if (this.limit && this.limit > 0) {
-				return ''
+			if (!this.limit || this.limit <= 0) {
+				return t('files_downloadlimit', 'The minimum limit is 1')
 			}
-			return t('files_downloadlimit', 'The minimum limit is 1')
+			if (this.limit > this.maximumLimit) {
+				return t('files_downloadlimit', 'The maximum limit is {limit}', { limit: this.maximumLimit })
+			}
+			return ''
 		},
 
 		isNewShare() {
@@ -156,7 +165,7 @@ export default defineComponent({
 		t,
 
 		async save() {
-			if (typeof this.limit !== 'number' || this.limit <= 0) {
+			if (typeof this.limit !== 'number' || this.limit <= 0 || this.limit > this.maximumLimit) {
 				logger.debug('Skip saving invalid limit', { limit: this.limit })
 				return
 			}

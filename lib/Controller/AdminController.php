@@ -12,6 +12,7 @@ namespace OCA\Files_DownloadLimit\Controller;
 use OCA\Files_DownloadLimit\AppInfo\Application;
 use OCA\Files_DownloadLimit\AuditLog\AuditEventFactory;
 use OCA\Files_DownloadLimit\AuditLog\Operation;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCP\AppFramework\Http\Attribute\ApiRoute;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCS\OCSBadRequestException;
@@ -25,6 +26,7 @@ class AdminController extends OCSController {
 		IRequest $request,
 		private IAppConfig $appConfig,
 		private IEventDispatcher $eventDispatcher,
+		private ConfigService $configService,
 	) {
 		parent::__construct(Application::APP_ID, $request);
 	}
@@ -35,8 +37,8 @@ class AdminController extends OCSController {
 			throw new OCSBadRequestException('Minimum limit is 1');
 		}
 
-		$previousLimit = $this->getDefaultLimit();
-		if (!$this->appConfig->setValueInt(Application::APP_ID, 'default-download-limit', $limit)) {
+		$previousLimit = $this->configService->getDefaultLimit();
+		if (!$this->appConfig->setValueInt(Application::APP_ID, ConfigService::KEY_DEFAULT_LIMIT, $limit)) {
 			return new DataResponse();
 		}
 
@@ -53,12 +55,16 @@ class AdminController extends OCSController {
 
 	#[ApiRoute(verb: 'DELETE', url: '/api/v{version}/limit', requirements: ['version' => 1])]
 	public function removeDefaultLimit(): DataResponse {
-		$previousLimit = $this->getDefaultLimit();
+		$previousLimit = $this->configService->getDefaultLimit();
 		if ($previousLimit === null) {
 			return new DataResponse();
 		}
 
-		$this->appConfig->deleteKey(Application::APP_ID, 'default-download-limit');
+		if ($this->configService->isLimitEnforced()) {
+			$this->disableLimitEnforcement();
+		}
+
+		$this->appConfig->deleteKey(Application::APP_ID, ConfigService::KEY_DEFAULT_LIMIT);
 		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
 			Operation::DefaultLimitRemoved,
 			'The default download limit has been removed',
@@ -69,10 +75,48 @@ class AdminController extends OCSController {
 		return new DataResponse();
 	}
 
-	private function getDefaultLimit(): ?int {
-		if (!$this->appConfig->hasKey(Application::APP_ID, 'default-download-limit')) {
-			return null;
+	/**
+	 * Enforce the default download limit as maximum download limit of all shares
+	 *
+	 * @param bool $enforced Whether the limit should be enforced
+	 * @throws OCSBadRequestException No default limit is configured
+	 */
+	#[ApiRoute(verb: 'PUT', url: '/api/v{version}/limit/enforced', requirements: ['version' => 1])]
+	public function setLimitEnforced(bool $enforced): DataResponse {
+		if ($enforced === $this->configService->isLimitEnforced()) {
+			return new DataResponse();
 		}
-		return $this->appConfig->getValueInt(Application::APP_ID, 'default-download-limit');
+
+		if (!$enforced) {
+			$this->disableLimitEnforcement();
+			return new DataResponse();
+		}
+
+		$limit = $this->configService->getDefaultLimit();
+		if ($limit === null) {
+			throw new OCSBadRequestException('A default limit is required to enforce it');
+		}
+
+		$this->appConfig->setValueBool(Application::APP_ID, ConfigService::KEY_ENFORCE_LIMIT, true);
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::LimitEnforcementEnabled,
+			'The default download limit of %s is now enforced as maximum download limit',
+			[
+				'limit' => $limit,
+			],
+		));
+		return new DataResponse();
+	}
+
+	private function disableLimitEnforcement(): void {
+		$limit = $this->configService->getMaximumLimit();
+		$this->appConfig->deleteKey(Application::APP_ID, ConfigService::KEY_ENFORCE_LIMIT);
+		$this->eventDispatcher->dispatchTyped(AuditEventFactory::create(
+			Operation::LimitEnforcementDisabled,
+			'The maximum download limit is no longer enforced',
+			[
+				'previousLimit' => $limit,
+			],
+		));
 	}
 }

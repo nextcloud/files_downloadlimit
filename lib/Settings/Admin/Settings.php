@@ -10,16 +10,16 @@ declare(strict_types=1);
 namespace OCA\Files_DownloadLimit\Settings\Admin;
 
 use OCA\Files_DownloadLimit\AppInfo\Application;
+use OCA\Files_DownloadLimit\Service\ConfigService;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\IAppConfig;
 use OCP\Settings\ISettings;
 use OCP\Util;
 
 class Settings implements ISettings {
 	public function __construct(
 		private IInitialState $initialState,
-		private IAppConfig $appConfig,
+		private ConfigService $configService,
 	) {
 	}
 
@@ -27,7 +27,11 @@ class Settings implements ISettings {
 	public function getForm(): TemplateResponse {
 		$this->initialState->provideInitialState(
 			'default-download-limit',
-			$this->appConfig->getValueInt(Application::APP_ID, 'default-download-limit', -1),
+			$this->configService->getDefaultLimit() ?? -1,
+		);
+		$this->initialState->provideInitialState(
+			'enforce-download-limit',
+			$this->configService->isLimitEnforced(),
 		);
 
 		Util::addStyle(Application::APP_ID, Application::APP_ID . '-admin');
