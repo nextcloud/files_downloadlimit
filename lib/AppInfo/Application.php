@@ -13,6 +13,7 @@ use OCA\DAV\Events\SabrePluginAddEvent;
 use OCA\Files\Event\LoadSidebar;
 use OCA\Files_DownloadLimit\Capabilities;
 use OCA\Files_DownloadLimit\Listener\BeforeNodeReadListener;
+use OCA\Files_DownloadLimit\Listener\BeforeSabrePubliclyLoadedListener;
 use OCA\Files_DownloadLimit\Listener\BeforeTemplateRenderedListener;
 use OCA\Files_DownloadLimit\Listener\LoadSidebarListener;
 use OCA\Files_DownloadLimit\Listener\SabrePluginAddListener;
@@ -23,6 +24,7 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\BeforeSabrePubliclyLoadedEvent;
 use OCP\Files\Events\Node\BeforeNodeReadEvent;
 
 class Application extends App implements IBootstrap {
@@ -35,6 +37,7 @@ class Application extends App implements IBootstrap {
 	#[\Override]
 	public function register(IRegistrationContext $context): void {
 		$context->registerEventListener(SabrePluginAddEvent::class, SabrePluginAddListener::class);
+		$context->registerEventListener(BeforeSabrePubliclyLoadedEvent::class, BeforeSabrePubliclyLoadedListener::class);
 
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
 		$context->registerEventListener(LoadSidebar::class, LoadSidebarListener::class);

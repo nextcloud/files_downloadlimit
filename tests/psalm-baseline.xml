@@ -9,6 +9,15 @@
       <code><![CDATA[$token]]></code>
     </InvalidArgument>
   </file>
+  <file src="lib/Listener/BeforeSabrePubliclyLoadedListener.php">
+    <MissingDependency>
+      <code><![CDATA[DirectDownloadPlugin]]></code>
+    </MissingDependency>
+    <UndefinedDocblockClass>
+      <code><![CDATA[$event->getServer()]]></code>
+      <code><![CDATA[$server]]></code>
+    </UndefinedDocblockClass>
+  </file>
   <file src="lib/Listener/LoadSidebarListener.php">
     <ImplementedParamTypeMismatch>
       <code><![CDATA[$event]]></code>
