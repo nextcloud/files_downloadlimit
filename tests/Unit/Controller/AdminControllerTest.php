@@ -46,14 +46,21 @@ class AdminControllerTest extends TestCase {
 		);
 	}
 
-	private function mockStoredLimit(?int $limit, bool $enforced = false): void {
-		$this->appConfig->method('hasKey')
+	/**
+	 * @param int $limitReads How often the default limit is read
+	 * @param int $enforcedReads How often the enforcement flag is read
+	 */
+	private function mockStoredLimit(?int $limit, bool $enforced = false, int $limitReads = 1, int $enforcedReads = 0): void {
+		$this->appConfig->expects($this->exactly($limitReads))
+			->method('hasKey')
 			->with('files_downloadlimit', 'default-download-limit')
 			->willReturn($limit !== null);
-		$this->appConfig->method('getValueInt')
+		$this->appConfig->expects($this->exactly($limit === null ? 0 : $limitReads))
+			->method('getValueInt')
 			->with('files_downloadlimit', 'default-download-limit')
 			->willReturn($limit ?? 0);
-		$this->appConfig->method('getValueBool')
+		$this->appConfig->expects($this->exactly($enforcedReads))
+			->method('getValueBool')
 			->with('files_downloadlimit', 'enforce-download-limit')
 			->willReturn($enforced);
 	}
@@ -130,7 +137,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testRemoveDefaultLimit(): void {
-		$this->mockStoredLimit(3);
+		$this->mockStoredLimit(3, false, 2, 1);
 		$this->appConfig->expects($this->once())
 			->method('deleteKey')
 			->with('files_downloadlimit', 'default-download-limit');
@@ -156,7 +163,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testRemoveDefaultLimitEnforced(): void {
-		$this->mockStoredLimit(3, true);
+		$this->mockStoredLimit(3, true, 3, 2);
 		$deletedKeys = [];
 		$this->appConfig->expects($this->exactly(2))
 			->method('deleteKey')
@@ -179,7 +186,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testSetLimitEnforced(): void {
-		$this->mockStoredLimit(5);
+		$this->mockStoredLimit(5, false, 2, 1);
 		$this->appConfig->expects($this->once())
 			->method('setValueBool')
 			->with('files_downloadlimit', 'enforce-download-limit', true)
@@ -197,7 +204,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testSetLimitEnforcedWithoutDefaultLimit(): void {
-		$this->mockStoredLimit(null);
+		$this->mockStoredLimit(null, false, 2);
 		$this->appConfig->expects($this->never())->method('setValueBool');
 
 		try {
@@ -210,7 +217,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testSetLimitEnforcedUnchanged(): void {
-		$this->mockStoredLimit(5, true);
+		$this->mockStoredLimit(5, true, 1, 1);
 		$this->appConfig->expects($this->never())->method('setValueBool');
 		$this->appConfig->expects($this->never())->method('deleteKey');
 
@@ -220,7 +227,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testSetLimitNotEnforced(): void {
-		$this->mockStoredLimit(5, true);
+		$this->mockStoredLimit(5, true, 2, 2);
 		$this->appConfig->expects($this->once())
 			->method('deleteKey')
 			->with('files_downloadlimit', 'enforce-download-limit');
@@ -237,7 +244,7 @@ class AdminControllerTest extends TestCase {
 	}
 
 	public function testSetLimitNotEnforcedUnchanged(): void {
-		$this->mockStoredLimit(5);
+		$this->mockStoredLimit(5, false, 1, 1);
 		$this->appConfig->expects($this->never())->method('setValueBool');
 		$this->appConfig->expects($this->never())->method('deleteKey');
 
