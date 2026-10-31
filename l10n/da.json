@@ -3,6 +3,7 @@
     "File link share download limit" : "Grænse for hentning via delingslink",
     "This app allows limiting the number of downloads for external link shares." : "Med denne app kan du begrænse, hvor mange gange filer kan hentes via eksterne delingslinks.",
     "The minimum limit is 1" : "Minimumsgrænsen er 1",
+    "The maximum limit is {limit}" : "Maksimumsgrænsen er {limit}",
     "Failed to set download limit" : "Kunne ikke sætte downloadgrænse",
     "Failed to remove download limit" : "Kunne ikke fjerne downloadgrænse",
     "Limit downloads" : "Begræns downloads",
@@ -12,10 +13,12 @@
     "Download limit" : "Downloadgrænse",
     "Configure the default download limit for external shares." : "Konfigurer standard downloadgrænse for eksterne delinger.",
     "Default download limit for external shares" : "Standardgrænse for downloads ved eksterne delinger",
+    "Enforce the default download limit as maximum" : "Brug standardgrænsen for downloads som maksimum",
     "Set default download limit" : "Angiv standard downloadgrænse",
     "You have reached the maximum amount of downloads allowed" : "Du har nået det maksimale antal tilladte downloads",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Denne deling kan kun hentes et begrænset antal gange. Er du sikker på, at du vil hente den igen?",
     "Failed to set default download limit" : "Kunne ikke sætte standard downloadgrænse",
-    "Failed to remove default download limit" : "Standardgrænsen for downloads kunne ikke fjernes"
+    "Failed to remove default download limit" : "Standardgrænsen for downloads kunne ikke fjernes",
+    "Failed to change download limit enforcement" : "Kunne ikke ændre, om downloadgrænsen håndhæves"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
