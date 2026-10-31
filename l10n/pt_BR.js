@@ -5,6 +5,7 @@ OC.L10N.register(
     "File link share download limit" : "Limite de download de compartilhamento de link de arquivo",
     "This app allows limiting the number of downloads for external link shares." : "Este aplicativo permite limitar o número de downloads para compartilhamentos por links externos.",
     "The minimum limit is 1" : "O limite mínimo é 1",
+    "The maximum limit is {limit}" : "O limite máximo é {limit}",
     "Failed to set download limit" : "Falha ao definir limite de download",
     "Failed to remove download limit" : "Falha ao remover o limite de download",
     "Limit downloads" : "Limitar downloads",
@@ -14,10 +15,12 @@ OC.L10N.register(
     "Download limit" : "Limite de download",
     "Configure the default download limit for external shares." : "Configure o limite de download padrão para compartilhamentos externos.",
     "Default download limit for external shares" : "Limite padrão de download para compartilhamentos externos",
+    "Enforce the default download limit as maximum" : "Aplicar o limite padrão de download como valor máximo",
     "Set default download limit" : "Definir limite de download padrão",
     "You have reached the maximum amount of downloads allowed" : "Você atingiu a quantidade máxima de downloads permitidos",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Este compartilhamento tem um número limitado de downloads. Tem certeza de que deseja iniciar um novo download?",
     "Failed to set default download limit" : "Falha ao definir o limite de download padrão",
-    "Failed to remove default download limit" : "Não foi possível remover o limite de download padrão"
+    "Failed to remove default download limit" : "Não foi possível remover o limite de download padrão",
+    "Failed to change download limit enforcement" : "Não foi possível alterar a aplicação do limite de download"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
