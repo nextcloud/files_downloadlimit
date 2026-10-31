@@ -3,6 +3,7 @@
     "File link share download limit" : "File link share download limit",
     "This app allows limiting the number of downloads for external link shares." : "This app offers the capability to restrict the number of downloads for external link shares.",
     "The minimum limit is 1" : "The minimum limit is 1",
+    "The maximum limit is {limit}" : "The maximum limit is {limit}",
     "Failed to set download limit" : "Failed to set download limit",
     "Failed to remove download limit" : "Failed to remove download limit",
     "Limit downloads" : "Limit downloads",
@@ -12,10 +13,12 @@
     "Download limit" : "Download limit",
     "Configure the default download limit for external shares." : "Configure the default download limit for external shares.",
     "Default download limit for external shares" : "Default download limit for external shares",
+    "Enforce the default download limit as maximum" : "Enforce the default download limit as maximum",
     "Set default download limit" : "Set default download limit",
     "You have reached the maximum amount of downloads allowed" : "You have reached the maximum amount of downloads allowed",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "This share has a limited number of downloads. Are you sure you want to trigger a new download?",
     "Failed to set default download limit" : "Failed to set default download limit",
-    "Failed to remove default download limit" : "Failed to remove default download limit"
+    "Failed to remove default download limit" : "Failed to remove default download limit",
+    "Failed to change download limit enforcement" : "Failed to change download limit enforcement"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
