@@ -5,6 +5,7 @@ OC.L10N.register(
     "File link share download limit" : "Teorainn íoslódála nasc comhaid",
     "This app allows limiting the number of downloads for external link shares." : "Ligeann an aip seo teorainn a chur le líon na n-íoslódálacha le haghaidh scaireanna naisc sheachtracha.",
     "The minimum limit is 1" : "Is é 1 an teorainn íosta",
+    "The maximum limit is {limit}" : "Is é {limit} an teorainn uasta",
     "Failed to set download limit" : "Theip ar an teorainn íoslódála a shocrú",
     "Failed to remove download limit" : "Theip ar an teorainn íoslódála a bhaint",
     "Limit downloads" : "Teorainneacha íoslódáil",
@@ -14,10 +15,12 @@ OC.L10N.register(
     "Download limit" : "Teorainn a íoslódáil",
     "Configure the default download limit for external shares." : "Cumraigh an teorainn íoslódála réamhshocraithe do scaireanna seachtracha.",
     "Default download limit for external shares" : "Teorainn íoslódála réamhshocraithe le haghaidh scaireanna seachtracha",
+    "Enforce the default download limit as maximum" : "Cuir an teorainn íoslódála réamhshocraithe i bhfeidhm mar uasleibhéal",
     "Set default download limit" : "Socraigh teorainn íoslódála réamhshocraithe",
     "You have reached the maximum amount of downloads allowed" : "Tá an t-uasmhéid íoslódálacha ceadaithe agat",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Tá líon teoranta íoslódálacha ag an sciar seo. An bhfuil tú cinnte gur mhaith leat íosluchtú nua a spreagadh?",
     "Failed to set default download limit" : "Theip ar an teorainn íoslódála réamhshocraithe a shocrú",
-    "Failed to remove default download limit" : "Theip ar an teorainn íoslódála réamhshocraithe a bhaint"
+    "Failed to remove default download limit" : "Theip ar an teorainn íoslódála réamhshocraithe a bhaint",
+    "Failed to change download limit enforcement" : "Theip ar athrú a dhéanamh ar fhorfheidhmiú na teorann íoslódála"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");

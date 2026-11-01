@@ -3,6 +3,7 @@
     "File link share download limit" : "Dosya bağlantısı paylaşımı indirme sınırı",
     "This app allows limiting the number of downloads for external link shares." : "Bu uygulama dış bağlantı paylaşımlarının indirme sayısının sınırlanmasını sağlar.",
     "The minimum limit is 1" : "En az sınır 1 olabilir",
+    "The maximum limit is {limit}" : "En fazla sınır {limit}",
     "Failed to set download limit" : "İndirme sınırı ayarlanamadı",
     "Failed to remove download limit" : "İndirme sınırı kaldırılamadı",
     "Limit downloads" : "İndirmeleri sınırla",
@@ -12,10 +13,12 @@
     "Download limit" : "İndirme sınırı",
     "Configure the default download limit for external shares." : "Dış paylaşımların varsayılan indirme sınırını yapılandırın.",
     "Default download limit for external shares" : "Dış paylaşımlar için varsayılan indirme sınırı",
+    "Enforce the default download limit as maximum" : "Varsayılan indirme sınırı en fazla olarak dayatılsın",
     "Set default download limit" : "Varsayılan indirme sınırını ayarla",
     "You have reached the maximum amount of downloads allowed" : "En fazla indirme sayısı sınırına ulaştınız",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Bu paylaşımın indirme sayısı sınırlanmış. Yeni bir indirme başlatmak istediğinize emin misiniz?",
     "Failed to set default download limit" : "Varsayılan indirme sınırı ayarlanamadı",
-    "Failed to remove default download limit" : "Varsayılan indirme sınırı kaldırılamadı"
+    "Failed to remove default download limit" : "Varsayılan indirme sınırı kaldırılamadı",
+    "Failed to change download limit enforcement" : "İndirme sınırı dayatması değiştirilemedi"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }
