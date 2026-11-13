@@ -5,6 +5,7 @@ OC.L10N.register(
     "File link share download limit" : "Hämtningsgräns för länkdelningar",
     "This app allows limiting the number of downloads for external link shares." : "Med den här appen kan antalet hämtningar från externa länkdelningar begränsas.",
     "The minimum limit is 1" : "Minimigränsen är 1",
+    "The maximum limit is {limit}" : "Den högsta gränsen är {limit}",
     "Failed to set download limit" : "Det gick inte att ange hämtningsgränsen",
     "Failed to remove download limit" : "Det gick inte att ta bort hämtningsgränsen",
     "Limit downloads" : "Begränsa hämtningar",
@@ -14,10 +15,12 @@ OC.L10N.register(
     "Download limit" : "Hämtningsbegränsning",
     "Configure the default download limit for external shares." : "Konfigurera standardgränsen för hämtningar från externa delningar.",
     "Default download limit for external shares" : "Standardgräns för hämtningar från externa delningar",
+    "Enforce the default download limit as maximum" : "Tillämpa standardgränsen för hämtningar som högsta gräns",
     "Set default download limit" : "Ange standardgräns för hämtningar",
     "You have reached the maximum amount of downloads allowed" : "Du har nått det högsta tillåtna antalet hämtningar",
     "This share has a limited number of downloads. Are you sure you want to trigger a new download?" : "Den här delningen har ett begränsat antal hämtningar. Vill du starta en ny hämtning?",
     "Failed to set default download limit" : "Det gick inte att ange standardgränsen för hämtningar",
-    "Failed to remove default download limit" : "Det gick inte att ta bort standardgränsen för hämtningar"
+    "Failed to remove default download limit" : "Det gick inte att ta bort standardgränsen för hämtningar",
+    "Failed to change download limit enforcement" : "Det gick inte att ändra tillämpningen av hämtningsgränsen"
 },
 "nplurals=2; plural=(n != 1);");
