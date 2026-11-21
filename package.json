@@ -42,7 +42,7 @@
     "@nextcloud/router": "^3.2.0",
     "@nextcloud/sharing": "^0.4.0",
     "@nextcloud/vue": "^9.13.1",
-    "vue": "^3.5.44"
+    "vue": "^3.5.45"
   },
   "devDependencies": {
     "@nextcloud/browserslist-config": "^3.1.2",
